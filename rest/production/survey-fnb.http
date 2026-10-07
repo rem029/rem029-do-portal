@@ -1,0 +1,53 @@
+
+
+POST https://public.dohaoasis.com/payload/api/survey-customer-feedbacks
+Content-Type: application/json
+Authorization: users API-Key 1930a698-8dda-4c61-aadb-1e9de18f9055
+
+{
+    "visit_date": "2024-04-17T09:28:26.609+03:00",
+    "customer_comments": "",
+    "customer_feedback_number": "0",
+    "receipt_id": "test123",
+    "transaction_type": "Food and Beverage",
+    "visited_restaurant": "Wild and the moon",
+    "favorite_restaurant": "Twiga",
+    "meal_period": "Lunch",
+    "visit_frequency": "daily",
+    "rating_greeting": "excellent",
+    "rating_service": "good",
+    "rating_food": "poor",
+    "rating_beverage": "very-good",
+    "rating_value_for_money": "good",
+    "rating_cleanliness": "poor",
+    "discovery_method": "Influencer Recommendations",
+    "will_visit_again": "No",
+    "manager_visit": "Yes",
+    "customer_feedback": "detractor",
+    "marketing_consent": true,
+    "discovery_text": ""
+}
+
+{
+    "visit_date": "2024-04-12T09:28:26.609+03:00",
+    "customer_comments": "",
+    "customer_feedback_number": "0",
+    "receipt_id": "test123",
+    "transaction_type": "Food and Beverage",
+    "visited_restaurant": "Dar yema",
+    "favorite_restaurant": "Dar yema",
+    "meal_period": "Breakfast",
+    "visit_frequency": "monthly",
+    "rating_greeting": "excellent",
+    "rating_service": "good",
+    "rating_food": "poor",
+    "rating_beverage": "very-good",
+    "rating_value_for_money": "good",
+    "rating_cleanliness": "poor",
+    "discovery_method": "Influencer Recommendations",
+    "will_visit_again": "No",
+    "manager_visit": "Yes",
+    "customer_feedback": "detractor",
+    "marketing_consent": true,
+    "discovery_text": ""
+}

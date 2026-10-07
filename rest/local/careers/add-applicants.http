@@ -1,0 +1,37 @@
+
+@urlBase = {{$dotenv BASE_URL}}
+@payloadItem = careers-application-printemps
+@apiKey = {{$dotenv API_TOKEN}}
+@url = {{urlBase}}/{{payloadItem}}
+
+### POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "first_name": "Mani V45xNewLine",
+    "last_name": "Pookyaw",
+    "phone": "33426847",
+    "email": "mani.pokyaw@gmail.com",
+    "cover_letter": "Dear Mister, This is new.\npunching punching",
+    "nationality": "Philippines",
+    "country_of_residence": "Qatar",
+    "nationalIdPassportNumber": "P12341234",
+    "resume": 1,
+    "career": "b9c31999-e362-4765-8058-97815bac424a",
+    "career_questions": [
+        {
+            "item": 1,
+            "response": "2341"
+        },
+        {
+            "item": 2,
+            "response": "Lawrence"
+        },
+        {
+            "item": 3,
+            "response": "45"
+        }
+    ]
+}

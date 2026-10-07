@@ -1,0 +1,133 @@
+
+@urlBase = {{$dotenv BASE_URL}}
+@payloadItem = kpi-plans-item
+@apiKey = {{$dotenv API_TOKEN}}
+@url = {{urlBase}}/{{payloadItem}}
+
+### POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Achieve full compliance with international data security standards",
+    "description": "Achieve full compliance with international data security standards",
+    "department": 4,
+    "status": 1,
+    "start_date": "2024-09-01T12:00:00.000Z",
+    "end_date": "2024-09-30T12:00:00.000Z",
+    "weight": 30,
+    "_status": "published"
+}
+
+### POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Implement cutting-edge technology solutions to increase operational efficiency by 20%",
+    "description": "Implement cutting-edge technology solutions to increase operational efficiency by 20%",
+    "department": 4,
+    "status": 1,
+    "start_date": "2024-09-01T12:00:00.000Z",
+    "end_date": "2024-09-30T12:00:00.000Z",
+    "weight": 10,
+    "_status": "published"
+}
+
+### POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Establish a responsive IT support system with a 85% satisfaction rate",
+    "description": "Establish a responsive IT support system with a 85% satisfaction rate",
+    "department": 4,
+    "status": 1,
+    "start_date": "2024-09-01T12:00:00.000Z",
+    "end_date": "2024-09-30T12:00:00.000Z",
+    "weight": 10,
+    "_status": "published"
+}
+
+### POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Maintain scalable IT systems to enhance efficiency by 15% annually",
+    "description": "Maintain scalable IT systems to enhance efficiency by 15% annually",
+    "department": 4,
+    "status": 1,
+    "start_date": "2024-09-01T12:00:00.000Z",
+    "end_date": "2024-09-30T12:00:00.000Z",
+    "weight": 5,
+    "_status": "published"
+}
+
+### POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Lead digital transformation initiatives with at least three major innovations",
+    "description": "Lead digital transformation initiatives with at least three major innovations",
+    "department": 4,
+    "status": 1,
+    "start_date": "2024-09-01T12:00:00.000Z",
+    "end_date": "2024-09-30T12:00:00.000Z",
+    "weight": 5,
+    "_status": "published"
+}
+
+### POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Enhance collaboration through IT tools, increasing departmental productivity by 25%",
+    "description": "Enhance collaboration through IT tools, increasing departmental productivity by 25%",
+    "department": 4,
+    "status": 1,
+    "start_date": "2024-09-01T12:00:00.000Z",
+    "end_date": "2024-09-30T12:00:00.000Z",
+    "weight": 10,
+    "_status": "published"
+}
+
+### POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Train IT staff for 100% qualification in new technologies by year-end",
+    "description": "Train IT staff for 100% qualification in new technologies by year-end",
+    "department": 4,
+    "status": 1,
+    "start_date": "2024-09-01T12:00:00.000Z",
+    "end_date": "2024-09-30T12:00:00.000Z",
+    "weight": 15,
+    "_status": "published"
+}
+
+### POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Enhance operational efficiency following our recent merger, aiming to achieve a 15% reduction in process time or cost across all departments—IT, HR, Marketing, Purchasing, Engineering/Maintenance, and Finance—by the end of the fiscal year.",
+    "description": "Enhance operational efficiency following our recent merger, aiming to achieve a 15% reduction in process time or cost across all departments—IT, HR, Marketing, Purchasing, Engineering/Maintenance, and Finance—by the end of the fiscal year.",
+    "department": 4,
+    "status": 1,
+    "start_date": "2024-09-01T12:00:00.000Z",
+    "end_date": "2024-09-30T12:00:00.000Z",
+    "weight": 15,
+    "_status": "published"
+}

@@ -1,0 +1,54 @@
+@urlBase = http://localhost:3005/payload/api
+@urlFeedback = {{urlBase}}/survey-net-promoter
+@urlFeedbacks = {{urlBase}}/survey-net-promoter
+
+@apiKey = {{survey-do api-token-dev}}
+
+
+### GET
+GET {{urlFeedback}} 
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+### POST
+POST {{urlFeedback}} 
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+  "visit_date":"2024-03-28T09:26:37.181+03:00",
+  "customer_comments":"hello word",
+  "receipt_id":"1234",
+  "transaction_type":"Retail",
+  "visited_restaurant":"",
+  "favorite_restaurant":"",
+  "customer_feedback":"neutral",
+  "discovery_text":""
+}
+
+### ADD
+POST {{urlFeedback}}
+Content-Type: application/json
+
+{
+  "visit_date": "2024-01-21T12:00:00+00:00",
+  "meal_period": "Lunch",
+  "visit_frequency": "Weekly",
+  "rating_greeting": "Excellent",
+  "rating_service": "Good",
+  "rating_beverage": "Average",
+  "rating_food": "Very Good",
+  "rating_value_for_money": "Poor",
+  "rating_cleanliness": "Excellent",
+  "discovery_method": "Online Ad",
+  "will_visit_again": "Yes",
+  "manager_visit": "No",
+  "favorite_restaurant": "Pasta Palace",
+  "additional_comments": "Loved the ambiance and the pasta dishes.",
+  "name": "John Doe",
+  "telephone_number": "555-1234",
+  "birth_date": "1985-05-30",
+  "email_address": "johndoe@example.com"
+}
+
+

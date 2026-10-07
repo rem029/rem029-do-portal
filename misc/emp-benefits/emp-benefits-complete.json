@@ -1,0 +1,780 @@
+[
+  {
+    "general_info": {
+      "name": "Al Jazeera Medical Center",
+      "category": [
+        "Medical"
+      ]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": "Marketing@aljazeeramc.com",
+      "point_of_contact": "Khouloud Jbeli",
+      "address": null
+    },
+    "expiry_date": "2023-12-31T00:00:00",
+    "external_link": null,
+    "benefits": [
+      {
+        "id": "65f6a89b103cfb3b5d434fb7",
+        "title": "Discount on Medical Services (Details in The Share Folder)",
+        "description": null,
+        "printemps": "Free",
+        "dohaoasis": "50%",
+        "banyantree": "25%"
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": "Discount cannot be used in conjunction with any other promotion, discounts or privileges"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "general_info": {
+      "name": "Banyan Tree Hotel",
+      "category": [
+        "Hotel",
+        "Restaurant"
+      ]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "Corprate Prices For Rooms, F&B and Spa (Details in The Share Folder)",
+        "description": null,
+        "printemps": "25%",
+        "dohaoasis": "50%",
+        "banyantree": "Free"
+      }
+    ]
+  },
+  {
+    "general_info": {
+      "name": "Al Rayes Laundry",
+      "category": [
+        "Laundry"
+      ]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": "Csr1@alrayeslaundry.com",
+      "point_of_contact": "Ahmed al Rayes",
+      "address": null
+    },
+    "expiry_date": "2024-03-07T00:00:00",
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "50%  Discount on every washing, pressing and dry-cleaning service.",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": "The Corporate discount doesn't include home delivery services"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "general_info": {
+      "name": "DHL",
+      "category": [
+        "Service"
+      ]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": "Mohamed Khamis",
+      "address": null
+    },
+    "expiry_date": "2024-12-31T00:00:00",
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "50% discount for all shipments",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "general_info": {
+      "name": "Diet and the Beast",
+      "category": [
+        "Restaurant"
+      ]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "25% for any ala card order + 10% for any monthly plan registration",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "general_info": {
+      "name": "Diet Mood Plus",
+      "category": [
+        "Restaurant"
+      ]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "25% for any ala card order + 10% for any monthly plan registration",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "general_info": {
+      "name": "Doha Oasis Padle Courts",
+      "category": [
+        "Activity"
+      ]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "25% Discount",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "general_info": {
+      "name": "Dr Diet",
+      "category": [
+        "Restaurant"
+      ]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "25% for any ala card order + 10% for any monthly plan registration",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "general_info": {
+      "name": "Eggspectation (The Pearl Branch Only)",
+      "category": [
+        "Restaurant"
+      ]
+    },
+    "contact_info": {
+      "phone": "+974 3085 8511",
+      "email": "Corporate-qatar@eggspectationme.com",
+      "point_of_contact": "Rodel L. Cabrera",
+      "address": null
+    },
+    "expiry_date": "2024-02-28T00:00:00",
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "15% Discount on Food & Beverage",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": "Discounts shall not be available on any promotional items and shall not be clubbed with any other promotional offer"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "general_info": {
+      "name": "ER Detailing",
+      "category": [
+        "Service"
+      ]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "Discount on Car Detailing & Services (Details in The Share Folder)",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "general_info": {
+      "name": "Gym World",
+      "category": [
+        "Activity"
+      ]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "Discount on Karate - MMA - Jiu jitsu subscription (Details in The Share Folder)",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "general_info": {
+      "name": "La Cigale",
+      "category": [
+        "Hotel",
+        "Restaurant"
+      ]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": "Tony.mimar@lacigalehotel.com",
+      "point_of_contact": "\nTony Mimar",
+      "address": null
+    },
+    "expiry_date": "2023-12-31T00:00:00",
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "Coorporate Prices For Rooms, F&B and Spa (Details in The Share Folder)",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": "Corporate rates are subject to availability at the time of booking and during school, public holidays and city-wide events"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "general_info": {
+      "name": "Naseem Healthcare",
+      "category": [
+        "Medical"
+      ]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": "Imran@naseemhealthcare.com",
+      "point_of_contact": "Imran Sat Ummer Sait",
+      "address": null
+    },
+    "expiry_date": "2024-09-16T00:00:00",
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "20% Discount for specialist consultation and General consultation",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": "The Offer will be available only for the members and their family members of Doha Oasis"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "general_info": {
+      "name": "Planet Hollywood",
+      "category": [
+        "Restaurant"
+      ]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "15% Discount on Food & Beverage",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": "Discount is not available on already discounted food items"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "general_info": {
+      "name": "Quest",
+      "category": [
+        "Activity"
+      ]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "Free Ticket for colleague and 50% discount up to four guests per month.",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "general_info": {
+      "name": "Reyada Medical Centre",
+      "category": [
+        "Medical"
+      ]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": "Bdm@reyadamedicalcentre.com",
+      "point_of_contact": "Altaf Khan ",
+      "address": null
+    },
+    "expiry_date": "2024-08-29T00:00:00",
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "20% Discount will be applied for all remaining dental procedures (Details in The Share Folder)",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": "Discount are excluding medicines & injections"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "general_info": {
+      "name": "Shakespeare & Co. (Dar Al Salam Mall Only)",
+      "category": [
+        "Restaurant"
+      ]
+    },
+    "contact_info": {
+      "phone": "+974 3085 8511",
+      "email": "Corporate-qatar@eggspectationme.com",
+      "point_of_contact": "Rodel L. Cabrera",
+      "address": null
+    },
+    "expiry_date": "2024-02-14T00:00:00",
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "15% Discount on Food & Beverage",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": "Discounts shall not be available on any promotional items and shall not be clubbed with any other promotional offer"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "general_info": {
+      "name": "Sharq Village Hotel",
+      "category": [
+        "Hotel",
+        "Restaurant"
+      ]
+    },
+    "contact_info": {
+      "phone": "+974 5515 1229 ",
+      "email": "rahul.bakshi@ritzcarlton.com",
+      "point_of_contact": "Nazrin",
+      "address": null
+    },
+    "expiry_date": "2023-12-31T00:00:00",
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "Corprate Prices For Rooms and F&B(Details in The Share Folder)",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": "The rates are subject to rate and room type availability at time of reservation."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "general_info": {
+      "name": "Slot Racing Qatar",
+      "category": [
+        "Activity",
+        "Restaurant"
+      ]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "10% discount on the food and Car racing circuit",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "general_info": {
+      "name": "Squad 5 Training",
+      "category": [
+        "Activity"
+      ]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": "Wissem Saadallah",
+      "address": null
+    },
+    "expiry_date": "2023-12-31T00:00:00",
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "(Details in The Share Folder)",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": "The discount cannot be used on items on sale or special promotion"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "general_info": {
+      "name": "Sugar caf\u00e9",
+      "category": [
+        "Restaurant"
+      ]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "25% for any ala card order + 10% for any monthly plan registration",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "general_info": {
+      "name": "UFC Gym",
+      "category": [
+        "Activity"
+      ]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": "Saeed Kosar",
+      "address": null
+    },
+    "expiry_date": "2024-01-11T00:00:00",
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "10% for 3 Months - 15% for 6 Months - 20% for 12 Months",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": "Discount applicable to the standard membership prices only"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "general_info": {
+      "name": "VOX",
+      "category": [
+        "Activity"
+      ]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "33% On Cinema & Bowling +15% on F&B (From Saturday to Wednesday)",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": ""
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,594 @@
+/**
+ * TECH-0112 — nav icons.
+ *
+ * Hand-maintained. To add an icon for a collection or global:
+ *   1. Drop an `icon.svg` next to its `index.ts`/`index.tsx`.
+ *   2. Add a block below referencing it by relative path (copy an
+ *      existing one and change the slug + path).
+ * To add an icon for a nav GROUP, drop the svg in
+ * `src/common/nav-icons/groups/<slug>.svg` and add a block in the
+ * groups section below. See CLAUDE.md for the full convention.
+ *
+ * Payload's stock nav renders each collection/global link with a stable
+ * `id="nav-<slug>"` / `id="nav-global-<slug>"` (Payload's own output, not
+ * ours), and each group with a CSS class built from its label. Icons are
+ * added as `::before` mask-image pseudo-elements keyed off those, so
+ * nothing about Payload's Nav rendering is touched — a slug/group with no
+ * block below simply renders label-only.
+ *
+ * `url()` below is a normal relative-path CSS asset reference — Next.js'
+ * Sass pipeline resolves and bundles it like any other CSS asset import,
+ * there is no data-URI encoding or generation step involved.
+ */
+
+@mixin nav-icon($icon-url) {
+  &::before {
+    content: '';
+    display: inline-block;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    background-color: currentColor;
+    -webkit-mask: url($icon-url) center / contain no-repeat;
+    mask: url($icon-url) center / contain no-repeat;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Group ("parent") icons — src/common/nav-icons/groups/<slug>.svg
+// ---------------------------------------------------------------------------
+// Common
+.nav-group.Common > .nav-group__toggle {
+  align-items: center;
+  @include nav-icon('../../../common/nav-icons/groups/common.svg');
+}
+
+// Admin
+.nav-group.Admin > .nav-group__toggle {
+  align-items: center;
+  @include nav-icon('../../../common/nav-icons/groups/admin.svg');
+}
+
+// Link Shortener
+.nav-group.Link.Shortener > .nav-group__toggle {
+  align-items: center;
+  @include nav-icon('../../../common/nav-icons/groups/link-shortener.svg');
+}
+
+// FnB
+.nav-group.FnB > .nav-group__toggle {
+  align-items: center;
+  @include nav-icon('../../../common/nav-icons/groups/fnb.svg');
+}
+
+// La Cigale
+.nav-group.La.Cigale > .nav-group__toggle {
+  align-items: center;
+  @include nav-icon('../../../common/nav-icons/groups/la-cigale.svg');
+}
+
+// Employees
+.nav-group.Employees > .nav-group__toggle {
+  align-items: center;
+  @include nav-icon('../../../common/nav-icons/groups/employees.svg');
+}
+
+// Site
+.nav-group.Site > .nav-group__toggle {
+  align-items: center;
+  @include nav-icon('../../../common/nav-icons/groups/site.svg');
+}
+
+// Settings
+.nav-group.Settings > .nav-group__toggle {
+  align-items: center;
+  @include nav-icon('../../../common/nav-icons/groups/settings.svg');
+}
+
+// HACCP
+.nav-group.HACCP > .nav-group__toggle {
+  align-items: center;
+  @include nav-icon('../../../common/nav-icons/groups/haccp.svg');
+}
+
+// Forms
+.nav-group.Forms > .nav-group__toggle {
+  align-items: center;
+  @include nav-icon('../../../common/nav-icons/groups/forms.svg');
+}
+
+// Surveys
+.nav-group.Surveys > .nav-group__toggle {
+  align-items: center;
+  @include nav-icon('../../../common/nav-icons/groups/surveys.svg');
+}
+
+// Workflow V2
+.nav-group.Workflow.V2 > .nav-group__toggle {
+  align-items: center;
+  @include nav-icon('../../../common/nav-icons/groups/workflow-v2.svg');
+}
+
+// Reports
+.nav-group.Reports > .nav-group__toggle {
+  align-items: center;
+  @include nav-icon('../../../common/nav-icons/groups/reports.svg');
+}
+
+// FnB Events
+.nav-group.FnB.Events > .nav-group__toggle {
+  align-items: center;
+  @include nav-icon('../../../common/nav-icons/groups/fnb-events.svg');
+}
+
+// FnB Orders
+.nav-group.FnB.Orders > .nav-group__toggle {
+  align-items: center;
+  @include nav-icon('../../../common/nav-icons/groups/fnb-orders.svg');
+}
+
+// QA
+.nav-group.QA > .nav-group__toggle {
+  align-items: center;
+  @include nav-icon('../../../common/nav-icons/groups/qa.svg');
+}
+
+// ---------------------------------------------------------------------------
+// Collection / global ("children") icons — <folder>/icon.svg
+// ---------------------------------------------------------------------------
+// media
+#nav-media.nav__link,
+#nav-global-media.nav__link {
+  @include nav-icon('../../../collections/media/icon.svg');
+}
+
+// internal-media
+#nav-internal-media.nav__link,
+#nav-global-internal-media.nav__link {
+  @include nav-icon('../../../collections/public/internal-media/icon.svg');
+}
+
+// forms-media
+#nav-forms-media.nav__link,
+#nav-global-forms-media.nav__link {
+  @include nav-icon('../../../collections/forms-media/icon.svg');
+}
+
+// link-shortener-media
+#nav-link-shortener-media.nav__link,
+#nav-global-link-shortener-media.nav__link {
+  @include nav-icon('../../../collections/public/link-shortener-media/icon.svg');
+}
+
+// menu-media
+#nav-menu-media.nav__link,
+#nav-global-menu-media.nav__link {
+  @include nav-icon('../../../collections/public/menu-media/icon.svg');
+}
+
+// users
+#nav-users.nav__link,
+#nav-global-users.nav__link {
+  @include nav-icon('../../../collections/users/icon.svg');
+}
+
+// users-access
+#nav-users-access.nav__link,
+#nav-global-users-access.nav__link {
+  @include nav-icon('../../../collections/users-access/icon.svg');
+}
+
+// departments
+#nav-departments.nav__link,
+#nav-global-departments.nav__link {
+  @include nav-icon('../../../collections/departments/icon.svg');
+}
+
+// store-departments
+#nav-store-departments.nav__link,
+#nav-global-store-departments.nav__link {
+  @include nav-icon('../../../collections/store-departments/icon.svg');
+}
+
+// restaurants
+#nav-restaurants.nav__link,
+#nav-global-restaurants.nav__link {
+  @include nav-icon('../../../collections/restaurants/icon.svg');
+}
+
+// operators
+#nav-operators.nav__link,
+#nav-global-operators.nav__link {
+  @include nav-icon('../../../collections/operators/icon.svg');
+}
+
+// crm-categories
+#nav-crm-categories.nav__link,
+#nav-global-crm-categories.nav__link {
+  @include nav-icon('../../../collections/crm-categories/icon.svg');
+}
+
+// analytics
+#nav-analytics.nav__link,
+#nav-global-analytics.nav__link {
+  @include nav-icon('../../../collections/analytics/icon.svg');
+}
+
+// audit-logs
+#nav-audit-logs.nav__link,
+#nav-global-audit-logs.nav__link {
+  @include nav-icon('../../../collections/audit-logs/icon.svg');
+}
+
+// user-settings
+#nav-user-settings.nav__link,
+#nav-global-user-settings.nav__link {
+  @include nav-icon('../../../collections/user-settings/icon.svg');
+}
+
+// link-shortener
+#nav-link-shortener.nav__link,
+#nav-global-link-shortener.nav__link {
+  @include nav-icon('../../../collections/public/link-shortener/icon.svg');
+}
+
+// e-recognition
+#nav-e-recognition.nav__link,
+#nav-global-e-recognition.nav__link {
+  @include nav-icon('../../../collections/public/e-recognition/icon.svg');
+}
+
+// site-pages
+#nav-site-pages.nav__link,
+#nav-global-site-pages.nav__link {
+  @include nav-icon('../../../collections/public/site-pages/icon.svg');
+}
+
+// menu
+#nav-menu.nav__link,
+#nav-global-menu.nav__link {
+  @include nav-icon('../../../collections/public/menu/icon.svg');
+}
+
+// menu-items
+#nav-menu-items.nav__link,
+#nav-global-menu-items.nav__link {
+  @include nav-icon('../../../collections/public/menu-items/icon.svg');
+}
+
+// menu-categories
+#nav-menu-categories.nav__link,
+#nav-global-menu-categories.nav__link {
+  @include nav-icon('../../../collections/public/menu-categories/icon.svg');
+}
+
+// menu-allergens
+#nav-menu-allergens.nav__link,
+#nav-global-menu-allergens.nav__link {
+  @include nav-icon('../../../collections/public/menu-allergens/icon.svg');
+}
+
+// menu-pages
+#nav-menu-pages.nav__link,
+#nav-global-menu-pages.nav__link {
+  @include nav-icon('../../../collections/public/menu-pages/icon.svg');
+}
+
+// menu-tags
+#nav-menu-tags.nav__link,
+#nav-global-menu-tags.nav__link {
+  @include nav-icon('../../../collections/public/menu-tags/icon.svg');
+}
+
+// lacigale-sales
+#nav-lacigale-sales.nav__link,
+#nav-global-lacigale-sales.nav__link {
+  @include nav-icon('../../../collections/public/lacigale-sales/icon.svg');
+}
+
+// workflow-v2
+#nav-workflow-v2.nav__link,
+#nav-global-workflow-v2.nav__link {
+  @include nav-icon('../../../collections/workflow-v2/icon.svg');
+}
+
+// workflow
+#nav-workflow.nav__link,
+#nav-global-workflow.nav__link {
+  @include nav-icon('../../../collections/workflow/icon.svg');
+}
+
+// workflow-instances
+#nav-workflow-instances.nav__link,
+#nav-global-workflow-instances.nav__link {
+  @include nav-icon('../../../collections/workflow-instances/icon.svg');
+}
+
+// forms
+#nav-forms.nav__link,
+#nav-global-forms.nav__link {
+  @include nav-icon('../../../collections/forms/icon.svg');
+}
+
+// form-submissions
+#nav-form-submissions.nav__link,
+#nav-global-form-submissions.nav__link {
+  @include nav-icon('../../../collections/forms-submission/icon.svg');
+}
+
+// haccp-dry-store
+#nav-haccp-dry-store.nav__link,
+#nav-global-haccp-dry-store.nav__link {
+  @include nav-icon('../../../collections/haccp-dry-store/icon.svg');
+}
+
+// haccp-personal-hygiene
+#nav-haccp-personal-hygiene.nav__link,
+#nav-global-haccp-personal-hygiene.nav__link {
+  @include nav-icon('../../../collections/haccp-personal-hygiene/icon.svg');
+}
+
+// haccp-dishwashing-temperature
+#nav-haccp-dishwashing-temperature.nav__link,
+#nav-global-haccp-dishwashing-temperature.nav__link {
+  @include nav-icon('../../../collections/haccp-dishwashing/icon.svg');
+}
+
+// haccp-buffet-temperature
+#nav-haccp-buffet-temperature.nav__link,
+#nav-global-haccp-buffet-temperature.nav__link {
+  @include nav-icon('../../../collections/haccp-buffet/icon.svg');
+}
+
+// haccp-outlet-settings
+#nav-haccp-outlet-settings.nav__link,
+#nav-global-haccp-outlet-settings.nav__link {
+  @include nav-icon('../../../collections/haccp-outlet-settings/icon.svg');
+}
+
+// outlets
+#nav-outlets.nav__link,
+#nav-global-outlets.nav__link {
+  @include nav-icon('../../../collections/outlets/icon.svg');
+}
+
+// notices-settings
+#nav-notices-settings.nav__link,
+#nav-global-notices-settings.nav__link {
+  @include nav-icon('../../../globals/letters/notices-settings/icon.svg');
+}
+
+// disciplinary-actions-settings
+#nav-disciplinary-actions-settings.nav__link,
+#nav-global-disciplinary-actions-settings.nav__link {
+  @include nav-icon('../../../globals/letters/disciplinary-actions-settings/icon.svg');
+}
+
+// warnings-settings
+#nav-warnings-settings.nav__link,
+#nav-global-warnings-settings.nav__link {
+  @include nav-icon('../../../globals/letters/warnings-settings/icon.svg');
+}
+
+// salary-deduction-settings
+#nav-salary-deduction-settings.nav__link,
+#nav-global-salary-deduction-settings.nav__link {
+  @include nav-icon('../../../globals/letters/salary-deduction-settings/icon.svg');
+}
+
+// audit-log-settings
+#nav-audit-log-settings.nav__link,
+#nav-global-audit-log-settings.nav__link {
+  @include nav-icon('../../../globals/audit-log-settings/icon.svg');
+}
+
+// workflow-dashboard
+#nav-workflow-dashboard.nav__link,
+#nav-global-workflow-dashboard.nav__link {
+  @include nav-icon('../../../globals/workflow-dashboard/icon.svg');
+}
+
+// employee-history
+#nav-employee-history.nav__link,
+#nav-global-employee-history.nav__link {
+  @include nav-icon('../../../globals/employee-history/icon.svg');
+}
+
+// fnb-import
+#nav-fnb-import.nav__link,
+#nav-global-fnb-import.nav__link {
+  @include nav-icon('../../../globals/fnb-import/icon.svg');
+}
+
+// h2a-oasys-settings
+#nav-h2a-oasys-settings.nav__link,
+#nav-global-h2a-oasys-settings.nav__link {
+  @include nav-icon('../../../globals/h2a-oasys-settings/icon.svg');
+}
+
+// payload-docusign
+#nav-payload-docusign.nav__link,
+#nav-global-payload-docusign.nav__link {
+  @include nav-icon('../../../globals/payload-docusign/icon.svg');
+}
+
+// lacigale-sales-report
+#nav-lacigale-sales-report.nav__link,
+#nav-global-lacigale-sales-report.nav__link {
+  @include nav-icon('../../../globals/lacigale-sales-report/icon.svg');
+}
+
+// forms-dashboard
+#nav-forms-dashboard.nav__link,
+#nav-global-forms-dashboard.nav__link {
+  @include nav-icon('../../../globals/forms-dashboard/icon.svg');
+}
+
+// fnb-event-staff
+#nav-fnb-event-staff.nav__link,
+#nav-global-fnb-event-staff.nav__link {
+  @include nav-icon('../../../collections/public/fnb-event-staff/icon.svg');
+}
+
+// fnb-menu-events
+#nav-fnb-menu-events.nav__link,
+#nav-global-fnb-menu-events.nav__link {
+  @include nav-icon('../../../collections/public/fnb-menu-events/icon.svg');
+}
+
+// orders
+#nav-orders.nav__link,
+#nav-global-orders.nav__link {
+  @include nav-icon('../../../collections/public/orders/icon.svg');
+}
+
+// tables
+#nav-tables.nav__link,
+#nav-global-tables.nav__link {
+  @include nav-icon('../../../collections/public/tables/icon.svg');
+}
+
+// qa-field-types
+#nav-qa-field-types.nav__link,
+#nav-global-qa-field-types.nav__link {
+  @include nav-icon('../../../collections/qa-field-types/icon.svg');
+}
+
+// back-of-house-panel
+#nav-back-of-house-panel.nav__link,
+#nav-global-back-of-house-panel.nav__link {
+  @include nav-icon('../../../globals/back-of-house-panel/icon.svg');
+}
+
+// cashier-panel
+#nav-cashier-panel.nav__link,
+#nav-global-cashier-panel.nav__link {
+  @include nav-icon('../../../globals/cashier-panel/icon.svg');
+}
+
+// waiter-panel
+#nav-waiter-panel.nav__link,
+#nav-global-waiter-panel.nav__link {
+  @include nav-icon('../../../globals/waiter-panel/icon.svg');
+}
+
+// fnb-orders-report
+#nav-fnb-orders-report.nav__link,
+#nav-global-fnb-orders-report.nav__link {
+  @include nav-icon('../../../globals/fnb-orders-report/icon.svg');
+}
+
+// fnb-event-back-of-house-panel
+#nav-fnb-event-back-of-house-panel.nav__link,
+#nav-global-fnb-event-back-of-house-panel.nav__link {
+  @include nav-icon('../../../globals/fnb-event-back-of-house-panel/icon.svg');
+}
+
+// fnb-event-cashier-panel
+#nav-fnb-event-cashier-panel.nav__link,
+#nav-global-fnb-event-cashier-panel.nav__link {
+  @include nav-icon('../../../globals/fnb-event-cashier-panel/icon.svg');
+}
+
+// fnb-event-waiter-panel
+#nav-fnb-event-waiter-panel.nav__link,
+#nav-global-fnb-event-waiter-panel.nav__link {
+  @include nav-icon('../../../globals/fnb-event-waiter-panel/icon.svg');
+}
+
+// fnb-event-orders-report
+#nav-fnb-event-orders-report.nav__link,
+#nav-global-fnb-event-orders-report.nav__link {
+  @include nav-icon('../../../globals/fnb-event-orders-report/icon.svg');
+}
+
+// survey-invitations
+#nav-survey-invitations.nav__link,
+#nav-global-survey-invitations.nav__link {
+  @include nav-icon('../../../collections/survey-invitations/icon.svg');
+}
+
+// survey-send-invitation
+#nav-survey-send-invitation.nav__link,
+#nav-global-survey-send-invitation.nav__link {
+  @include nav-icon('../../../globals/survey-send-invitation/icon.svg');
+}
+
+// survey-report
+#nav-survey-report.nav__link,
+#nav-global-survey-report.nav__link {
+  @include nav-icon('../../../globals/survey-report/icon.svg');
+}
+
+// Trip Scheduling
+.nav-group.Trip.Scheduling > .nav-group__toggle {
+  align-items: center;
+  @include nav-icon('../../../common/nav-icons/groups/trip-scheduling.svg');
+}
+
+// trip-scheduling-adhoc
+#nav-trip-scheduling-adhoc.nav__link,
+#nav-global-trip-scheduling-adhoc.nav__link {
+  @include nav-icon('../../../collections/trip-scheduling-adhoc/icon.svg');
+}
+
+// trip-scheduling-bookings
+#nav-trip-scheduling-bookings.nav__link,
+#nav-global-trip-scheduling-bookings.nav__link {
+  @include nav-icon('../../../collections/trip-scheduling-bookings/icon.svg');
+}
+
+// trip-scheduling-categories
+#nav-trip-scheduling-categories.nav__link,
+#nav-global-trip-scheduling-categories.nav__link {
+  @include nav-icon('../../../collections/trip-scheduling-categories/icon.svg');
+}
+
+// trip-scheduling-drivers
+#nav-trip-scheduling-drivers.nav__link,
+#nav-global-trip-scheduling-drivers.nav__link {
+  @include nav-icon('../../../collections/trip-scheduling-drivers/icon.svg');
+}
+
+// trip-scheduling-locations
+#nav-trip-scheduling-locations.nav__link,
+#nav-global-trip-scheduling-locations.nav__link {
+  @include nav-icon('../../../collections/trip-scheduling-locations/icon.svg');
+}
+
+// trip-scheduling-routes
+#nav-trip-scheduling-routes.nav__link,
+#nav-global-trip-scheduling-routes.nav__link {
+  @include nav-icon('../../../collections/trip-scheduling-routes/icon.svg');
+}
+
+// trip-scheduling-shuttles
+#nav-trip-scheduling-shuttles.nav__link,
+#nav-global-trip-scheduling-shuttles.nav__link {
+  @include nav-icon('../../../collections/trip-scheduling-shuttles/icon.svg');
+}
+
+// trip-scheduling-staff-voice
+#nav-trip-scheduling-staff-voice.nav__link,
+#nav-global-trip-scheduling-staff-voice.nav__link {
+  @include nav-icon('../../../collections/trip-scheduling-staff-voice/icon.svg');
+}
+
+// trip-scheduling-vehicles
+#nav-trip-scheduling-vehicles.nav__link,
+#nav-global-trip-scheduling-vehicles.nav__link {
+  @include nav-icon('../../../collections/trip-scheduling-vehicles/icon.svg');
+}
+
+// trip-scheduling-zones
+#nav-trip-scheduling-zones.nav__link,
+#nav-global-trip-scheduling-zones.nav__link {
+  @include nav-icon('../../../collections/trip-scheduling-zones/icon.svg');
+}
+
+// trip-scheduling-settings
+#nav-trip-scheduling-settings.nav__link,
+#nav-global-trip-scheduling-settings.nav__link {
+  @include nav-icon('../../../globals/trip-scheduling-settings/icon.svg');
+}

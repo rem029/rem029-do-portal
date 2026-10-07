@@ -1,0 +1,122 @@
+/**
+ * TECH-0112 Phase 1 — design tokens translated from the Figma
+ * payloadcms-redesign file (see docs/TECH-0112/Plan.md and
+ * docs/TECH-0112/phases/phase-1-design-tokens.md).
+ *
+ * Additive only: the existing shadcn-style tokens in ../custom.scss are
+ * left untouched here. Later phases wire these new tokens into the admin
+ * UI, so no visible change comes from this file alone.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+/* Noah and Baskerville aren't on Google Fonts — this app's real brand
+ * fonts, self-hosted the same way apps/frontend already does (see its
+ * src/index.css). Files copied from there into ../../../fonts/ (Noah was
+ * already present for email templates; Baskerville is new here). */
+@font-face {
+  font-family: 'Noah-Regular';
+  src: url('../../../fonts/Noah-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Noah-Bold';
+  src: url('../../../fonts/Noah-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Baskerville';
+  src: url('../../../fonts/Baskerville.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Baskerville';
+  src: url('../../../fonts/Baskerville-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+:root {
+  /* Brand colors — single edit point. Every primary/secondary accent in
+   * _components.scss reads these two variables (var(--admin-color-primary)/
+   * var(--admin-color-secondary)) by role, never a literal hex or a
+   * color-specific name, so changing the theme's colors is just these two
+   * lines (plus the dark-mode override below, if it should differ there).
+   * Sourced from the real brand, not the Figma redesign mockup's own
+   * invented palette: the `dohaoasis-new` daisyUI theme this same app
+   * already ships on its public (frontend) routes
+   * (src/app/(frontend)/styles.css) — primary/secondary/accent /neutral,
+   * respectively. That theme has no dark-mode variant of its own
+   * (`color-scheme: 'light'` only), so the dark overrides below are this
+   * redesign's own extrapolation, not a second official brand palette. */
+  --admin-color-primary: #072c1b;
+  --admin-color-secondary: #c8b46e;
+  --admin-color-black: #252120;
+  /* Fixed text/icon color for anything sitting ON --admin-color-primary
+   * (buttons, the current-page paginator badge, selected calendar days) —
+   * from the same `dohaoasis-new` theme's own --color-primary-content.
+   * Deliberately NOT var(--theme-elevation-0): that variable inverts
+   * between light/dark mode (Payload's own adaptive-surface convention),
+   * but our primary background is a fixed brand color in both modes, so
+   * pairing it with an adaptive text color produced near-black-on-near-
+   * black text in dark mode (~1.2:1 contrast, confirmed via computed
+   * styles) — a real bug this fixes, not a style preference. */
+  --admin-color-primary-content: #eae7dc;
+  /* Brand color for text/icons/borders on an adaptive surface (not ON a
+   * primary fill): primary green in light mode, gold in dark mode. */
+  --admin-color-accent: var(--admin-color-primary);
+
+  /* Figma: Admin Panel Look — Light (node 2:5) */
+  --admin-bg: #faf7f2;
+  /* Second gradient stop, from the "Creating new post" frame's own
+   * light gradient (6:252: #fffdf8 -> #f7f1e8) — reused here so the main
+   * content background reads as a subtle gradient instead of a flat tint,
+   * rather than introducing an unrelated color. */
+  --admin-bg-alt: #f7f1e8;
+  --sidebar-bg: var(--admin-color-black);
+  --admin-card: #f5ede0;
+  --admin-card-alt: #e7dccb;
+
+  /* Corner radius scale */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 999px;
+
+  /* Glass blur scale, for floating surfaces */
+  --glass-blur-sm: 6px;
+  --glass-blur-md: 10px;
+  --glass-blur-lg: 12px;
+
+  /* Type — three tiers: a brand display font for major headings, a serif
+   * for supporting/editorial copy, and the workhorse body font for
+   * everything else (buttons, inputs, nav, labels — reached almost
+   * everywhere via _components.scss's --font-body remap). */
+  --admin-font-mono: 'Geist Mono', ui-monospace, monospace;
+  --admin-font-sans: 'Poppins', system-ui, sans-serif;
+  --admin-font-primary: 'Noah-Regular', system-ui, sans-serif;
+  --admin-font-secondary: 'Baskerville', serif;
+}
+
+[data-theme='dark'] {
+  /* Figma: Admin Panel Look — Dark (node 6:5) */
+  --admin-bg: #09090b;
+  --admin-bg-alt: #0d0d0d;
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --admin-card: #18181b;
+  --admin-border: #3d352a;
+  /* No dark-specific --admin-color-primary override anymore — same brand
+   * green in both modes now that it's the real brand color, not the Figma
+   * mockup's blue (which happened to be identical in both modes anyway).
+   * Text/icons ON that primary background do differ in dark mode though,
+   * per explicit request: the secondary gold reads as more distinctly
+   * on-brand than the light-mode cream, and still clears WCAG AAA (7.37:1
+   * against --admin-color-primary, confirmed via computed styles). */
+  --admin-color-primary-content: var(--admin-color-secondary);
+  --admin-color-accent: var(--admin-color-secondary);
+}

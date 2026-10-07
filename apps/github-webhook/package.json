@@ -1,0 +1,18 @@
+{
+  "name": "github-webhook",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.5.0",
+    "express": "^4.18.2"
+  },
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start:pm2": "pm2 delete do-app-github-webhook && pm2 start index.js --name=do-app-github-webhook"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

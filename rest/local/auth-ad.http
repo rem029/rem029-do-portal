@@ -1,0 +1,14 @@
+@urlBase = http://localhost:3005
+@url = {{urlBase}}/payload/api/users
+
+@apiKey = fe81007807f1666103441216cb9f7054c0ed9a8ad04ed38453d77f4eec083aec35c8dffdefeae22f1262b56008ea327b3f28c9b41e11d9665e2b286e908bc62de55a753dbcf92f5c2d7bb24dfd0517269d8becd63b82e4c5c68089b698070a98306460fa177c44ed055b740df7c5ff43309004631ab7fd20
+
+### METHOD 1 ADD \ LDAPJS
+PATCH {{url}}/14?depth=0
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+  "password": "test@microsoft-email.com2"
+}
+

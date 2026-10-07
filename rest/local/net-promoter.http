@@ -1,0 +1,156 @@
+@urlBase = http://localhost:3005/payload/api
+@urlAPI = {{urlBase}}/survey-net-promoter
+@urlAPI = {{urlBase}}/survey-net-promoter
+
+@apiKey = 26c3bd06-d65d-4ba7-a646-83d52c39a66b
+
+
+### ADD
+POST {{urlAPI}} 
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "id": 112,
+    "visit_date": "2024-04-07T21:35:40.928Z",
+    "receipt_id": " 000019-1001464",
+    "customer_feedback": "promoter",
+    "customer_comments": "",
+    "updatedAt": "2024-04-07T21:36:12.103Z",
+    "createdAt": "2024-04-07T21:36:12.103Z"
+}
+
+### ADD
+POST {{urlAPI}} 
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "id": 111,
+    "visit_date": "2024-04-07T20:48:47.036Z",
+    "receipt_id": "1001463",
+    "customer_feedback": "promoter",
+    "customer_comments": "",
+    "updatedAt": "2024-04-07T20:49:28.780Z",
+    "createdAt": "2024-04-07T20:49:28.780Z"
+}
+
+### ADD
+POST {{urlAPI}} 
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "id": 110,
+    "visit_date": "2024-04-07T20:26:52.786Z",
+    "receipt_id": "000019-1001461",
+    "customer_feedback": "promoter",
+    "customer_comments": "",
+    "updatedAt": "2024-04-07T20:27:14.352Z",
+    "createdAt": "2024-04-07T20:27:14.352Z"
+}
+
+### ADD
+POST {{urlAPI}} 
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "id": 109,
+    "visit_date": "2024-04-07T20:13:40.363Z",
+    "receipt_id": "1698",
+    "customer_feedback": "promoter",
+    "customer_comments": "",
+    "updatedAt": "2024-04-07T20:14:24.207Z",
+    "createdAt": "2024-04-07T20:14:24.207Z"
+}
+
+### ADD
+POST {{urlAPI}} 
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "id": 108,
+    "visit_date": "2024-04-07T18:22:47.331Z",
+    "receipt_id": "1697",
+    "customer_feedback": "promoter",
+    "customer_comments": "Thank you Crisanto for helping me find my perfect shoe.",
+    "updatedAt": "2024-04-07T18:24:51.344Z",
+    "createdAt": "2024-04-07T18:24:51.344Z"
+}
+
+### ADD
+POST {{urlAPI}} 
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+      "id": 107,
+      "visit_date": "2024-04-07T18:03:57.331Z",
+      "receipt_id": "1001456",
+      "customer_feedback": "promoter",
+      "customer_comments": "",
+      "updatedAt": "2024-04-07T18:04:26.274Z",
+      "createdAt": "2024-04-07T18:04:26.274Z"
+}
+
+### ADD
+POST {{urlAPI}} 
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "id": 106,
+    "visit_date": "2024-04-07T18:01:24.205Z",
+    "receipt_id": "1455",
+    "customer_feedback": "promoter",
+    "customer_comments": "",
+    "updatedAt": "2024-04-07T18:01:38.049Z",
+    "createdAt": "2024-04-07T18:01:38.049Z"
+}
+
+### ADD
+POST {{urlAPI}} 
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "id": 105,
+    "visit_date": "2024-04-07T13:39:10.526Z",
+    "receipt_id": "1454",
+    "customer_feedback": "promoter",
+    "customer_comments": "",
+    "updatedAt": "2024-04-07T13:39:42.905Z",
+    "createdAt": "2024-04-07T13:39:42.905Z"
+}
+
+### ADD
+POST {{urlAPI}} 
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "id": 104,
+    "visit_date": "2024-04-07T13:06:25.939Z",
+    "receipt_id": "1453",
+    "customer_feedback": "promoter",
+    "customer_comments": "The service is very good Christineo",
+    "updatedAt": "2024-04-07T13:07:53.799Z",
+    "createdAt": "2024-04-07T13:07:53.799Z"
+}
+
+### ADD
+POST {{urlAPI}} 
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "id": 103,
+    "visit_date": "2024-04-07T12:23:05.787Z",
+    "receipt_id": "1452",
+    "customer_feedback": "promoter",
+    "customer_comments": "",
+    "updatedAt": "2024-04-07T12:23:25.019Z",
+    "createdAt": "2024-04-07T12:23:25.019Z"
+}

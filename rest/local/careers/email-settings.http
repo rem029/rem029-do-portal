@@ -1,0 +1,30 @@
+
+@urlBase = {{$dotenv BASE_URL_GLOBALS}}
+@payloadItem = careers-email-settings
+@apiKey = {{$dotenv API_TOKEN}}
+@url = {{urlBase}}/{{payloadItem}}
+
+
+### FETCH
+GET {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+
+###POST#1
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+  "email": "ima.schaden71@ethereal.email",
+  "password": "4HXHC2Fh6haue9pe1V",
+  "host": "smtp.ethereal.email",
+  "port": "587",
+  "recipients": [
+    {
+      "key": "printemps",
+      "email": "lawrence.ponce@dohaoasis.com"
+    }
+  ]
+}

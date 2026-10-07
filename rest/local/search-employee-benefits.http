@@ -1,0 +1,9 @@
+@urlBase = http://localhost:3005/payload
+@urlAPI = {{urlBase}}/api/employee-benefits
+
+
+
+### GET
+GET {{urlAPI}}/search/diet
+Content-Type: application/json
+Authorization: users API-Key ea659540-92bb-4733-9554-7e696f646b80

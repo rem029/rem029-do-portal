@@ -1,0 +1,164 @@
+.embla {
+  max-width: 100%;
+  margin: auto;
+  --slide-height: auto;
+  --slide-spacing: 1rem;
+  --slide-size: 100%;
+  position: relative;
+}
+.embla__viewport {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  margin-left: calc(var(--slide-spacing) * -1);
+}
+.embla__slide {
+  transform: translate3d(0, 0, 0);
+  flex: 0 0 var(--slide-size);
+  min-width: 0;
+  padding-left: var(--slide-spacing);
+}
+.embla__slide__number {
+  box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+  font-size: 4rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  aspect-ratio: 16 / 9;
+}
+.embla__controls {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-content: space-between;
+  gap: 1.2rem;
+  padding: 0.5rem;
+}
+.embla__buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  align-items: center;
+}
+.embla__button {
+  -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  touch-action: manipulation;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+  width: 1rem;
+  height: 1rem;
+  z-index: 1;
+  border-radius: 50%;
+  color: var(--color-menu-primary-contrast, var(--text-body));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.embla__button:disabled {
+  color: var(--detail-high-contrast);
+  opacity: 0.5;
+}
+.embla__button__svg {
+  width: 50%;
+  height: 50%;
+}
+.embla__dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 0.5rem;
+  gap: 4px;
+}
+.embla__dot {
+  appearance: none;
+  touch-action: manipulation;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.embla__dot:after {
+  box-shadow: inset 0 0 0 0.1rem #a5a5a5;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  content: '';
+}
+.embla__dot--selected:after {
+  background-color: #ebebeb;
+}
+
+/* Segmented chip track for the filter-tab carousel (CarouselFilters). Scoped under
+   .filter-carousel so it never touches the generic image carousel in ./index.tsx,
+   which shares these .embla__* class names. */
+.filter-carousel .embla__viewport {
+  /* -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 16px,
+    black calc(100% - 16px),
+    transparent 100%
+  );
+  mask-image: linear-gradient(to right, transparent 0, black 16px, black calc(100% - 16px), transparent 100%); */
+}
+.filter-carousel .embla__container {
+  border-radius: 999px;
+  padding: 4px;
+  gap: 4px;
+  /* Cancels the -8px slide-alignment margin below so the track's rounded left
+     edge isn't pushed past the viewport's overflow:hidden clip boundary. */
+  margin-left: 0;
+}
+.filter-carousel .embla__slide:first-child {
+  padding-left: 4px;
+}
+.filter-carousel .embla__slide > button {
+  border-radius: 999px;
+  padding: 6px 12px;
+  color: var(--text-color);
+}
+.filter-carousel .embla__slide > button.font-bold {
+  background: color-mix(in srgb, var(--primary-color) 88%, transparent);
+  color: var(--primary-contrast-color);
+}
+
+/* Category filter chips specifically (filter-categories.tsx) - every category sits
+   inside its own visibly-bounded pill, not just bold text, per the reference the user
+   pointed to. Scoped to .category-chip so the muted search-suggestion chips (which
+   share this same .filter-carousel track) are untouched. */
+.filter-carousel .embla__slide > button.category-chip {
+  background: color-mix(in srgb, var(--primary-color) 8%, transparent);
+  color: var(--primary-color);
+}
+.filter-carousel .embla__slide > button.category-chip.font-bold {
+  background: var(--primary-color);
+  color: var(--primary-contrast-color);
+}

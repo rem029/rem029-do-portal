@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.pdf-page canvas {
+    @apply !w-full object-contain;
+}
+
+.pdf-page__container {
+    @apply h-fit;
+}
+
+@media (max-width: 768px) {
+  .pdf-page {
+    width: 100% !important; /* Make the pdf-page take full width on mobile */
+    height: 100%; /* Adjust height dynamically */
+    transform: none; /* Remove translate for better mobile alignment */
+    top: auto;
+    left: auto;
+  }
+
+  .pdf-page__container {
+    @apply flex items-center justify-center h-full;
+  }
+}

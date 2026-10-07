@@ -1,0 +1,341 @@
+import type { Payload, RequiredDataFromCollectionSlug } from 'payload'
+import { Operator } from '@/payload-types'
+
+export const seedWorkflowV2TestBlueprint = async (
+  payload: Payload,
+  operator: Operator,
+): Promise<void> => {
+  const slug = 'workflow-v2-test'
+  const operatorSlug = 'doha-oasis-workflow-v2-test'
+
+  const existing = await payload.find({
+    collection: 'workflow-v2',
+    where: { slug: { equals: slug } },
+    limit: 1,
+    overrideAccess: true,
+  })
+
+  if (existing.totalDocs > 0) {
+    payload.logger.info(`[seedWorkflowV2] "${slug}" already exists — skipping.`)
+    return
+  }
+
+  await payload.create({
+    collection: 'workflow-v2',
+    overrideAccess: true,
+    data: {
+      name: 'Workflow V2 Test',
+      slug,
+      operator_slug: operatorSlug,
+      operator: operator.id,
+      notify_on_complete: true,
+      notify_on_update: true,
+      notify_on_reject: true,
+      approval_notifications: [
+        {
+          type: 'email',
+          email: 'workflow_complete@email.com',
+          hide_history: false,
+          hide_details: false,
+          hide_description: false,
+          hide_attachments: false,
+          hide_email_actions: false,
+        },
+      ],
+      rejection_notifications: [
+        {
+          type: 'email',
+          email: 'workflow_reject@email.com',
+          hide_history: false,
+          hide_details: false,
+          hide_description: false,
+          hide_attachments: false,
+          hide_email_actions: false,
+        },
+      ],
+      global_custom_fields: [
+        {
+          blockType: 'text',
+          name: 'action_type',
+          label: 'Action?',
+          required: false,
+        },
+        {
+          blockType: 'text',
+          name: 'next_approver_email',
+          label: 'Next Approver Email',
+          required: true,
+        },
+      ],
+      steps: [
+        {
+          label: 'First Step',
+          slug: 'doha-oasis-workflow-v2-test.first-step',
+          approvers: [
+            { approver_type: 'email', approver_email: 'first-step.approver@email.com' },
+            { approver_type: 'email', approver_email: 'first-step.additiona_approver@email.com' },
+          ],
+          final_approval: false,
+          auto_complete: false,
+          rejection_policy: 'end',
+          can_acknowledge: false,
+          can_approve: true,
+          can_reject: true,
+          can_skip: false,
+          can_generate_wordfile: false,
+          hide_history: false,
+          hide_details: false,
+          hide_description: false,
+          hide_attachments: false,
+          hide_email_actions: false,
+          acknowledge_label: 'Acknowledge',
+          approve_label: 'Approve',
+          reject_label: 'Reject',
+          skip_label: 'Skip',
+          before_response_fields: [
+            { blockType: 'textarea', name: 'comments', label: 'Comments', required: false },
+            { blockType: 'signature', name: 'signature', label: 'Signature', required: false },
+          ],
+          after_response_approved_fields: [],
+          after_response_rejected_fields: [],
+          after_response_acknowledged_fields: [],
+          on_reaching_notifications: [
+            {
+              type: 'email',
+              email: 'step1.reach.step@email.com',
+              hide_history: false,
+              hide_details: false,
+              hide_description: false,
+              hide_attachments: false,
+              hide_email_actions: false,
+            },
+          ],
+          on_approval_notifications: [],
+          on_rejection_notifications: [],
+          skip_condition: {
+            enabled: false,
+            source: 'workflow_field',
+            operator: 'equals',
+          },
+        },
+        {
+          label: 'Second Step',
+          slug: 'doha-oasis-workflow-v2-test.second-step',
+          approvers: [
+            { approver_type: 'email', approver_email: 'second-step.approver@email.com' },
+            { approver_type: 'email', approver_email: 'second-step.additional-approver@email.com' },
+          ],
+          final_approval: false,
+          auto_complete: false,
+          rejection_policy: 'previous',
+          can_acknowledge: false,
+          can_approve: true,
+          can_reject: true,
+          can_skip: false,
+          can_generate_wordfile: false,
+          hide_history: false,
+          hide_details: false,
+          hide_description: false,
+          hide_attachments: false,
+          hide_email_actions: false,
+          acknowledge_label: 'Acknowledge',
+          approve_label: 'Approve',
+          reject_label: 'Reject',
+          skip_label: 'Skip',
+          before_response_fields: [
+            { blockType: 'textarea', name: 'comments', label: 'Comments', required: false },
+            { blockType: 'signature', name: 'signature', label: 'Signature', required: false },
+          ],
+          after_response_approved_fields: [],
+          after_response_rejected_fields: [],
+          after_response_acknowledged_fields: [],
+          on_reaching_notifications: [
+            {
+              type: 'email',
+              email: 'step2.reach.step@email.com',
+              hide_history: false,
+              hide_details: false,
+              hide_description: false,
+              hide_attachments: false,
+              hide_email_actions: false,
+            },
+          ],
+          on_approval_notifications: [],
+          on_rejection_notifications: [
+            {
+              type: 'email',
+              email: 'step2.rejected@email.com',
+              hide_history: false,
+              hide_details: false,
+              hide_description: false,
+              hide_attachments: false,
+              hide_email_actions: false,
+            },
+          ],
+          skip_condition: {
+            enabled: false,
+            source: 'workflow_field',
+            operator: 'equals',
+          },
+        },
+        {
+          // Demonstrates form_field_email: reviewer email is read from the source document
+          // at instance-creation time using dot-notation path (e.g. a form field "manager_email").
+          // Also collects next_approver_email via a custom field so Step 4 can pick it up.
+          label: 'Form Field Email Step',
+          slug: 'doha-oasis-workflow-v2-test.form-field-email-step',
+          approvers: [
+            { approver_type: 'form_field_email', approver_form_field_path: 'manager_email' },
+          ],
+          final_approval: false,
+          auto_complete: false,
+          rejection_policy: 'previous',
+          can_acknowledge: false,
+          can_approve: true,
+          can_reject: true,
+          can_skip: false,
+          can_generate_wordfile: false,
+          hide_history: false,
+          hide_details: false,
+          hide_description: false,
+          hide_attachments: false,
+          hide_email_actions: false,
+          acknowledge_label: 'Acknowledge',
+          approve_label: 'Approve',
+          reject_label: 'Reject',
+          skip_label: 'Skip',
+          before_response_fields: [
+            { blockType: 'textarea', name: 'comments', label: 'Comments', required: false },
+            { blockType: 'signature', name: 'signature', label: 'Signature', required: false },
+            { blockType: 'global_field_ref', global_field_name: 'next_approver_email' },
+          ],
+          after_response_approved_fields: [],
+          after_response_rejected_fields: [],
+          after_response_acknowledged_fields: [],
+          on_reaching_notifications: [
+            {
+              type: 'email',
+              email: 'form-field-email-step.reach@email.com',
+              hide_history: false,
+              hide_details: false,
+              hide_description: false,
+              hide_attachments: false,
+              hide_email_actions: false,
+            },
+          ],
+          on_approval_notifications: [],
+          on_rejection_notifications: [],
+          skip_condition: {
+            enabled: false,
+            source: 'workflow_field',
+            operator: 'equals',
+          },
+        },
+        {
+          // Demonstrates workflow_field_email: reviewer email is resolved at advancement time
+          // from the custom field response "next_approver_email" filled in by the previous step.
+          label: 'Workflow Field Email Step',
+          slug: 'doha-oasis-workflow-v2-test.workflow-field-email-step',
+          approvers: [
+            { approver_type: 'workflow_field_email', approver_workflow_field_name: 'next_approver_email' },
+          ],
+          final_approval: false,
+          auto_complete: false,
+          rejection_policy: 'previous',
+          can_acknowledge: false,
+          can_approve: true,
+          can_reject: true,
+          can_skip: false,
+          can_generate_wordfile: false,
+          hide_history: false,
+          hide_details: false,
+          hide_description: false,
+          hide_attachments: false,
+          hide_email_actions: false,
+          acknowledge_label: 'Acknowledge',
+          approve_label: 'Approve',
+          reject_label: 'Reject',
+          skip_label: 'Skip',
+          before_response_fields: [
+            { blockType: 'textarea', name: 'comments', label: 'Comments', required: false },
+            { blockType: 'signature', name: 'signature', label: 'Signature', required: false },
+            { blockType: 'global_field_ref', global_field_name: 'action_type' },
+          ],
+          after_response_approved_fields: [],
+          after_response_rejected_fields: [],
+          after_response_acknowledged_fields: [],
+          on_reaching_notifications: [
+            {
+              type: 'email',
+              email: 'workflow-field-email-step.reach@email.com',
+              hide_history: false,
+              hide_details: false,
+              hide_description: false,
+              hide_attachments: false,
+              hide_email_actions: false,
+            },
+          ],
+          on_approval_notifications: [],
+          on_rejection_notifications: [],
+          skip_condition: {
+            enabled: false,
+            source: 'workflow_field',
+            operator: 'equals',
+          },
+        },
+        {
+          label: 'Third Step',
+          slug: 'doha-oasis-workflow-v2-test.third-step',
+          approvers: [
+            { approver_type: 'email', approver_email: 'third-step.approver@email.com' },
+          ],
+          final_approval: false,
+          auto_complete: false,
+          rejection_policy: 'previous',
+          can_acknowledge: false,
+          can_approve: true,
+          can_reject: true,
+          can_skip: false,
+          can_generate_wordfile: false,
+          hide_history: false,
+          hide_details: false,
+          hide_description: false,
+          hide_attachments: false,
+          hide_email_actions: false,
+          acknowledge_label: 'Acknowledge',
+          approve_label: 'Approve',
+          reject_label: 'Reject',
+          skip_label: 'Skip',
+          before_response_fields: [
+            { blockType: 'textarea', name: 'comments', label: 'Comments', required: false },
+            { blockType: 'signature', name: 'signature', label: 'Signature', required: false },
+            { blockType: 'global_field_ref', global_field_name: 'action_type' },
+          ],
+          after_response_approved_fields: [],
+          after_response_rejected_fields: [],
+          after_response_acknowledged_fields: [],
+          on_reaching_notifications: [],
+          on_approval_notifications: [
+            {
+              type: 'email',
+              email: 'third-step.on-approved@email.com',
+              hide_history: false,
+              hide_details: false,
+              hide_description: false,
+              hide_attachments: false,
+              hide_email_actions: false,
+            },
+          ],
+          on_rejection_notifications: [],
+          skip_condition: {
+            enabled: false,
+            source: 'workflow_field',
+            operator: 'equals',
+          },
+        },
+      ],
+    } as RequiredDataFromCollectionSlug<'workflow-v2'>,
+  })
+
+  payload.logger.info(`[seedWorkflowV2] "${slug}" created successfully.`)
+}

@@ -1,0 +1,354 @@
+
+
+@urlBase = https://public.dohaoasis.com
+@url = {{urlBase}}/payload/api/items?limit=1000000
+@auth = users API-Key 9672ed3d38050285fd4a5c25c305faf71708058f98a587b145dc54359ca7b660f0150e526aa56173a68185cc49966ef614b35438
+
+###
+GET {{url}}
+Content-Type: application/json
+Authorization: {{auth}}
+
+
+
+### Terms
+POST {{url}}
+Content-Type: application/json
+Authorization: {{auth}}
+
+{      
+      "name": "dohaquest-ifly-waiver-terms",
+      "description": "Terms",
+      "items": [
+        {
+          
+          "values": [
+            {
+              
+              "key": "en",
+              "value": "I agree that I am and/or my child is voluntarily participating in the activities offered by Quest iFLY Indoor Skydiving and understand that Quest iFLY Indoor Skydiving is not a ride but rather an interactive experience which simulates freefall skydiving by exposing me and/or my child(ren) to vertical winds of up to 220 miles per hour, and that it is an inherently dangerous activity."
+            },
+            {
+              
+              "key": "ar",
+              "value": "I agree that I am and/or my child is voluntarily participating in the activities offered by Quest iFLY Indoor Skydiving and understand that Quest iFLY Indoor Skydiving is not a ride but rather an interactive experience which simulates freefall skydiving by exposing me and/or my child(ren) to vertical winds of up to 220 miles per hour, and that it is an inherently dangerous activity."
+            }
+          ]
+        },
+        {
+          
+          "values": [
+            {
+              
+              "key": "en",
+              "value": "I understand and assume the risk of injury or disability related to this activity, for myself and/or my child, and I take full responsibility for my/child(ren)'s participation in all activities."
+            },
+            {
+              
+              "key": "ar",
+              "value": "I understand and assume the risk of injury or disability related to this activity, for myself and/or my child, and I take full responsibility for my/child(ren)'s participation in all activities."
+            }
+          ]
+        },
+        {
+          
+          "values": [
+            {
+              
+              "key": "en",
+              "value": "I confirm that I (or my child) have never had a shoulder dislocation. If I (or my child) have had a shoulder dislocation, I have brought this to the attention of a member of the Quest iFLY Indoor Skydiving staff."
+            },
+            {
+              
+              "key": "ar",
+              "value": "I confirm that I (or my child) have never had a shoulder dislocation. If I (or my child) have had a shoulder dislocation, I have brought this to the attention of a member of the Quest iFLY Indoor Skydiving staff."
+            }
+          ]
+        },
+        {
+          "id": "6637751f4b45b0f864888904",
+          "values": [
+            {
+              "id": "663775214b45b0f864888905",
+              "key": "en",
+              "value": "I am personally responsible for any insurance deemed necessary to cover my risk, and I have become aware of the extent to which my accident insurance covers any bodily injury or property damage in connection with my participation in activities at iFly."
+            },
+            {
+              "id": "663775244b45b0f864888906",
+              "key": "ar",
+              "value": "I am personally responsible for any insurance deemed necessary to cover my risk, and I have become aware of the extent to which my accident insurance covers any bodily injury or property damage in connection with my participation in activities at iFly."
+            }
+          ]
+        },
+        {
+          "id": "663775374b45b0f864888907",
+          "values": [
+            {
+              "id": "663775394b45b0f864888908",
+              "key": "en",
+              "value": "This Waiver and Release of all liability includes, without limitation, injuries, illness, or accidents, which may occur because of (a) use of the facility (b) use of any equipment which may malfunction or break, (c) instruction or supervision. "
+            },
+            {
+              "id": "663775424b45b0f864888909",
+              "key": "ar",
+              "value": "This Waiver and Release of all liability includes, without limitation, injuries, illness, or accidents, which may occur because of (a) use of the facility (b) use of any equipment which may malfunction or break, (c) instruction or supervision. "
+            }
+          ]
+        },
+        {
+          "id": "663775454b45b0f86488890a",
+          "values": [
+            {
+              "id": "6637754c4b45b0f86488890b",
+              "key": "en",
+              "value": "I have read and have clearly understood everything on the Disclaimer board."
+            },
+            {
+              "id": "6637754e4b45b0f86488890c",
+              "key": "ar",
+              "value": "I have read and have clearly understood everything on the Disclaimer board."
+            }
+          ]
+        },
+        {
+          "id": "663775524b45b0f86488890d",
+          "values": [
+            {
+              "id": "663775534b45b0f86488890e",
+              "key": "en",
+              "value": "I waive the right to claim any damages from Doha Quest and employees, including instructors, operators, receptionists, and others. I also promise to indemnify Doha Quest for any liability to pay damages arising out of my participation in body flying."
+            },
+            {
+              "id": "663775544b45b0f86488890f",
+              "key": "ar",
+              "value": "I waive the right to claim any damages from Doha Quest and employees, including instructors, operators, receptionists, and others. I also promise to indemnify Doha Quest for any liability to pay damages arising out of my participation in body flying."
+            }
+          ]
+        },
+        {
+          "id": "663775624b45b0f864888910",
+          "values": [
+            {
+              "id": "663775644b45b0f864888911",
+              "key": "en",
+              "value": "I confirm that I am 13 years of age or older and acknowledge that I have read and fully understand the above prior to signing below. Please note: Guardian should be above the age of 18 years."
+            },
+            {
+              "id": "663775654b45b0f864888912",
+              "key": "ar",
+              "value": "I confirm that I am 13 years of age or older and acknowledge that I have read and fully understand the above prior to signing below. Please note: Guardian should be above the age of 18 years."
+            }
+          ]
+        },
+        {
+          "id": "663775774b45b0f864888913",
+          "values": [
+            {
+              "id": "663775794b45b0f864888914",
+              "key": "en",
+              "value": "Any person deemed by the management to be behaving in an unsafe or disorderly fashion will be asked to leave the attraction."
+            },
+            {
+              "id": "6637757b4b45b0f864888915",
+              "key": "ar",
+              "value": "Any person deemed by the management to be behaving in an unsafe or disorderly fashion will be asked to leave the attraction."
+            }
+          ]
+        }
+      ]
+    }
+
+### Checklist
+POST {{url}}
+Content-Type: application/json
+Authorization: {{auth}}
+
+{
+       "id": 1,
+      "name": "dohaquest-ifly-waiver-checklist",
+      "description": "Checklist",
+      "items": [
+        {
+          "id": "6637501c5a3b691515f1f34a",
+          "values": [
+            {
+              "id": "6637501d5a3b691515f1f34b",
+              "key": "en",
+              "value": "All flyers must sign up to participate in this attraction (iFLY – Indoor skydiving) at Doha Quest. "
+            },
+            {
+              "id": "6637501e5a3b691515f1f34c",
+              "key": "ar",
+              "value": "All flying gear must be treated with respect; never step on the flight suits or drop the helmets."
+            }
+          ]
+        },
+        {
+          "id": "663750e285871b063a7786ec",
+          "values": [
+            {
+              "id": "663750ed85871b063a7786ed",
+              "key": "en",
+              "value": "All flying gear must be treated with respect; never step on the flight suits or drop the helmets. "
+            },
+            {
+              "id": "663750f285871b063a7786ee",
+              "key": "ar",
+              "value": "All flying gear must be treated with respect; never step on the flight suits or drop the helmets. "
+            }
+          ]
+        },
+        {
+          "id": "663750f685871b063a7786ef",
+          "values": [
+            {
+              "id": "663750f785871b063a7786f0",
+              "key": "en",
+              "value": "I agree for myself and/or the child(ren) to participate in the indoor flying skydiving, organized by Doha Quest. "
+            },
+            {
+              "id": "663750f985871b063a7786f1",
+              "key": "ar",
+              "value": "I agree for myself and/or the child(ren) to participate in the indoor flying skydiving, organized by Doha Quest. "
+            }
+          ]
+        },
+        {
+          "id": "6637511385871b063a7786f2",
+          "values": [
+            {
+              "id": "6637511d85871b063a7786f3",
+              "key": "en",
+              "value": "I declare that in case I am not the parent or legal guardian of the child(ren), I have authority from the parent or legal guardian of the child(ren) to sign this Disclaimer and Waiver Form."
+            },
+            {
+              "id": "6637512085871b063a7786f4",
+              "key": "ar",
+              "value": "I declare that in case I am not the parent or legal guardian of the child(ren), I have authority from the parent or legal guardian of the child(ren) to sign this Disclaimer and Waiver Form."
+            }
+          ]
+        },
+        {
+          "id": "6637512385871b063a7786f5",
+          "values": [
+            {
+              "id": "6637516385871b063a7786f6",
+              "key": "en",
+              "value": "I declare that I understand and acknowledge the attraction rules, regulations, and restrictions. I and the child(ren) will abide by them. "
+            },
+            {
+              "id": "6637517185871b063a7786f7",
+              "key": "ar",
+              "value": "I declare that I understand and acknowledge the attraction rules, regulations, and restrictions. I and the child(ren) will abide by them. "
+            }
+          ]
+        },
+        {
+          "id": "6637517885871b063a7786f8",
+          "values": [
+            {
+              "id": "6637518085871b063a7786f9",
+              "key": "en",
+              "value": "I confirm that I do not know of any medical condition that I or any of the child(ren) suffer from which might result in any incident that could result in injury to myself, child(ren), or others during the activity. "
+            },
+            {
+              "id": "6637518185871b063a7786fa",
+              "key": "ar",
+              "value": "I confirm that I do not know of any medical condition that I or any of the child(ren) suffer from which might result in any incident that could result in injury to myself, child(ren), or others during the activity. "
+            }
+          ]
+        },
+        {
+          "id": "6637519a85871b063a7786fb",
+          "values": [
+            {
+              "id": "6637519c85871b063a7786fc",
+              "key": "en",
+              "value": "I confirm that I do not know of any medical condition that I or any of the child(ren) suffer from which might result in any incident that could result in injury to myself, child(ren), or others during the activity. "
+            },
+            {
+              "id": "6637519d85871b063a7786fd",
+              "key": "ar",
+              "value": "I confirm that I do not know of any medical condition that I or any of the child(ren) suffer from which might result in any incident that could result in injury to myself, child(ren), or others during the activity. "
+            }
+          ]
+        },
+        {
+          "id": "663751ad85871b063a7786fe",
+          "values": [
+            {
+              "id": "663751ae85871b063a7786ff",
+              "key": "en",
+              "value": "I acknowledge that there are inherent risks associated with the above-mentioned activity, and I accept the full risk of personal injury and its consequences or property damage. I accept this risk on my behalf and on behalf of the child(ren)."
+            },
+            {
+              "id": "663751af85871b063a778700",
+              "key": "ar",
+              "value": "I acknowledge that there are inherent risks associated with the above-mentioned activity, and I accept the full risk of personal injury and its consequences or property damage. I accept this risk on my behalf and on behalf of the child(ren)."
+            }
+          ]
+        },
+        {
+          "id": "663751bd85871b063a778701",
+          "values": [
+            {
+              "id": "663751d585871b063a778702",
+              "key": "en",
+              "value": "I hereby release, waive, forever hold harmless, indemnify, and keep indemnified Doha Quest from all claims for any injury, loss, or damage sustained by me and/or the child(ren) in my custody arising from or in connection with the activity mentioned above. I hereby indemnify Doha Quest against all claims made by any other person against Doha Quest in respect of any injury, loss, or damage arising out of or in connection with my failure and/or the failure of the child(ren) to follow general restrictions and instructions and/or directions of Doha Quest, its management, and/or staff. "
+            },
+            {
+              "id": "663751d885871b063a778703",
+              "key": "ar",
+              "value": "I hereby release, waive, forever hold harmless, indemnify, and keep indemnified Doha Quest from all claims for any injury, loss, or damage sustained by me and/or the child(ren) in my custody arising from or in connection with the activity mentioned above. I hereby indemnify Doha Quest against all claims made by any other person against Doha Quest in respect of any injury, loss, or damage arising out of or in connection with my failure and/or the failure of the child(ren) to follow general restrictions and instructions and/or directions of Doha Quest, its management, and/or staff. "
+            }
+          ]
+        },
+        {
+          "id": "663751fb85871b063a778704",
+          "values": [
+            {
+              "id": "663751fc85871b063a778705",
+              "key": "en",
+              "value": "I acknowledge and accept that this form may be pleaded in the defense to any action, or proceedings taken by me and/or the child(ren) at any time against Doha Quest arising out of or in connection with my and/or the child(ren)'s participation in the activity."
+            },
+            {
+              "id": "663751fd85871b063a778706",
+              "key": "ar",
+              "value": "I acknowledge and accept that this form may be pleaded in the defense to any action, or proceedings taken by me and/or the child(ren) at any time against Doha Quest arising out of or in connection with my and/or the child(ren)'s participation in the activity."
+            }
+          ]
+        }
+      ],
+      "updatedAt": "2024-05-05T09:32:14.024Z",
+      "createdAt": "2024-05-05T09:19:57.918Z"
+}
+
+### Note
+POST {{url}}
+Content-Type: application/json
+Authorization: {{auth}}
+
+{
+    "id": 2,
+      "name": "dohaquest-ifly-waiver-note",
+      "description": null,
+      "items": [
+        {
+          "id": "6637525a0c4646fc288406ef",
+          "values": [
+            {
+              "id": "6637525a0c4646fc288406f0",
+              "key": "en",
+              "value": "All the flyers will be in Physical contact with the instructor while guiding, changing the body position and while controlling the movements of the flyer."
+            },
+            {
+              "id": "6637525a0c4646fc288406f1",
+              "key": "ar",
+              "value": "All the flyers will be in Physical contact with the instructor while guiding, changing the body position and while controlling the movements of the flyer."
+            }
+          ]
+        }
+      ],
+      "updatedAt": "2024-05-05T09:33:14.908Z",
+      "createdAt": "2024-05-05T09:33:14.908Z"
+}

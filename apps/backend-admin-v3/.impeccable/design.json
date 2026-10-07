@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-16T00:00:00Z",
+  "title": "Design System: Doha Oasis Ops Admin",
+  "extensions": {
+    "colorMeta": {
+      "canvas": { "role": "neutral", "displayName": "Canvas", "canonical": "rgb(255, 255, 255)", "tonalRamp": ["rgb(255,255,255)", "rgb(245,245,245)", "rgb(235,235,235)", "rgb(221,221,221)", "rgb(181,181,181)", "rgb(128,128,128)", "rgb(74,74,74)", "rgb(0,0,0)"] },
+      "surface-subtle": { "role": "neutral", "displayName": "Surface Subtle", "canonical": "rgb(245, 245, 245)", "tonalRamp": ["rgb(255,255,255)", "rgb(245,245,245)", "rgb(235,235,235)", "rgb(208,208,208)", "rgb(154,154,154)", "rgb(101,101,101)", "rgb(47,47,47)", "rgb(0,0,0)"] },
+      "surface-hover": { "role": "neutral", "displayName": "Surface Hover", "canonical": "rgb(235, 235, 235)", "tonalRamp": ["rgb(255,255,255)", "rgb(245,245,245)", "rgb(235,235,235)", "rgb(195,195,195)", "rgb(128,128,128)", "rgb(87,87,87)", "rgb(34,34,34)", "rgb(0,0,0)"] },
+      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "rgb(221, 221, 221)", "tonalRamp": ["rgb(255,255,255)", "rgb(245,245,245)", "rgb(221,221,221)", "rgb(181,181,181)", "rgb(128,128,128)", "rgb(74,74,74)", "rgb(20,20,20)", "rgb(0,0,0)"] },
+      "hairline-strong": { "role": "neutral", "displayName": "Hairline Strong", "canonical": "rgb(208, 208, 208)", "tonalRamp": ["rgb(255,255,255)", "rgb(235,235,235)", "rgb(208,208,208)", "rgb(168,168,168)", "rgb(114,114,114)", "rgb(60,60,60)", "rgb(20,20,20)", "rgb(0,0,0)"] },
+      "text-muted": { "role": "neutral", "displayName": "Text Muted", "canonical": "rgb(154, 154, 154)", "tonalRamp": ["rgb(235,235,235)", "rgb(208,208,208)", "rgb(181,181,181)", "rgb(154,154,154)", "rgb(128,128,128)", "rgb(101,101,101)", "rgb(74,74,74)", "rgb(47,47,47)"] },
+      "text-secondary": { "role": "neutral", "displayName": "Text Secondary", "canonical": "rgb(128, 128, 128)", "tonalRamp": ["rgb(208,208,208)", "rgb(181,181,181)", "rgb(154,154,154)", "rgb(128,128,128)", "rgb(101,101,101)", "rgb(74,74,74)", "rgb(47,47,47)", "rgb(20,20,20)"] },
+      "text-body": { "role": "neutral", "displayName": "Text Body", "canonical": "rgb(47, 47, 47)", "tonalRamp": ["rgb(181,181,181)", "rgb(141,141,141)", "rgb(101,101,101)", "rgb(74,74,74)", "rgb(60,60,60)", "rgb(47,47,47)", "rgb(34,34,34)", "rgb(20,20,20)"] },
+      "text-heading": { "role": "neutral", "displayName": "Text Heading", "canonical": "rgb(20, 20, 20)", "tonalRamp": ["rgb(154,154,154)", "rgb(114,114,114)", "rgb(74,74,74)", "rgb(60,60,60)", "rgb(47,47,47)", "rgb(34,34,34)", "rgb(20,20,20)", "rgb(7,7,7)"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "rgb(0, 0, 0)", "tonalRamp": ["rgb(74,74,74)", "rgb(60,60,60)", "rgb(47,47,47)", "rgb(34,34,34)", "rgb(20,20,20)", "rgb(7,7,7)", "rgb(0,0,0)", "rgb(0,0,0)"] },
+      "status-blue": { "role": "accent", "displayName": "Status Blue", "canonical": "rgb(21, 135, 186)", "tonalRamp": ["rgb(237,245,249)", "rgb(188,225,248)", "rgb(97,190,241)", "rgb(36,164,223)", "rgb(21,135,186)", "rgb(11,110,153)", "rgb(17,88,121)", "rgb(18,66,90)"] },
+      "status-amber": { "role": "warning", "displayName": "Status Amber", "canonical": "rgb(185, 108, 13)", "tonalRamp": ["rgb(249,242,237)", "rgb(243,212,186)", "rgb(238,166,98)", "rgb(223,132,17)", "rgb(185,108,13)", "rgb(150,87,11)", "rgb(120,70,13)", "rgb(90,55,19)"] },
+      "status-red": { "role": "error", "displayName": "Status Red", "canonical": "rgb(218, 75, 72)", "tonalRamp": ["rgb(250,241,240)", "rgb(247,208,204)", "rgb(253,154,146)", "rgb(246,109,103)", "rgb(218,75,72)", "rgb(182,54,54)", "rgb(144,44,43)", "rgb(105,39,37)"] },
+      "printemps-green": { "role": "brand", "displayName": "Printemps Green", "canonical": "#00d072", "tonalRamp": ["#d9f8ea", "#a6efce", "#73e5b1", "#40dc95", "#1ad580", "#00b161", "#007d44", "#004928"] },
+      "printemps-gold": { "role": "brand", "displayName": "Printemps Gold", "canonical": "#e5b420", "tonalRamp": ["#fbf4de", "#f6e5b1", "#f1d684", "#ecc758", "#e8bc36", "#c3991b", "#896c13", "#503f0b"] },
+      "doha-oasis-gold": { "role": "brand", "displayName": "Doha Oasis Gold (legacy/unverified)", "canonical": "#c7a965", "tonalRamp": ["#f7f2e8", "#ebe1c9", "#e0d0aa", "#d5bf8c", "#cdb274", "#a99056", "#77653d", "#463b23"] },
+      "oasis-green": { "role": "brand", "displayName": "Oasis Green", "canonical": "#072c1b", "tonalRamp": ["#dadfdd", "#a8b5af", "#778b82", "#456154", "#204132", "#062517", "#041a10", "#020f09"], "verified": "Doha Oasis - Brand Book 2025, section 4.1 Primary Colors" },
+      "golden-sand": { "role": "brand", "displayName": "Golden Sand", "canonical": "#c8b46e", "tonalRamp": ["#f7f4e9", "#ece5cc", "#e1d6af", "#d6c792", "#cebc7d", "#aa995e", "#786c42", "#463f27"], "verified": "Doha Oasis - Brand Book 2025, section 4.1 Primary Colors" },
+      "creamy-white": { "role": "brand", "displayName": "Creamy White", "canonical": "#eae7dc", "tonalRamp": ["#ffffff", "#fbfaf7", "#f4f2ec", "#eae7dc", "#c7c2ac", "#a49d7d", "#817852", "#5e5637"], "verified": "Doha Oasis - Brand Book 2025, section 4.1 Primary Colors" },
+      "banyan-tree-doha-taupe": { "role": "brand", "displayName": "Banyan Tree Doha Taupe", "canonical": "#85754e", "tonalRamp": ["#f2efe7", "#ddd5c0", "#c8bb99", "#b3a172", "#9d8a5f", "#85754e", "#635a3c", "#423c28"], "verified": "Doha Oasis - Brand Book 2025, section 4.3 Property Accent Colors -- for a general Banyan Tree Doha page, distinct from the intentionally monochrome banyan-tree-lululemon collab theme" },
+      "doha-quest-purple": { "role": "brand", "displayName": "Doha Quest Purple", "canonical": "#520b75", "tonalRamp": ["#e5daea", "#c2aacf", "#a079b3", "#7d4898", "#632383", "#460963", "#310746", "#1d0429"], "verified": "Quest Brand Identity Standards, June 2021 v2.0 -- Pantone 2607 / C83 M100 Y21 K8" },
+      "doha-quest-amber": { "role": "brand", "displayName": "Doha Quest Amber", "canonical": "#f2b02d", "tonalRamp": ["#fdf3e0", "#fae3b6", "#f8d48c", "#f5c462", "#f3b842", "#ce9626", "#916a1b", "#553e10"] },
+      "banyan-lululemon-black": { "role": "brand", "displayName": "Banyan x Lululemon Black", "canonical": "#000000", "tonalRamp": ["#e6e6e6", "#cccccc", "#999999", "#666666", "#4d4d4d", "#333333", "#1a1a1a", "#000000"], "note": "Intentional, one-time monochrome theme for a retired Banyan Tree x Lululemon collab form -- correct as-is, not a stand-in for Banyan Tree Doha's general brand color" },
+      "banyan-lululemon-white": { "role": "brand", "displayName": "Banyan x Lululemon White", "canonical": "#ffffff", "tonalRamp": ["#ffffff", "#f2f2f2", "#e6e6e6", "#cccccc", "#b3b3b3", "#999999", "#808080", "#666666"] }
+    },
+    "typographyMeta": {
+      "interface": { "displayName": "Admin Interface", "purpose": "Payload's own default system-font stack; unmodified across the entire admin shell." },
+      "guest-primary": { "displayName": "Guest Primary", "purpose": "Headings and primary CTAs on Forms, FnB menu, and Site Pages; swappable per page/operator (default Poppins)." },
+      "guest-secondary": { "displayName": "Guest Secondary", "purpose": "Body copy and secondary labels on guest surfaces; swappable per page/operator (default Urbanist)." }
+    },
+    "shadows": [
+      { "name": "ambient-overlay", "value": "0 8px 32px rgba(0,0,0,0.14)", "purpose": "Dropdown menus and popover panels in the admin." },
+      { "name": "ambient-drawer", "value": "-8px 0 32px rgba(0,0,0,0.12)", "purpose": "Slide-out sidebars, e.g. the Forms Dashboard filter drawer." },
+      { "name": "neubrutalist-offset", "value": "4px 4px 0px 0px var(--theme-elevation-1000)", "purpose": "FnB order card structural shadow, present at rest. Buttons use 3px/1px variants for default/pressed states. Scoped to the FnB order boards only." }
+    ],
+    "motion": [
+      { "name": "press-translate", "value": "translate(2px, 2px) with shadow shrinking to 1px 1px", "purpose": "FnB action button's tactile pressed state on :active." }
+    ],
+    "breakpoints": [
+      { "name": "xs", "value": "400px" },
+      { "name": "s", "value": "768px" },
+      { "name": "m", "value": "1024px" },
+      { "name": "l", "value": "1440px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Admin Action Chip",
+      "kind": "button",
+      "refersTo": "button-chip",
+      "description": "Low-emphasis admin action (export, reset, filter toggle) in dashboard toolbars.",
+      "html": "<button class=\"ds-btn-chip\">Export CSV</button>",
+      "css": ".ds-btn-chip { background: rgb(221,221,221); color: rgb(47,47,47); border: 1px solid rgb(208,208,208); border-radius: 4px; padding: 6px 12px; font-size: 12px; font-weight: 700; cursor: pointer; transition: background 0.15s; } .ds-btn-chip:hover { background: rgb(208,208,208); } .ds-btn-chip:focus-visible { outline: 2px solid rgb(21,135,186); outline-offset: 2px; }"
+    },
+    {
+      "name": "Admin Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Standard text/select input used across dashboard toolbars and filters.",
+      "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"Search...\" />",
+      "css": ".ds-input { background: rgb(255,255,255); color: rgb(47,47,47); border: 1px solid rgb(221,221,221); border-radius: 4px; padding: 7px 12px; font-size: 13px; } .ds-input:focus-visible { outline: 2px solid rgb(21,135,186); outline-offset: 2px; border-color: rgb(21,135,186); } .ds-input::placeholder { color: rgb(154,154,154); }"
+    },
+    {
+      "name": "Admin Overlay Panel",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Dropdown/popover panel (e.g. column selector) floating above admin content.",
+      "html": "<div class=\"ds-overlay\">Panel content</div>",
+      "css": ".ds-overlay { background: rgb(255,255,255); border: 1px solid rgb(208,208,208); border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.14); overflow: hidden; }"
+    },
+    {
+      "name": "FnB Order Card",
+      "kind": "card",
+      "refersTo": "fnb-order-card",
+      "description": "Signature component: staff-facing order card on the waiter/kitchen/cashier boards. Neubrutalist treatment, scoped to this surface only.",
+      "html": "<div class=\"ds-fnb-card\"><div class=\"ds-fnb-card-head\"><span>Table 4</span><span class=\"ds-fnb-pill\">Confirmed</span></div><p class=\"ds-fnb-items\">2x Margherita, 1x Iced Tea</p><p class=\"ds-fnb-total\">QAR 86</p><button class=\"ds-fnb-action\">Start Preparing</button></div>",
+      "css": ".ds-fnb-card { background: rgb(245,245,245); color: rgb(47,47,47); border: 2px solid rgb(0,0,0); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; gap: 12px; box-shadow: 4px 4px 0px 0px rgb(0,0,0); } .ds-fnb-card-head { display: flex; align-items: center; justify-content: space-between; font-weight: 700; } .ds-fnb-items { font-size: 13px; opacity: 0.7; margin: 0; } .ds-fnb-total { font-size: 13px; font-weight: 600; margin: 0; } .ds-fnb-pill { display: inline-flex; border: 2px solid rgb(0,0,0); border-radius: 999px; padding: 2px 10px; font-size: 11px; font-weight: 700; box-shadow: 2px 2px 0px 0px rgb(0,0,0); } .ds-fnb-action { background: #16a34a; color: #fff; border: 2px solid rgb(0,0,0); border-radius: 4px; padding: 8px 12px; font-weight: 700; cursor: pointer; box-shadow: 3px 3px 0px 0px rgb(0,0,0); transition: transform 0.1s; } .ds-fnb-action:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0px 0px rgb(0,0,0); }"
+    },
+    {
+      "name": "Guest Cart Bar",
+      "kind": "nav",
+      "refersTo": "cart-bar",
+      "description": "Fixed-bottom order CTA on the guest FnB ordering flow, expressed as its daisyUI-first target (a themed surface plus a real btn btn-primary), not the current hand-rolled --primary-color/--background-color implementation. Colors are the active operator theme's daisyUI primary/base tokens, not fixed values.",
+      "html": "<div class=\"ds-cart-bar\"><span class=\"ds-cart-summary\">2 items &middot; QAR 86</span><button class=\"ds-btn ds-btn-primary\">Order</button></div>",
+      "css": ".ds-cart-bar { position: fixed; bottom: 0; left: 0; right: 0; max-width: 28rem; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 12px; background: var(--color-base-100, #f3f4f6); color: var(--color-base-content, #1f2937); box-shadow: 0 -4px 16px rgba(0,0,0,0.15); } .ds-cart-summary { font-size: 13px; font-weight: 600; } .ds-btn-primary { background: var(--color-primary, #072c1b); color: var(--color-primary-content, #eae7dc); border: none; border-radius: var(--radius-field, 0.5rem); padding: 10px 20px; font-weight: 700; font-size: 14px; cursor: pointer; transition: background 0.15s; } .ds-btn-primary:hover { filter: brightness(1.08); } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-primary, #072c1b); outline-offset: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Operator",
+    "overview": "This is Payload's own admin, left almost entirely alone. There is no injected brand accent anywhere in the shell — no primary blue, no logo color bleeding into buttons or focus rings. Every panel, table, and form runs on Payload's native grayscale elevation scale and its three semantic status colors, because the actual users (HR admins, HACCP officers, CRM approvers, and — during a shift — waiter, kitchen, and cashier staff) are scanning dense operational data under time pressure, not evaluating a brand. Volume is earned, not default. The one deliberate exception is the FnB order boards: real-time, floor-paced screens where a waiter, chef, or cashier needs to read table/status/action from across a kitchen pass or a service line. There, and only there, the system goes loud — thick black borders and hard offset shadows in a contained neubrutalist register — while still built entirely from Payload's own tokens, so it never breaks dark mode. A second, separate register lives behind the same shell: the guest-facing public surfaces this admin drives (public Forms, FnB menu/ordering pages, and Site Pages). Those are intentionally white-label — each is skinned per operator via daisyUI's data-theme mechanism, not by this admin's own quiet palette. The admin stays quiet so the operator's brand can be loud where guests actually see it.",
+    "keyCharacteristics": [
+      "No brand accent in the admin shell — grayscale elevation + status colors only, straight from Payload's defaults.",
+      "Flat at rest; shadows are ambient and reserved for floating surfaces.",
+      "One contained neubrutalist exception (FnB order boards) — bold, but scoped, and never a template for other urgent surfaces.",
+      "Guest-facing surfaces (Forms, FnB pages, Site Pages) run a separate, per-operator white-label theme system layered on daisyUI.",
+      "Trilingual guest content (English / Arabic / French); Tajawal exists specifically for Arabic."
+    ],
+    "rules": [
+      { "name": "The No-Accent Rule", "body": "The admin shell has no primary brand color. If a new admin surface seems to need one, that's a signal to lean on Status Blue (Payload's own accent) or stay neutral — not to introduce a new hex value.", "section": "colors" },
+      { "name": "The Operator-Owns-The-Palette Rule", "body": "A guest page's color is never hardcoded in a component — it's selected via the theme field (or a fully custom pasted daisyUI theme for a new brand). Redesigning a guest surface means adding or editing a theme block, not touching component code.", "section": "colors" },
+      { "name": "The Locale-Aware Type Rule", "body": "The platform serves English, Arabic, and French guest content. Tajawal is the font offered specifically for Arabic; don't assume a Latin-only font pairing will hold up once a page's locale switches.", "section": "typography" },
+      { "name": "The FnB-Only Rule", "body": "The neubrutalist hard-offset shadow and its thick ink-colored border are confirmed as scoped to the FnB order boards specifically. Do not extend this treatment to any other admin surface unless explicitly instructed.", "section": "elevation" },
+      { "name": "The daisyUI-First Rule", "body": "Every guest theme is a genuine daisyUI theme object, so components should be built from daisyUI's own primitives (btn, card, modal, badge, input, navbar, menu, alert) so they inherit primary/secondary/base-* automatically from whichever data-theme the page is in. Public Forms already does this correctly; the FnB ordering flow (cart bar, table picker) is a known deviation and a fix target.", "section": "components" },
+      { "name": "The Verified-Font-Gap Rule", "body": "Doha Oasis's official headers use Noah + Baskerville (accent words) with Poppins Extra Light body text and Frutiger LT + Geeza Pro for Arabic headers / Tajawal for Arabic body. Doha Quest's official headers use Playfair Display Bold with Futura body text and Tajawal for Arabic. Baskerville, Frutiger LT, Geeza Pro, Playfair Display, and Futura are all missing from the current uploadable font list (Poppins, Tajawal, Urbanist, Gilroy, Noah) -- adding them is a legitimate accuracy fix, not scope creep.", "section": "typography" }
+    ],
+    "dos": [
+      "Do reference Payload's --theme-elevation-* / --theme-success/warning/error-* custom properties for any new admin UI, never a hardcoded hex or a Tailwind gray/green/red utility.",
+      "Do use Payload's native Button and Pill components for standard admin actions and status display before reaching for a hand-rolled equivalent.",
+      "Do keep new admin surfaces in the quiet register (1px hairline borders, rounded/rounded-md corners, ambient shadows only on floating elements) even when the surface itself is time-critical.",
+      "Do theme new or edited guest-facing pages through the existing theme field / operator theme blocks, using operator-based names for any new palette.",
+      "Do account for Arabic (and French) when touching guest-facing typography or layout.",
+      "Do build guest-facing UI from daisyUI's own component classes (btn, card, modal, badge, input, navbar, menu, alert) first, the way public Forms already does — they inherit the active data-theme automatically.",
+      "Do treat each operator's official brand book as the source of truth over what's currently coded when a guest surface is being brought to full accuracy."
+    ],
+    "donts": [
+      "Don't reuse the FnB order board's neubrutalist hard-offset shadow or thick ink border on any other admin surface unless explicitly instructed.",
+      "Don't introduce a primary brand accent into the admin shell.",
+      "Don't hardcode Tailwind palette colors (bg-green-600, bg-red-600, etc.) for status/action UI where a Payload theme token already exists.",
+      "Don't hardcode a guest-facing color, font, or radius into a shared component — every guest page's look is theme-driven and operator-owned.",
+      "Don't hand-roll a guest-facing button, card, or modal with one-off Tailwind + CSS-var recipes when daisyUI already ships the primitive — the FnB cart bar and table picker currently do this and are a fix target.",
+      "Don't reuse the banyan-tree-lululemon theme's black/white palette for a general Banyan Tree Doha page — it was built for a one-time, now-retired collab form and is correct as-is; a plain Banyan Tree Doha page should use the operator's actual accent, #85754E."
+    ]
+  }
+}

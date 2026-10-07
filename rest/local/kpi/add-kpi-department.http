@@ -1,0 +1,32 @@
+
+@urlBase = {{$dotenv BASE_URL}}
+@payloadItem = kpi-plans-department
+@apiKey = {{$dotenv API_TOKEN}}
+@url = {{urlBase}}/{{payloadItem}}
+
+### POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "IT"
+}
+
+### POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Marketing"
+}
+
+### POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Test"
+}

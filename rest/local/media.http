@@ -1,0 +1,12 @@
+@urlBase = http://localhost:3005
+@urlAPI = {{urlBase}}/payload/api/media
+
+@headerAuth = users API-Key 1e646493-ab64-4dc5-8207-11ae1a96cd81
+
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: {{headerAuth}}
+
+{    
+    "filename": "http://private.dohaoasis.com/payload/media//images-6.png"
+}

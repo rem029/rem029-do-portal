@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Typograhpy Start */
+.employee-perks h1 {
+  @apply font-Noah-Regular text-[22px];
+}
+
+.employee-perks h2 {
+  @apply font-Noah-Regular text-[22px];
+}
+
+.employee-perks h6 {
+  @apply font-Noah-Regular  text-[22px];
+}
+
+.employee-perks p {
+  @apply font-Poppins text-[14px] font-extralight;
+}
+.employee-perks__link {
+  @apply font-Poppins text-[14px] font-extralight underline;
+}
+
+.employee-perks__button-primary {
+  @apply font-Noah-Bold text-[14px] bg-primary text-white rounded-full px-10 py-1 min-w-[240px];
+}
+
+.employee-perks__button-primary:disabled {
+  @apply bg-opacity-50;
+}
+
+.employee-perks__footer p,
+.employee-perks__footer a {
+  @apply text-[12px];
+}
+
+.employee-perks__footer a {
+  @apply underline;
+}
+
+/* Misc and Layouts */
+
+.employee-perks {
+  @apply w-full flex flex-col items-center justify-center;
+}
+
+.employee-perks__container {
+  @apply w-full min-h-dvh max-w-md bg-[#E9E6DB] flex-col items-center justify-center;
+}
+
+.employee-perks__logo {
+  @apply w-28 h-auto;
+}
+
+.employee-perks__section {
+  @apply w-full p-4 flex gap-4 flex-col items-center justify-center;
+}
+
+.employee-perks__header,
+.employee-perks__footer {
+  @apply w-full max-w-md h-20 flex flex-row items-center justify-between px-2;
+}
+
+.employee-perks__footer {
+  @apply flex-col items-start justify-start py-4;
+}
+
+.employee-perks-restaurants__container {
+  @apply w-full grid grid-cols-3 gap-2;
+}
+
+.employee-perks-restaurants-item__container {
+  @apply flex flex-col gap-0 items-center;
+}
+
+.employee-perks-restaurants-item__container img {
+  @apply rounded-full aspect-square w-20 h-auto bg-secondary;
+}
+
+.employee-perks-restaurants-item__container p {
+  @apply text-primary !text-[14px] font-Noah-Regular;
+}

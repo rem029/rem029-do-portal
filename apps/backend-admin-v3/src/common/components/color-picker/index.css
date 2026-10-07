@@ -1,0 +1,85 @@
+.color-picker-field {
+  margin-bottom: 16px;
+}
+
+.color-picker-compact-container {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.swatch-wrapper {
+  position: relative;
+}
+
+.color-swatch {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 2px solid var(--theme-elevation-200);
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.color-swatch:hover {
+  transform: scale(1.08);
+  border-color: var(--theme-elevation-400);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.color-picker-popover {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  z-index: 1000;
+  background: var(--theme-elevation-50);
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--theme-elevation-250);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  animation: popIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(-8px) scale(0.95); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+}
+
+.color-picker-popover .react-colorful {
+  width: 200px;
+  height: 200px;
+}
+
+.input-wrapper {
+  flex: 0 0 120px;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 7px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--theme-elevation-250);
+  background: var(--theme-elevation-100);
+  color: var(--theme-elevation-900);
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+}
+
+.input-wrapper input:focus {
+  outline: none;
+  border-color: var(--theme-primary-500);
+  box-shadow: 0 0 0 2px var(--theme-primary-100);
+  background: var(--theme-elevation-0);
+}

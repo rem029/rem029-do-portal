@@ -1,0 +1,6 @@
+yarn run v1.22.22
+warning do-app-backend-admin-v3@1.0.0: The engine "pnpm" appears to be invalid.
+$ payload generate:types
+[16:50:59] [32mINFO[39m: [36mCompiling TS types for Collections and Globals...[39m
+[16:51:00] [32mINFO[39m: [36mTypes written to /home/lawrenceponce/survey-doha-quest/apps/backend-admin-v3/src/payload-types.ts[39m
+Done in 4.70s.

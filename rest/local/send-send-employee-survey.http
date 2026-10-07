@@ -1,0 +1,46 @@
+@urlBase = http://localhost:3005
+@url = {{urlBase}}/payload/api/email/send
+
+
+####    
+POST http://localhost:3005/payload/api/email/send        
+Content-Type: application/json
+Authorization: users API-Key f740ed71-817f-4958-928b-b5525c6396ab
+
+{
+    "email": "eufraim.ponce@dohaoasis.com"
+}
+
+####    
+POST http://localhost:3005/payload/api/email/send        
+Content-Type: application/json
+Authorization: users API-Key f740ed71-817f-4958-928b-b5525c6396ab
+
+{
+    "email": "eufraim.ponce@dohaoasis.com"
+}
+
+####    
+POST http://localhost:3005/payload/api/email/send        
+Content-Type: application/json
+Authorization: users API-Key 19000dfc-38a1-45dd-ac72-adb8f0295efe
+
+{
+    "email": "apple@dohaoasis.com"
+}
+
+###
+POST http://localhost:3005/payload/api/email/send
+
+
+####
+POST http://localhost:3005/payload/api/email/send
+Content-Type: application/json
+
+{
+    "email": "lawrence.ponce@dohaoasis.com"
+}
+
+
+# http://localhost:3005/payload/api/email/send
+# http://localhost:3005/payload/api/email/send

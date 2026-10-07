@@ -1,0 +1,23 @@
+@urlBase = http://survey.dohaoasis.com
+@urlFeedback = {{urlBase}}/payload/api/survey-net-promoter
+
+@urlFeedbacks = {{urlBase}}/payload/api/survey-net-promoter
+@urlReceiptID = {{urlBase}}/net-promoter/receiptID
+
+### ADD
+POST {{urlFeedback}}
+Content-Type: application/json
+
+{
+  "visit_date": "2024-01-21T12:00:00+00:00",
+  "receipt_id" : "1234-1234",
+  "customer_feedback": "neutral",
+  "customer_comments": "Hello WOrld"
+}
+
+### GET
+GET {{urlFeedbacks}}
+
+### GET
+GET {{urlReceiptID}}/000024-1002664
+Content-Type: application/json

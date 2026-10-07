@@ -1,0 +1,694 @@
+const questionGroup = 5;
+const questions = [
+  {
+    default_title:
+      "Do you feel that communication from your manager is clear and timely?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل تشعر أن التواصل من مديرك واضح وفي الوقت المناسب؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Do you receive adequate communication from senior leadership about the company’s goals, strategies, and updates?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title:
+          "هل تتلقى تواصلاً كافياً من القيادة العليا حول أهداف واستراتيجيات الشركة والتحديثات؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Are your concerns and suggestions valued and addressed by your manager?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل يتم تقدير ومعالجة اقتراحاتك من قبل مديرك؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Are communication channels (emails, meetings, internal portals) effective in keeping you informed about Printemps Doha’s activities?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title:
+          "هل تعتبر قنوات الاتصال (البريد الإلكتروني والاجتماعات) فعالة في إبقائك على اطلاع بأنشطة برنتان الدوحة؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Are you informed of changes or updates that impact your role and responsibilities?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title:
+          "هل يتم إعلامك بالتغييرات أو التحديثات التي تؤثر على وظيفتك ومسؤولياتك؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Do you feel that you can freely and comfortably express your ideas and concerns with your manager?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title:
+          "هل تشعر أنه بإمكانك التعبير بحرية وراحة عن أفكارك وإقترحاتك مع مديرك؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "When workplace conflicts arise, do you feel your manager takes appropriate steps to resolve them promptly and fairly?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title:
+          "عندما ينشأ خيلافات في مكان العمل، هل تشعر أن مديرك يتخذ الخطوات المناسبة لحلها بسرعة وبشكل عادل؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title: "Do you feel supported by your team members?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل تشعر بأنك مدعوم من قبل أعضاء فريقك؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Is your department manager supportive, approachable, and receptive to feedback?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل مدير قسمك داعم وسهل الوصول له ومتقبل للاقتراحات الراجعة؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title: "Are clear goals and expectations provided by your manager?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل يقدم مديرك أهدافاً وتوقعات واضحة؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "How satisfied are you with the level of teamwork and collaboration within your department?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "ما مدى رضاك عن مستوى العمل الجماعي والتعاون داخل قسمك؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Do you feel that collaboration across different departments is encouraged and valued?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل تشعر بأن التعاون بين الأقسام المختلفة يتم تشجيعه وتقديره؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Does Printemps Doha provide sufficient opportunities for your professional development?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل توفر برنتان الدوحة فرصاً كافية لتطويرك المهني؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Are you satisfied with the training and development programs offered by the company?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل أنت راضٍ عن برامج التدريب والتطوير التي تقدمها الشركة؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Do you feel that Printemps Doha invests in developing skills relevant to future challenges in your role?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title:
+          "هل تشعر أن برنتان الدوحة تستثمر في تطوير المهارات ذات الصلة بالتحديات المستقبلية في دورك؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Are there clear paths for advancement within your department and the company as a whole?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل هناك مسارات واضحة للتقدم داخل قسمك والشركة ككل؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Do you have access to mentorship or coaching to help you grow in your role?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل لديك وصول إلى الإرشاد أو التدريب للمساعدة في نموك في دورك؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Do you feel that your contributions are recognized and appreciated by your manager?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل تشعر بأن مساهماتك يتم تقديرها من قبل مديرك؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Do you receive regular and constructive performance feedback from your manager?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل تتلقى تقييم أداء منتظم وبناء من مديرك؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Are your performance reviews fair, objective, and based on measurable criteria?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل تقييمات أدائك عادلة وموضوعية وتعتمد على معايير قابلة للقياس؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Do you feel that outstanding work is celebrated and rewarded appropriately by Printemps Doha?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title:
+          "هل تشعر أن العمل المتميز يتم الاحتفاء به ومكافأته بشكل مناسب من قبل برنتان الدوحة؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Are there clear expectations on what is required to achieve recognition or advancement?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل هناك توقعات واضحة بشأن ما هو مطلوب لتحقيق التقدير أو التقدم؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title: "Are you satisfied with the company’s onboarding process?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل أنت راضٍ عن عملية التوظيف بالشركة؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Do you find Printemps Doha’s HR team to be accessible and responsive?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل تجد فريق الموارد البشرية في برنتان الدوحة سهل الوصول ومستجيب؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Are HR policies, such as leave policies, clearly communicated and fairly enforced?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title:
+          "هل سياسات الموارد البشرية، مثل سياسات الإجازة، واضحة ويتم تنفيذها بشكل عادل؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Are you satisfied with the company’s approach to diversity, equity, and inclusion?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل أنت راضٍ عن نهج الشركة في التعامل مع التنوع والمساواة والشمول؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Do you feel comfortable and safe discussing HR-related issues with the HR department?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title:
+          "هل تشعر بالراحة والأمان في مناقشة القضايا المتعلقة بالموارد البشرية مع قسم الموارد البشرية؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "How satisfied are you with the benefits package provided by Printemps Doha (e.g., health, retirement, Incentive)?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title:
+          "ما مدى رضاك عن حزمة المزايا المقدمة من برنتان الدوحة (مثل، الصحة  والحوافز)؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Are there clear processes in place for escalating workplace conflicts to HR, and do you feel confident that HR will handle these issues confidentially, promptly and fairly? ",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title:
+          "هل هناك عمليات واضحة لتصعيد النزاعات والخيلافات في مكان العمل إلى الموارد البشرية، وهل تشعر بالثقة بأن الموارد البشرية ستتعامل مع هذه القضايا بسرية وبسرعة وبشكل عادل؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "        How satisfied you are with the company’s disciplinary practices?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "ما مدى رضاك عن ممارسات الشركة التأديبية؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title: "Do you feel secure in your current position?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل تشعر بالأمان في وظيفتك الحالية؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title: "Does Printemps Doha promote a healthy work-life balance?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل تعزز برنتان الدوحة توازناً صحياً بين العمل والحياة؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Do you feel that the company takes active steps to ensure your physical and emotional well-being?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل تشعر أن الشركة تتخذ خطوات نشطة لضمان رفاهيتك الجسدية والعاطفية؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Are you able to manage your workload without feeling overwhelmed?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل تستطيع ان تديرعبء العمل دون الشعور بالإنهاك؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "How satisfied are you with the overall culture at Printemps Doha?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "ما مدى رضاك عن الثقافة العامة في برنتان الدوحة؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Do you feel that Printemps Doha fosters a culture of respect, trust, and inclusivity?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل تشعر أن برنتان الدوحة تعزز ثقافة الاحترام والثقة والشمول؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Do you feel that your department embodies the values and culture of Printemps Doha?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل يطبق ويجسد قسمك قيم وثقافة برنتان الدوحة؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Are employees encouraged to innovate and think creatively within their roles?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل يتم تشجيع الموظفين على الابتكار والتفكير الإبداعي في أدوارهم؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Do you believe that Printemps Doha is a fair and equitable workplace for all employees?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل تعتقد أن برنتان الدوحة مكان عمل عادل ومنصف لجميع الموظفين؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title: "        Do you observe favoritism at Printemps Doha?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل تلاحظ أي تفضيلات بين الموظفين في برنتان الدوحة؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "        Are you afraid to share freely your concerns at Printemps Doha?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل تخشى من التعبير عن مخاوفك او مشاكلك بحرية في برنتان الدوحة؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title: "Would you recommend Printemps Doha as a great place to work?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل توصي بـبرنتان الدوحة كمكان رائع للعمل؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Do you feel that your work here aligns with your personal career goals?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل تشعر أن عملك هنا يتماشى مع أهدافك المهنية الشخصية؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title: "Would you choose to continue working at Printemps Doha?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل ستختار الاستمرار في العمل في برنتان الدوحة؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "What is one thing you would change to improve your experience here?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "ما هو الشيء الذي ترغب في تغييره لتحسين تجربتك هنا؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "What factors would influence your decision to stay or leave Printemps Doha?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "ما هي العوامل التي ستؤثر على قرارك بالبقاء أو مغادرة برنتان الدوحة؟",
+        subtitle: null,
+      },
+    ],
+  },
+  {
+    default_title:
+      "Is there anything else you would like to share about your experience with Printemps Doha?",
+    default_subtitle: null,
+    question_group: questionGroup,
+    item: [
+      {
+        type: "text",
+        language: "ar",
+        title: "هل هناك أي شيء آخر ترغب في مشاركته عن تجربتك في برنتان الدوحة؟",
+        subtitle: null,
+      },
+    ],
+  },
+];
+
+const init = async () => {
+  const args = process.argv.slice(2); // Get arguments passed to the script
+  const apiKey = args[0]; // The first argument will be the API key
+
+  if (!apiKey) {
+    console.error("Error: API key is required. Usage: node add_emp.js YOUR_API_KEY");
+    process.exit(1); // Exit if no API key is provided
+  }
+  console.log(`Found ${questions.length} questions to add.`);
+
+  for (const q of questions) {
+    console.log(`Adding question ${q.default_title}`);
+    const response = await fetch(
+      "http://private.dohaoasis.com/payload/api/employee-questions-new",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `users API-Key ${apiKey}`,
+        },
+        body: JSON.stringify(q),
+      },
+    );
+
+    console.log("Response:", await response.json());
+  }
+};
+
+init();

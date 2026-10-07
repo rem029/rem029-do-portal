@@ -1,0 +1,20 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-font",
+        "value": "noah-regular",
+        "createdAt": "2026-09-20T09:36:23.955Z",
+        "reason": "TECH-0098 Phase 6: canonical dohaoasis-new brand font, already self-hosted and used by the admin panel (_tokens.scss); spec doc docs/TECH-0098/phases/phase-6-default-event-theme.md"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "baskerville",
+        "createdAt": "2026-09-20T09:36:23.991Z",
+        "reason": "TECH-0098 Phase 6: canonical dohaoasis-new brand font, already self-hosted and used by the admin panel (_tokens.scss); spec doc docs/TECH-0098/phases/phase-6-default-event-theme.md"
+      }
+    ]
+  }
+}

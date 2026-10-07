@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-radius",
+        "value": "999px",
+        "createdAt": "2026-08-25T06:46:02.714Z",
+        "reason": "pre-existing pill-track radius for the filter-carousel chip component (embla-carousel/carousel-filters.tsx), predates this session's edit; 999px is the correct value for a fully-rounded pill shape"
+      }
+    ]
+  }
+}

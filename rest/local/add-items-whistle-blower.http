@@ -1,0 +1,54 @@
+@urlBase = http://localhost:3005
+@url = {{urlBase}}/payload/api/employee-whistle-blower
+@apiKey = {{survey-do api-token-dev}}
+
+### ADD ENTRY
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{      
+    "contact_info": {
+        "name": null,
+        "designation": null,
+        "department": null,
+        "phone": null,
+        "email": null
+    },
+    "subject_info": {
+        "name": "LOL",
+        "designation": "IT",
+        "department": "12341234",
+        "phone": "12341234",
+        "email": "12341234@lol.com"
+    },
+    "witness_info": {
+        "name": null,
+        "designation": null,
+        "department": null,
+        "phone": null,
+        "email": null
+    },
+    "details": {
+        "description": "asdadsada",
+        "when": null,
+        "where": null,
+        "how": null,
+        "other_parties_involved": null,
+        "concerned_about_consequences": null,
+        "reported_to_employer": null,
+        "conflicted_individuals": "asdadsa",
+        "circumvented_controls": "asdadadad",
+        "supporting_docs": [
+            { 
+                "media_internal": 4       
+            },
+            {
+                "media_internal": 3           
+            }
+        ],
+            "other_details": null
+        },
+    "updatedAt": "2024-07-09T09:32:45.885Z",
+    "createdAt": "2024-07-09T09:30:06.399Z"
+}

@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import 'tailwindcss';
+@plugin "daisyui";
+@plugin "@tailwindcss/typography";
+
+@font-face {
+  font-family: 'Noah-Regular';
+  src: url('../../fonts/Noah-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Baskerville';
+  src: url('../../fonts/Baskerville.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Baskerville';
+  src: url('../../fonts/Baskerville-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@plugin "daisyui/theme" {
+  name: 'printemps';
+  --color-primary: #00d072;
+  --color-secondary: #e5b420;
+  --color-accent: #d6d3d1;
+  --color-neutral: #ffffff;
+  --color-base-100: #f3f4f6;
+  --color-base-200: #eae7dc;
+  --color-base-300: oklch(92% 0.006 264.531);
+  --color-base-content: #1f2937;
+  --color-info: #9ca3af;
+  --color-success: #4ade80;
+  --color-warning: #eab308;
+  --color-error: #dc2626;
+}
+
+@plugin "daisyui/theme" {
+  name: 'dohaoasis';
+  --color-primary: #c7a965;
+  --color-secondary: #202b4e;
+  --color-accent: #d6d3d1;
+  --color-neutral: #ffffff;
+  --color-base-100: #f3f4f6;
+  --color-base-200: #eae7dc;
+  --color-base-300: oklch(92% 0.006 264.531);
+  --color-base-content: #1f2937;
+  --color-info: #9ca3af;
+  --color-success: #4ade80;
+  --color-warning: #eab308;
+  --color-error: #dc2626;
+}
+
+@plugin "daisyui/theme" {
+  name: 'dohaoasis-new';
+  default: true;
+  prefersdark: false;
+  color-scheme: 'light';
+  --color-base-100: #ffffff;
+  --color-base-200: #eae7dc;
+  --color-base-300: #e7dccb;
+  --color-base-content: #2f2f2f;
+  --color-primary: #072c1b;
+  --color-primary-content: #eae7dc;
+  --color-secondary: #c8b46e;
+  --color-secondary-content: #072c1b;
+  --color-accent: #252120;
+  --color-accent-content: #eae7dc;
+  --color-neutral: #252120;
+  --color-neutral-content: #eae7dc;
+  --color-info: #bcccd3;
+  --color-info-content: #ffffff;
+  --color-success: #4ade80;
+  --color-success-content: oklch(98% 0.018 155.826);
+  --color-warning: #eab308;
+  --color-warning-content: oklch(98% 0.026 102.212);
+  --color-error: #6d2e15;
+  --color-error-content: oklch(97% 0.013 17.38);
+  --radius-selector: 0.5rem;
+  --radius-field: 1rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1.5px;
+  --depth: 1;
+  --noise: 0;
+}
+
+/* dohaoasis-new pages (forms, survey gate, letters) follow the admin panel look —
+ * see src/app/(payload)/admin-theme/_tokens.scss. The selectors outrank the
+ * noah.className that headings/legends carry. */
+[data-theme='dohaoasis-new'] {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-weight: 300;
+  color: var(--color-base-content);
+}
+
+[data-theme='dohaoasis-new'] :is(h1, h2, h3, legend, .fieldset-legend) {
+  font-family: 'Baskerville', serif;
+}
+
+[data-theme='dohaoasis-new'] .btn {
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+
+/* Page shells only add bg-white when the form has no background image. */
+[data-theme='dohaoasis-new'].bg-white {
+  background-image: linear-gradient(180deg, #faf7f2 0%, #f7f1e8 100%);
+}
+
+@plugin "daisyui/theme" {
+  name: 'dohaquest';
+  --color-primary: #520b75;
+  --color-secondary: #f2b02d;
+  --color-accent: #d6d3d1;
+  --color-neutral: #ffffff;
+  --color-base-100: #f3f4f6;
+  --color-base-200: #eae7dc;
+  --color-base-300: oklch(92% 0.006 264.531);
+  --color-base-content: #1f2937;
+  --color-info: #9ca3af;
+  --color-success: #4ade80;
+  --color-warning: #eab308;
+  --color-error: #dc2626;
+}
+
+@plugin "daisyui/theme" {
+  name: 'dohaquest-new';
+  default: true;
+  prefersdark: false;
+  color-scheme: 'light';
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(98% 0 0);
+  --color-base-300: oklch(95% 0 0);
+  --color-base-content: oklch(21% 0.006 285.885);
+  --color-primary: #520b75;
+  --color-primary-content: oklch(93% 0.034 272.788);
+  --color-secondary: #f2b02d;
+  --color-secondary-content: #101828;
+  --color-accent: oklch(92% 0.013 255.508);
+  --color-accent-content: oklch(44% 0.03 256.802);
+  --color-neutral: oklch(55% 0.027 264.364);
+  --color-neutral-content: oklch(92% 0.004 286.32);
+  --color-info: oklch(74% 0.16 232.661);
+  --color-info-content: oklch(29% 0.066 243.157);
+  --color-success: oklch(76% 0.177 163.223);
+  --color-success-content: oklch(37% 0.077 168.94);
+  --color-warning: oklch(82% 0.189 84.429);
+  --color-warning-content: oklch(41% 0.112 45.904);
+  --color-error: oklch(71% 0.194 13.428);
+  --color-error-content: oklch(27% 0.105 12.094);
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.28125rem;
+  --size-field: 0.1875rem;
+  --border: 0.5px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@plugin "daisyui/theme" {
+  name: 'banyan-tree-lululemon';
+  --color-primary: #000000;
+  --color-secondary: #ffffff;
+  --color-accent: #f3f4f6;
+  --color-neutral: #ffffff;
+  --color-base-100: #ffffff;
+  --color-base-200: #eae7dc;
+  --color-base-300: oklch(92% 0.006 264.531);
+  --color-base-content: #000000;
+  --color-info: #9ca3af;
+  --color-success: #4ade80;
+  --color-warning: #eab308;
+  --color-error: #dc2626;
+}
+
+@theme {
+  --color-menu-primary: var(--primary-color);
+  --color-menu-primary-contrast: var(--primary-contrast-color);
+  --color-menu-background: var(--background-color);
+  --color-menu-background-card: var(--background-card-color);
+  --color-menu-text: var(--text-color);
+  --color-menu-neutral: var(--neutral-color);
+
+  --font-menu-primary: Noah-Regular;
+  --font-menu-secondary: Baskerville;
+  --font-menu-tertiary: Poppins;
+
+  /* Order tracker status icons (order-tracker.tsx) - one motion per lifecycle stage. */
+  --animate-pop: pop 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-flicker: flicker 1.4s ease-in-out infinite;
+  --animate-ring: ring 2.6s ease-in-out infinite;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.08) rotate(-4deg);
+  }
+  50% {
+    transform: scale(0.94) rotate(3deg);
+  }
+  75% {
+    transform: scale(1.05) rotate(-2deg);
+  }
+}
+
+@keyframes ring {
+  0%,
+  16%,
+  100% {
+    transform: rotate(0deg);
+  }
+  2% {
+    transform: rotate(-12deg);
+  }
+  4% {
+    transform: rotate(10deg);
+  }
+  6% {
+    transform: rotate(-9deg);
+  }
+  8% {
+    transform: rotate(7deg);
+  }
+  10% {
+    transform: rotate(-5deg);
+  }
+  12% {
+    transform: rotate(3deg);
+  }
+  14% {
+    transform: rotate(-1deg);
+  }
+}
+
+:root {
+  --font-mono: 'Roboto Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  line-height: 32px;
+  -webkit-font-smoothing: antialiased;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  font-size: 18px;
+  line-height: 32px;
+
+  margin: 0;
+
+  @media (max-width: 1024px) {
+    font-size: 15px;
+    line-height: 24px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1 {
+  margin: 40px 0;
+  font-size: 64px;
+  /* line-height: 70px; */
+  font-weight: bold;
+
+  @media (max-width: 1024px) {
+    margin: 24px 0;
+    font-size: 42px;
+    /* line-height: 42px; */
+  }
+
+  @media (max-width: 768px) {
+    font-size: 38px;
+    /* line-height: 38px; */
+  }
+
+  @media (max-width: 400px) {
+    font-size: 32px;
+    /* line-height: 32px; */
+  }
+}
+
+p {
+  margin: 0;
+
+  @media (max-width: 1024px) {
+    margin: calc(var(--base) * 0.75) 0;
+  }
+}
+
+a {
+  &:focus {
+    opacity: 0.8;
+    outline: none;
+  }
+
+  &:active {
+    opacity: 0.7;
+    outline: none;
+  }
+}
+
+svg {
+  vertical-align: middle;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 45px;
+  max-width: 1024px;
+  margin: 0 auto;
+  overflow: hidden;
+
+  @media (max-width: 400px) {
+    padding: 24px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+
+    h1 {
+      text-align: center;
+    }
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    a {
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .admin {
+      color: rgb(0, 0, 0);
+      background: rgb(1000, 1000, 1000);
+      border: 1px solid rgb(0, 0, 0);
+    }
+
+    .docs {
+      color: rgb(1000, 1000, 1000);
+      background: rgb(0, 0, 0);
+      border: 1px solid rgb(1000, 1000, 1000);
+    }
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .codeLink {
+      text-decoration: none;
+      padding: 0 0.5rem;
+      background: rgb(60, 60, 60);
+      border-radius: 4px;
+    }
+  }
+}
+
+/* Survey gate: the panel eases up once — after a valid code unlocks the form, and again when
+   the respondent steps back to re-enter a code. A single authored entrance, not a flourish. */
+@keyframes survey-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.survey-panel-in {
+  animation: survey-panel-in 440ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .survey-panel-in {
+    animation: none;
+  }
+}
+
+/* dohaoasis-new: let the page gradient show through the survey panel and its form. */
+[data-theme='dohaoasis-new'] .survey-panel-in,
+[data-theme='dohaoasis-new'] .survey-panel-in form {
+  background: transparent;
+}
+
+[data-theme='dohaoasis-new'] .container,
+[data-theme='dohaoasis-new'] .card {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: unset;
+}

@@ -1,0 +1,1271 @@
+@urlBase = https://public.dohaoasis.com
+@urlAPI = {{urlBase}}/payload/api/employee-benefits
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{    
+  "name": "Talabat (add attachment)",
+  "general_info": {
+    "category": [4,5]
+  },
+  "contact_info": {
+    "phone": null,
+    "email": null,
+    "point_of_contact": null,
+    "address": null
+  },
+  "expiry_date": "2024-12-30T21:00:00.000Z",
+  "external_link": null,
+  "benefits": [
+    {
+      "id": "660be1016895e1a7994717bf",
+      "title": "Get 22% of using the DHO22 ",
+      "description": "* Applicable on selected vendors only\n* Maximum discount is 35 QR ",
+      "printemps": null,
+      "dohaoasis": null,
+      "banyantree": null
+    }
+  ],
+  "terms_and_condition": null,    
+  "_status": "published"
+}
+
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{    
+    "name": "Jardin ",
+    "general_info": {
+      "category": [5]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {        
+        "title": "15% Discount (Excluding Alcohol or Tobacco) ",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": null,    
+    "_status": "published"
+  }
+
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{    
+    "name": "Saffron ",
+    "general_info": {
+      "category": [5]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {        
+        "title": "15% Discount (Excluding Alcohol or Tobacco) ",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": null,    
+    "_status": "published"
+  }
+
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{
+    "id": 65,
+    "name": "Qalamkarri ",
+    "general_info": {
+      "category": [5]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {
+        
+        "title": "15% Discount (Excluding Alcohol or Tobacco) ",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": null,
+    "_status": "published"
+  }
+
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{
+    "id": 64,
+    "name": "Reem Al Bawadi",
+    "general_info": {
+      "category": [5]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": "2024-12-30T21:00:00.000Z",
+    "external_link": null,
+    "benefits": [
+      {        
+        "title": "20% Discount (Only Ala carte)",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": null,    
+    "_status": "published"
+  }
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{
+    "id": 63,
+    "name": "Azka Maza Resturant  ",
+    "general_info": {
+      "category": [
+       5
+      ]      
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": "2024-12-30T21:00:00.000Z",
+    "external_link": null,
+    "benefits": [
+      {        
+        "title": "20% Discount (Only Ala carte)",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": null,    
+    "_status": "published"
+  }
+
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{    
+    "name": "Lemon Garden ",
+    "general_info": {
+      "category": [5]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": "2024-12-30T21:00:00.000Z",
+    "external_link": null,
+    "benefits": [
+      {        
+        "title": "20% Discount in all Lemon Garden branches (Only ala carte)",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": null,
+    "_status": "published"
+  }
+
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{    
+    "name": "Squad 5 Training",
+    "general_info": {
+      "category": [5]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": "Wissem Saadallah",
+      "address": null
+    },
+    "expiry_date": "2023-12-31T00:00:00.000Z",
+    "external_link": "",
+    "benefits": [
+      {        
+        "title": "(Details in The Share Folder)",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": "The discount cannot be used on items on sale or special promotion"
+          }
+        ]
+      }
+    ],    
+    "_status": "published"
+  }
+
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{    
+    "name": "Il Galante",
+    "general_info": {
+      "category": [4]     
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {
+        "id": "66014e420f7a7a412cc99240",
+        "title": "15% Discount (Excluding Alcohol or Tobacco) ",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": null,
+    "_status": "published"
+  }
+
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{    
+    "name": "Banyan Tree Hotel",
+    "general_info": {
+      "category": [3]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {
+        "id": "65f7e7bab1aeaa2e280ad5ba",
+        "title": "Corprate Prices For Rooms, F&B and Spa (Details in The Share Folder)",
+        "description": null,
+        "printemps": "",
+        "dohaoasis": "",
+        "banyantree": ""
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": null,    
+    "_status": "published"
+  }
+
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+
+  {
+    
+    "name": "Tche Tche Cafe",
+    "general_info": {
+      "category": [
+       4
+      ]      
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": "2024-12-30T21:00:00.000Z",
+    "external_link": null,
+    "benefits": [
+      {
+        "id": "66001a0b91100a5ace329e94",
+        "title": "20% Discount in all Tche Tche branches (Only ala carte)",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": null,    
+    "_status": "published"
+  }
+  
+  
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+  {
+    "id": 53,
+    "name": "VOX",
+    "general_info": {
+      "category": [6]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {        
+        "title": "33% On Cinema & Bowling +15% on F&B",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": null,
+    "_status": "published"
+  }
+
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{
+    "id": 52,
+    "name": "UFC Gym with attachment UFC Signed",
+    "general_info": {
+      "category": [6]      
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": "",
+      "address": null
+    },
+    "expiry_date": "2024-01-11T00:00:00.000Z",
+    "external_link": null,
+    "benefits": [
+      {        
+        "title": "10% for 3 Months - 15% for 6 Months - 20% for 12 Months",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": "Discount applicable to the standard membership prices only"
+          }
+        ]
+      }
+    ],
+    "_status": "published"
+  }
+
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{    
+    "name": "Sugar café",
+    "general_info": {
+      "category": [
+       4
+      ]     
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {        
+        "title": "25% for any ala card order + 10% for any monthly plan registration",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": null,
+    "_status": "published"
+  }
+
+  
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{
+    "name": "Slot Racing Qatar",
+    "general_info": {
+      "category": [4,6]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {        
+        "title": "10% discount on the food and Car racing circuit",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": null,  
+    "_status": "published"
+  }
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+  {
+    "name": "Sharq Village Hotel",
+    "general_info": {
+      "category": [
+       3
+      ]
+    },
+    "contact_info": {
+      "phone": "+974 5515 1229 ",
+      "email": "rahul.bakshi@ritzcarlton.com",
+      "point_of_contact": "Nazrin",
+      "address": null
+    },
+    "expiry_date": "2023-12-31T00:00:00.000Z",
+    "external_link": null,
+    "benefits": [
+      {
+        
+        "title": "Corprate Prices For Rooms and F&B(Details in The Share Folder)",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": "The rates are subject to rate and room type availability at time of reservation."
+          }
+        ]
+      }
+    ],    
+    "_status": "published"
+  }
+
+
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{
+    "name": "Shakespeare & Co. (Dar Al Salam Mall Only)",
+    "general_info": {
+      "category": [4]
+    },
+    "contact_info": {
+      "phone": "+974 3085 8511",
+      "email": "Corporate-qatar@eggspectationme.com",
+      "point_of_contact": "Rodel L. Cabrera",
+      "address": null
+    },
+    "expiry_date": "2024-02-14T00:00:00.000Z",
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "15% Discount on Food & Beverage",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": "Discounts shall not be available on any promotional items and shall not be clubbed with any other promotional offer"
+          }
+        ]
+      }
+    ],
+    "_status": "published"
+  }
+
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+  {
+    "id": 46,
+    "name": "Reyada Medical Centre",
+    "general_info": {
+      "category": [1]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": "Bdm@reyadamedicalcentre.com",
+      "point_of_contact": "Altaf Khan ",
+      "address": null
+    },
+    "expiry_date": "2024-08-29T00:00:00.000Z",
+    "external_link": null,
+    "benefits": [
+      {
+        "title": "20% Discount will be applied for all remaining dental procedures (Details in The Share Folder)",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": "Discount are excluding medicines & injections"
+          }
+        ]
+      }
+    ],
+    "_status": "published"
+  }
+
+
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{
+    "id": 45,
+    "name": "Quest",
+    "general_info": {
+      "category": [
+        6
+      ]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {
+        "id": "65f7e829b1aeaa2e280ad5c8",
+        "title": "Free Ticket for colleague and 50% discount up to four guests per month. ",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": null,
+    "updatedAt": "2024-03-28T11:32:00.300Z",
+    "createdAt": "2024-03-18T07:07:21.243Z",
+    "_status": "published"
+  }
+
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+
+{
+    "id": 44,
+    "name": "Planet Hollywood",
+    "general_info": {
+      "category": [4]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {
+        "id": "65f7e822b1aeaa2e280ad5c7",
+        "title": "15% Discount on Food & Beverage",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": "Discount is not available on already discounted food items"
+          }
+        ]
+      }
+    ],
+    "updatedAt": "2024-03-24T12:57:00.012Z",
+    "createdAt": "2024-03-18T07:07:14.083Z",
+    "_status": "published"
+  }
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{
+    "id": 33,
+    "name": "Al Rayes Laundry",
+    "general_info": {
+      "category": [
+        5
+      ]
+      
+    },
+    "contact_info": {
+      "phone": null,
+      "email": "Csr1@alrayeslaundry.com",
+      "point_of_contact": "Ahmed al Rayes",
+      "address": null
+    },
+    "expiry_date": "2024-03-07T00:00:00.000Z",
+    "external_link": null,
+    "benefits": [
+      {
+        "id": "65f7e7beb1aeaa2e280ad5bb",
+        "title": "50%  Discount on every washing, pressing and dry-cleaning service.",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": "The Corporate discount doesn't include home delivery services"
+          }
+        ]
+      }
+    ],
+    "updatedAt": "2024-03-25T09:53:07.869Z",
+    "createdAt": "2024-03-18T07:05:34.171Z",
+    "_status": "published"
+  }
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{
+    "id": 31,
+    "name": "Al Jazeera Medical Center",
+    "general_info": {
+      "category": [1]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": "Marketing@aljazeeramc.com",
+      "point_of_contact": "Khouloud Jbeli",
+      "address": null
+    },
+    "expiry_date": "2023-12-31T00:00:00.000Z",
+    "external_link": null,
+    "benefits": [
+      {
+        "id": "65f7e6e9b1aeaa2e280ad5b9",
+        "title": "Discount on Medical Services (Details in The Share Folder)",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": "Discount cannot be used in conjunction with any other promotion, discounts or privileges"
+          }
+        ]
+      }
+    ],
+    "updatedAt": "2024-03-24T13:18:42.000Z",
+    "createdAt": "2024-03-18T07:02:01.905Z",
+    "_status": "published"
+  }
+
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{
+    "id": 43,
+    "name": "Naseem Healthcare",
+    "general_info": {
+      "category": [1]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": "Imran@naseemhealthcare.com",
+      "point_of_contact": "Imran Sat Ummer Sait",
+      "address": null
+    },
+    "expiry_date": "2024-09-16T00:00:00.000Z",
+    "external_link": null,
+    "benefits": [
+      {
+        "id": "65f7e81bb1aeaa2e280ad5c6",
+        "title": "20% Discount for specialist consultation and General consultation",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": null,
+    "updatedAt": "2024-03-24T12:58:55.712Z",
+    "createdAt": "2024-03-18T07:07:07.608Z",
+    "_status": "published"
+  }
+
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{
+    "id": 42,
+    "name": "La Cigale",
+    "general_info": {
+      "category": [3]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": "Tony.mimar@lacigalehotel.com",
+      "point_of_contact": "\nTony Mimar",
+      "address": null
+    },
+    "expiry_date": "2023-12-31T00:00:00.000Z",
+    "external_link": null,
+    "benefits": [
+      {
+        "id": "65f7e810b1aeaa2e280ad5c5",
+        "title": "Coorporate Prices For Rooms, F&B and Spa (Details in The Share Folder)",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": "Corporate rates are subject to availability at the time of booking and during school, public holidays and city-wide events"
+          }
+        ]
+      }
+    ],
+    "updatedAt": "2024-03-25T09:51:37.295Z",
+    "createdAt": "2024-03-18T07:06:56.428Z",
+    "_status": "published"
+  }
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{
+    "id": 41,
+    "name": "Gym World",
+    "general_info": {
+      "category": [6]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {
+        "id": "65f7e80bb1aeaa2e280ad5c4",
+        "title": "Discount on Karate - MMA - Jiu jitsu subscription (Details in The Share Folder)",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": null,
+    "updatedAt": "2024-03-24T13:00:00.806Z",
+    "createdAt": "2024-03-18T07:06:51.099Z",
+    "_status": "published"
+  }
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+ {
+    "id": 40,
+    "name": "ER Detailing",
+    "general_info": {
+      "category": [5]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {
+        "id": "65f7e7ffb1aeaa2e280ad5c2",
+        "title": "Discount on Car Detailing & Services (Details in The Share Folder)",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": null,
+    "updatedAt": "2024-03-24T13:03:34.395Z",
+    "createdAt": "2024-03-18T07:06:39.911Z",
+    "_status": "published"
+  }
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{
+    "id": 39,
+    "name": "Eggspectation (The Pearl Branch Only)",
+    "general_info": {
+      "category": [4]
+    },
+    "contact_info": {
+      "phone": "+974 3085 8511",
+      "email": "Corporate-qatar@eggspectationme.com",
+      "point_of_contact": "Rodel L. Cabrera",
+      "address": null
+    },
+    "expiry_date": "2024-02-28T00:00:00.000Z",
+    "external_link": null,
+    "benefits": [
+      {
+        "id": "65f7e7edb1aeaa2e280ad5c1",
+        "title": "15% Discount on Food & Beverage",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": "Discounts shall not be available on any promotional items and shall not be clubbed with any other promotional offer"
+          }
+        ]
+      }
+    ],
+    "updatedAt": "2024-03-24T13:05:10.604Z",
+    "createdAt": "2024-03-18T07:06:21.326Z",
+    "_status": "published"
+  }
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{
+    "id": 38,
+    "name": "Dr Diet",
+    "general_info": {
+      "category": [4]      
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {
+        "id": "65f7e7dcb1aeaa2e280ad5c0",
+        "title": "25% for any ala card order + 10% for any monthly plan registration",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": ""
+          }
+        ]
+      }
+    ],
+    "updatedAt": "2024-03-24T13:06:04.026Z",
+    "createdAt": "2024-03-18T07:06:04.295Z",
+    "_status": "published"
+  }
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{
+    "id": 37,
+    "name": "Doha Oasis Padle Courts",
+    "general_info": {
+      "category": [6]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {
+        "id": "65f7e7d5b1aeaa2e280ad5bf",
+        "title": "25% Discount",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": ""
+          }
+        ]
+      }
+    ],
+    "updatedAt": "2024-03-24T13:07:02.288Z",
+    "createdAt": "2024-03-18T07:05:57.269Z",
+    "_status": "published"
+  }
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{
+    "id": 36,
+    "name": "Diet Mood Plus",
+    "general_info": {
+      "category": [4]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {
+        "id": "65f7e7cfb1aeaa2e280ad5be",
+        "title": "25% for any ala card order + 10% for any monthly plan registration",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": ""
+          }
+        ]
+      }
+    ],
+    "updatedAt": "2024-03-24T13:08:58.796Z",
+    "createdAt": "2024-03-18T07:05:51.363Z",
+    "_status": "published"
+  }
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{
+    "id": 35,
+    "name": "Diet and the Beast",
+    "general_info": {
+      "category": [4]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": null,
+      "address": null
+    },
+    "expiry_date": null,
+    "external_link": null,
+    "benefits": [
+      {
+        "id": "65f7e7cab1aeaa2e280ad5bd",
+        "title": "25% for any ala card order + 10% for any monthly plan registration",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "attachments": [],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": ""
+          }
+        ]
+      }
+    ],
+    "updatedAt": "2024-03-24T13:09:42.709Z",
+    "createdAt": "2024-03-18T07:05:46.319Z",
+    "_status": "published"
+  }
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+{
+    "id": 34,
+    "name": "DHL with attachment DohaOasis1.pdf",
+    "general_info": {
+      "category": [5
+      ]
+    },
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "point_of_contact": "Mohamed Khamis",
+      "address": null
+    },
+    "expiry_date": "2024-12-31T00:00:00.000Z",
+    "external_link": null,
+    "benefits": [
+      {
+        "id": "65f7e7c4b1aeaa2e280ad5bc",
+        "title": "50% discount for all shipments",
+        "description": null,
+        "printemps": null,
+        "dohaoasis": null,
+        "banyantree": null
+      }
+    ],
+    "terms_and_condition": [
+      {
+        "children": [
+          {
+            "text": ""
+          }
+        ]
+      }
+    ],
+    "updatedAt": "2024-04-02T11:30:03.023Z",
+    "createdAt": "2024-03-18T07:05:40.627Z",
+    "_status": "published"
+  }
+
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e
+
+### ADD NEW ITEM
+POST {{urlAPI}}
+Content-Type: application/json
+Authorization: users API-Key 021c8936-b709-4948-87c3-e0e9c647075e

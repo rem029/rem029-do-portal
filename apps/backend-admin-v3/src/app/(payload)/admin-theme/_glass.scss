@@ -1,0 +1,105 @@
+/**
+ * TECH-0112 Phase 5 — Glass Effect Pass (see docs/TECH-0112/Plan.md and
+ * docs/TECH-0112/phases/phase-5-glass-effect-pass.md).
+ *
+ * Figma's 6 captured frames never depict an open dropdown, popup, drawer,
+ * modal, or toast (static artwork can't show an interaction state) — the
+ * Field Types/Components Inventory frames only show closed triggers, already
+ * styled in Phases 3/4. There's nothing to pixel-match here, so this phase
+ * applies Plan.md's general "glass blur 6-12px on floating surfaces" rule
+ * (via Phase 1's --glass-blur-{sm,md,lg} tokens) to every real floating
+ * element found by grepping @payloadcms/{ui,next}'s compiled `.scss`:
+ *
+ * - Dropdowns/popovers (`.popup__content`, `.rs__menu`, `.react-datepicker`)
+ *   render fully opaque today — add translucency + blur.
+ * - Modal/drawer/lock overlay scrims already use Payload's own `blur-bg`
+ *   mixin (each element's own `index.scss`), a hardcoded
+ *   `backdrop-filter: blur(8px)` behind a solid `:before` tint — only the
+ *   blur radius is retheme here.
+ * - `.doc-controls` (sticky doc header) and `.payload-toast-item` are the
+ *   lighter-weight floating surfaces, grouped with the smallest token.
+ *
+ * The sidebar/topbar are NOT touched here despite phase-2-layout-shell.md's
+ * follow-up note floating the idea — both are opaque, non-overlapping
+ * persistent panels in Payload's actual grid layout (`template-default`),
+ * not floating surfaces with page content behind them to blur. See this
+ * file's Results section for the full reasoning.
+ *
+ * No "hover card" component exists anywhere in `@payloadcms/ui` — not
+ * fabricated, same reasoning as the Toggle Switch/doc-count-badge items
+ * already in open-items.md.
+ */
+
+// ---------------------------------------------------------------------------
+// Dropdowns & popovers — opaque today; add translucency + blur. `.popup` is
+// Payload's shared popover engine (Combobox, ColumnSelector, PillSelector,
+// CheckboxPopup, per-row "..." actions, list-header controls all render
+// through `.popup__content`), so this one selector reaches every one of them.
+// A plain solid background stays the unconditional default (the "no
+// backdrop-filter support" fallback); the glass treatment only layers on top
+// inside @supports.
+// ---------------------------------------------------------------------------
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .popup__content {
+    background: color-mix(in srgb, var(--popup-bg) 82%, transparent);
+    border: 1px solid color-mix(in srgb, var(--theme-elevation-150) 60%, transparent);
+    backdrop-filter: blur(var(--glass-blur-lg));
+    -webkit-backdrop-filter: blur(var(--glass-blur-lg));
+  }
+
+  .rs__menu {
+    background: color-mix(in srgb, var(--theme-input-bg) 82%, transparent);
+    border: 1px solid color-mix(in srgb, var(--theme-elevation-150) 60%, transparent);
+    backdrop-filter: blur(var(--glass-blur-lg));
+    -webkit-backdrop-filter: blur(var(--glass-blur-lg));
+  }
+
+  .react-datepicker {
+    background: color-mix(in srgb, var(--theme-input-bg) 82%, transparent);
+    backdrop-filter: blur(var(--glass-blur-lg));
+    -webkit-backdrop-filter: blur(var(--glass-blur-lg));
+  }
+
+  .payload-toast-item {
+    background: color-mix(in srgb, var(--theme-input-bg) 85%, transparent);
+    backdrop-filter: blur(var(--glass-blur-sm));
+    -webkit-backdrop-filter: blur(var(--glass-blur-sm));
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Modal / drawer / document-lock overlay scrims — already blurred by
+// Payload's own `blur-bg` mixin (a `:before` solid tint + `:after`
+// `backdrop-filter: blur(8px)` pair, baked in at build time as a literal
+// px value, not a custom property Phase 1's tokens can reach). The `:before`
+// layer is Payload's own no-backdrop-filter fallback, already in place — only
+// the `:after` blur radius needs retheming, matching every real usage of the
+// mixin found in @payloadcms/ui's and @payloadcms/next's compiled output.
+// ---------------------------------------------------------------------------
+.drawer__blur-bg,
+.confirmation-modal,
+.document-locked,
+.document-take-over,
+.delete-document,
+.restore-button,
+.restore-many,
+.edit-many__document-actions,
+.edit-many-bulk-uploads__document-actions,
+.file-selections__mobileBlur,
+.file-selections__filesContainer {
+  &:after {
+    backdrop-filter: blur(var(--glass-blur-md));
+    -webkit-backdrop-filter: blur(var(--glass-blur-md));
+  }
+}
+
+// `.doc-controls` (sticky doc-edit header, `blur-bg-light`: a lighter .3
+// opacity tint) sits above scrolling content the same way a popover does —
+// grouped with the toast at the smallest blur token rather than the heavier
+// modal/drawer group above.
+.doc-controls {
+  &:after {
+    backdrop-filter: blur(var(--glass-blur-sm));
+    -webkit-backdrop-filter: blur(var(--glass-blur-sm));
+  }
+}

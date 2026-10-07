@@ -1,0 +1,28 @@
+
+@urlBase = {{$dotenv BASE_URL_GLOBALS}}
+@payloadItem = careers-content-printemps
+@apiKey = {{$dotenv API_TOKEN}}
+@url = {{urlBase}}/{{payloadItem}}
+
+
+### FETCH
+GET {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+
+###POST#1
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+  "careers": {
+    "title": "Shape Your Future with Us",
+    "sub_title": "Join a team that values your talent, fosters growth, and celebrates success."
+  },
+  "about_us": {
+    "title": "About Printemps",
+    "sub_title": "Where tradition meets innovation, and your career can thrive."
+  }
+}

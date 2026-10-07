@@ -1,0 +1,1096 @@
+/**
+ * TECH-0112 Phase 2 — layout shell: sidebar, topbar, breadcrumbs, nav groups.
+ * Restyles Payload's persistent `.nav`, `.nav-group`, `.app-header`, and
+ * `.step-nav` with the tokens from `_tokens.scss` (see
+ * docs/TECH-0112/phases/phase-2-layout-shell.md).
+ *
+ * Payload's stock sidebar renders text-only nav links (no per-collection
+ * icons or document-count badges — see @payloadcms/next's DefaultNavClient)
+ * and has no built-in search/notifications/GitHub link. Those Figma elements
+ * are added as new components below (sidebar-brand, sidebar-profile-card,
+ * topbar-actions) rather than reconstructed in this stylesheet.
+ */
+
+// ---------------------------------------------------------------------------
+// Sidebar (`.nav`) — dark in both themes (Figma: Admin Panel Look, light 2:5 / dark 6:5)
+// ---------------------------------------------------------------------------
+.nav {
+  font-family: var(--admin-font-sans);
+
+  // Re-map Payload's elevation scale to its dark set so every element that
+  // reads --theme-elevation-*/--theme-text/--theme-bg inside the sidebar
+  // stays legible on a dark surface, regardless of the app-wide theme.
+  --theme-elevation-0: var(--color-base-900);
+  --theme-elevation-50: var(--color-base-850);
+  --theme-elevation-100: var(--color-base-800);
+  --theme-elevation-150: var(--color-base-750);
+  --theme-elevation-200: var(--color-base-700);
+  --theme-elevation-250: var(--color-base-650);
+  --theme-elevation-300: var(--color-base-600);
+  --theme-elevation-350: var(--color-base-550);
+  --theme-elevation-400: var(--color-base-450);
+  --theme-elevation-450: var(--color-base-400);
+  --theme-elevation-550: var(--color-base-350);
+  --theme-elevation-600: var(--color-base-300);
+  --theme-elevation-650: var(--color-base-250);
+  --theme-elevation-700: var(--color-base-200);
+  --theme-elevation-750: var(--color-base-150);
+  --theme-elevation-800: var(--color-base-100);
+  --theme-elevation-850: var(--color-base-50);
+  --theme-elevation-900: var(--color-base-0);
+  --theme-elevation-950: var(--color-base-0);
+  --theme-elevation-1000: var(--color-base-0);
+
+  --theme-bg: var(--sidebar-bg);
+  --theme-input-bg: var(--theme-elevation-50);
+  --theme-text: var(--theme-elevation-1000);
+
+  // `color` must be re-declared here (not just the custom properties above):
+  // descendants with no color of their own inherit the computed value from
+  // an ancestor outside `.nav`, which resolved --theme-text against the
+  // app-wide theme, not this remap.
+  background: var(--theme-bg);
+  color: var(--theme-text);
+  border-right-color: var(--sidebar-border, rgba(255, 255, 255, 0.08));
+
+  &__link {
+    border-radius: var(--radius-xs);
+    padding: 8px 12px;
+    margin-bottom: 2px;
+
+    &:hover {
+      background: var(--theme-elevation-100);
+    }
+
+    &.active {
+      background: var(--theme-elevation-100);
+    }
+  }
+
+  &__link-indicator {
+    background: var(--admin-color-primary);
+  }
+
+  &__link-label {
+    font-size: 0.875rem;
+  }
+
+  // Ensure the sidebar fits dynamic mobile viewports (100dvh) without overflowing
+  // beneath browser chrome or mobile toolbars.
+  height: 100vh;
+  height: 100dvh;
+
+  &__scroll {
+    // Provide sufficient bottom clearance for the logout row and mobile safe areas.
+    padding-bottom: max(calc(var(--base) * 3), env(safe-area-inset-bottom, 24px));
+  }
+
+  &__controls {
+    width: 100%;
+    align-self: stretch;
+    border-top: 1px solid var(--theme-elevation-100);
+    padding-top: 12px;
+    margin-top: 16px;
+  }
+
+  // Stock Payload renders `.nav__log-out` as a bare 20px SVG icon with no label
+  // and no touch dimensions. On mobile, this makes it nearly invisible, easily
+  // scrolled past or covered by chrome, and fails minimum touch target standards.
+  // Style it as a full-width clickable nav item with an explicit "Log out" text label.
+  &__log-out {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 40px;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    color: var(--theme-elevation-600);
+    font-family: var(--admin-font-sans);
+    font-size: 0.875rem;
+    font-weight: 300;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 150ms ease, color 150ms ease;
+
+    &::after {
+      content: 'Log out';
+      font-family: var(--admin-font-sans);
+      font-size: 0.875rem;
+      font-weight: 300;
+      color: inherit;
+    }
+
+    svg,
+    .icon--logout {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      stroke: currentColor;
+    }
+
+    &:hover,
+    &:focus-visible {
+      background: var(--theme-elevation-100);
+      color: var(--theme-elevation-1000);
+      text-decoration: none;
+    }
+  }
+
+  // Mobile layout enhancements (viewport ≤ 768px): ensure comfortable touch target
+  // (48px height), card-like button styling, and safe-area padding at bottom.
+  @media (max-width: 768px) {
+    &__controls {
+      padding-bottom: max(24px, env(safe-area-inset-bottom, 24px));
+    }
+
+    &__log-out {
+      min-height: 48px;
+      padding: 12px 14px;
+      background: var(--theme-elevation-50);
+      border: 1px solid var(--theme-elevation-100);
+      color: var(--theme-elevation-800);
+
+      &:hover,
+      &:active {
+        background: var(--theme-elevation-100);
+        color: var(--theme-elevation-1000);
+      }
+    }
+  }
+
+  // `.nav__header` (the sidebar close/toggle button) is `position: absolute`
+  // over the top of `.nav`, while `.nav__scroll` beneath it scrolls
+  // independently — Payload leaves it transparent, so scrolling the nav
+  // list slides links up underneath the button instead of behind an opaque
+  // bar. Give it the sidebar's own background so it masks scrolled content
+  // instead of overlapping it.
+  &__header {
+    background: var(--theme-bg);
+    border-bottom: 1px solid var(--theme-elevation-100);
+  }
+}
+
+.nav-group {
+  margin-bottom: 24px;
+
+  &__toggle {
+    // Was bold Poppins (600) — per request, anything that was rendering
+    // Poppins Bold switches to Baskerville instead of just going thin.
+    // Explicit `normal`: Baskerville only has one loaded weight (see its
+    // @font-face in _tokens.scss), so numeric weights like the global
+    // 200 ExtraLight default don't correspond to a real face here.
+    font-family: var(--admin-font-secondary);
+    font-size: 0.9375rem;
+    font-weight: normal;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    color: var(--admin-color-secondary);
+
+    // Payload's own rule is `justify-content: space-between` across the
+    // toggle's flex children. That's fine with the stock 2-child layout
+    // (label, indicator chevron) but this redesign's group icon
+    // (_nav-icons.scss `nav-icon()` mixin) adds a third child — a static
+    // `::before` pseudo-element — which then also takes part in the
+    // space-between distribution and shoves the label into the middle of
+    // the row instead of left-aligned next to its icon. Pin the icon/label
+    // to the start and push only the chevron to the end instead.
+    justify-content: flex-start;
+  }
+
+  &__indicator {
+    margin-left: auto;
+  }
+}
+
+// The active nav item renders as a non-link `<div>` with a `.nav__link-
+// indicator` bar (inactive items are plain `<a>`s without one) — Payload's
+// own `.nav__link:has(.nav__link-indicator)` rule bolds it to 600 Poppins,
+// the same "bold Poppins" pattern converted to Baskerville everywhere else
+// in this file, so it gets the same treatment here instead of just being
+// left as the one bold Poppins label in the whole sidebar.
+.nav__link:has(.nav__link-indicator) .nav__link-label {
+  font-family: var(--admin-font-secondary);
+  font-weight: normal;
+}
+
+// ---------------------------------------------------------------------------
+// Sidebar brand mark (new — `beforeNavLinks`, no equivalent slot exists in
+// the stock nav header) and profile card (new — `afterNavLinks`)
+//
+// Wordmark only (no diamond mark, no "Doha Oasis" text label), per request.
+// Always the white wordmark asset rather than swapping by `[data-theme]`:
+// `.nav` above remaps its own elevation scale to stay dark in both app
+// themes, so the sidebar surface itself never becomes light.
+// ---------------------------------------------------------------------------
+.admin-sidebar-brand {
+  display: flex;
+  align-items: center;
+  // `.nav__scroll`'s own `padding-top: 56px` (below) clears the absolutely
+  // positioned `.nav__header` toggle bar exactly at its border-bottom, so
+  // this brand mark started flush against that line with no gap of its own.
+  margin-top: 16px;
+  margin-bottom: 32px;
+
+  &__wordmark {
+    display: block;
+    height: 20px;
+    width: auto;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Login screen wordmark (`admin.components.graphics.Logo`, `common/
+// components/logo`'s `Logo` export — Payload's login-page-only logo slot).
+// Renders both the gold and white "Doha Oasis" wordmark SVGs and toggles
+// which is visible by theme, since the login page's own background is
+// dark/light per `[data-theme]` rather than a single fixed surface.
+// ---------------------------------------------------------------------------
+.admin-login-wordmark {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 24px;
+
+  img {
+    height: 28px;
+    width: auto;
+  }
+
+  &__white {
+    display: none;
+  }
+}
+
+[data-theme='dark'] .admin-login-wordmark__gold {
+  display: none;
+}
+
+[data-theme='dark'] .admin-login-wordmark__white {
+  display: block;
+}
+
+.admin-sidebar-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: var(--radius-sm);
+  background: var(--theme-elevation-50);
+
+  &__avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-full);
+    background: var(--admin-color-secondary);
+    color: var(--sidebar-bg, #1a1714);
+    font-family: var(--admin-font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  &__meta {
+    min-width: 0;
+  }
+
+  &__name {
+    font-size: 0.8125rem;
+    font-weight: 200;
+    color: var(--theme-elevation-1000);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__role {
+    font-size: 0.75rem;
+    color: var(--theme-elevation-450);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Main content background (`.template-default`/`.template-default__wrap`,
+// the scrollable column next to `.nav`) — both set `background-color:
+// var(--theme-bg)` in Payload's own compiled `templates/Default/index.scss`,
+// which resolves to Payload's plain white/near-black elevation-0, not the
+// warm-cream `--admin-bg` token Phase 1 defined. That token had never
+// actually been wired to anything until now. A flat near-white page made
+// Phase 5's glass blur (translucent surfaces over the page) barely
+// perceptible, so this reads as a subtle two-stop gradient between
+// `--admin-bg` and `--admin-bg-alt` instead of a flat tint — cards/tables
+// keep their own opaque `--theme-elevation-0` background (Phase 3), so only
+// the gaps/margins around them show it.
+// ---------------------------------------------------------------------------
+.template-default,
+.template-default__wrap {
+  background: linear-gradient(180deg, var(--admin-bg) 0%, var(--admin-bg-alt) 100%);
+}
+
+// ---------------------------------------------------------------------------
+// Topbar (`.app-header`) + breadcrumbs (`.step-nav`)
+// (Figma: Admin Panel Look, light 2:5 / dark 6:5)
+// ---------------------------------------------------------------------------
+.app-header {
+  font-family: var(--admin-font-sans);
+
+  &__account {
+    border-radius: var(--radius-full);
+    overflow: hidden;
+  }
+}
+
+.step-nav {
+  font-family: var(--admin-font-sans);
+
+  // Payload's own breadcrumb link is bold (600) Poppins — switched to
+  // Baskerville per the same "bold Poppins -> Baskerville" rule; the
+  // current (non-link) crumb stays Poppins/ExtraLight via the parent.
+  a {
+    font-family: var(--admin-font-secondary);
+    font-weight: normal;
+    border-radius: var(--radius-xs);
+  }
+
+  // `.step-nav__home` (the breadcrumb's home icon) is a fixed 18px/16px
+  // square box in Payload's own `elements/StepNav/index.scss`, but our
+  // brand mark (`common/components/logo.tsx`'s `LogoSM`) renders its `<svg>`
+  // at a fixed 26.75x22 — its real, wider-than-tall aspect ratio — so the
+  // right edge overflowed the square box and got clipped by it. A CSS
+  // `width`/`height` on the svg element beats its own presentational
+  // attributes with no `!important` needed, so this scales it down to fit
+  // the box (preserving its aspect ratio via the svg's own `viewBox`)
+  // without touching the shared component, which also renders unclipped
+  // at its native size inside the sidebar brand tile (`_components.scss`'s
+  // `.admin-sidebar-brand__mark`, a larger 32x32 box).
+  &__home svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Topbar actions (new — `admin.components.actions`, renders inside
+// `.app-header__actions`): decorative search trigger, notification bell,
+// GitHub link. Non-functional for now — see phase-2-layout-shell.md Results.
+// ---------------------------------------------------------------------------
+.admin-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  &__icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-full);
+    border: 0;
+    background: transparent;
+    color: var(--theme-elevation-450);
+    cursor: pointer;
+
+    &:hover {
+      background: var(--theme-elevation-100);
+      color: var(--theme-elevation-800);
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Document sidebar as a slide-in drawer (new — `admin.components.actions`,
+// `document-sidebar-toggle.tsx`, portaled into `.doc-controls__controls`
+// so it sits inline right after Publish, per explicit request, rather
+// than floating in the global topbar). Desktop only: on any document edit
+// view with a real Payload sidebar (`.document-fields--has-sidebar`,
+// present whenever a collection/global has an `admin.position: 'sidebar'`
+// field — e.g. Site Pages/Menu Pages), the sidebar starts hidden and
+// slides in from the right when the "..." toggle is clicked, instead of
+// sitting as a permanent 33%-width column. Reclaims the column's width
+// for the main form since the sidebar is now `position: fixed`, out of
+// flow.
+//
+// The `@media (max-width: 1024px)` below matches Payload's own
+// `$breakpoint-m-width` (`elements/DocumentFields/index.scss`'s
+// `mid-break`, the same width that layout already switches to
+// `display: block` at) and reverts every override back to Payload's stock
+// values, so mobile/tablet keeps the sidebar always visible, stacked below
+// the main form, exactly as before — untouched by this change.
+// ---------------------------------------------------------------------------
+.admin-doc-sidebar-toggle {
+  // Matches Payload's own adjacent `.doc-controls__dots` (Copy to
+  // locale/Create New/Delete menu) — same bordered-square treatment so
+  // the two sit consistently side by side in `.doc-controls__controls`.
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: calc(var(--base) * 1.6);
+  width: calc(var(--base) * 1.6);
+  border: 1px solid var(--theme-elevation-150);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--theme-elevation-450);
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--theme-elevation-400);
+    background: var(--theme-elevation-100);
+    color: var(--theme-elevation-800);
+  }
+
+  // Payload's own `mid-break` mixin (`@payloadcms/ui/scss/queries.scss`)
+  // isn't imported by any of our own files, so it's not in scope here —
+  // matches the exact 1024px value it wraps
+  // ($breakpoint-m-width, confirmed by reading that file) rather than
+  // depending on an import chain that doesn't exist yet.
+  @media (max-width: 1024px) {
+    display: none;
+  }
+
+  // Hidden while Live Preview is active — the sidebar already reverts to
+  // its stock in-flow presentation in that mode (see the
+  // `.collection-edit--is-live-previewing` rule below), so the toggle
+  // would have nothing left to do. `.collection-edit` (not
+  // `.collection-edit__main-wrapper`) is the shared ancestor here since
+  // this button now lives in `.doc-controls`, which sits outside
+  // `__main-wrapper` — confirmed via the real DOM, not assumed.
+  //
+  // `--is-live-previewing`, not `:has(.live-preview-window)`: that element
+  // stays mounted (`display: none`) even while closed, so `:has()` matched
+  // on every collection that merely *supports* live preview — see the full
+  // explanation on the matching rule below.
+  .collection-edit--is-live-previewing & {
+    display: none;
+  }
+}
+
+.document-fields--has-sidebar {
+  --main-width: 100%;
+  --main-border: none;
+  --main-field-margin: initial;
+  // Overrides Payload's 325px; only the drawer below reads it (mobile/live-preview reset min-width).
+  --doc-sidebar-width: 480px;
+
+  .document-fields__sidebar-wrap {
+    position: fixed;
+    // --doc-sidebar-drawer-top is measured at runtime (document-sidebar-
+    // toggle.tsx) from the real sticky header's bottom edge, which
+    // --doc-controls-height alone doesn't cover on collections whose
+    // fields use a `type: 'tabs'` field (that tab strip renders inside
+    // the same sticky header, taller than the Save/Publish row alone).
+    // Falls back to --doc-controls-height before the first measurement.
+    top: var(--doc-sidebar-drawer-top, var(--doc-controls-height));
+    right: 0;
+    height: calc(100vh - var(--doc-sidebar-drawer-top, var(--doc-controls-height)));
+    width: var(--doc-sidebar-width);
+    min-width: 0;
+    max-width: 90vw;
+    background: var(--theme-bg);
+    border-left: 1px solid var(--theme-elevation-150);
+    // Softer per request — was too obvious/heavy against the page.
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.06);
+    z-index: var(--z-modal);
+    transform: translateX(100%);
+    transition: transform 220ms ease;
+    // Fixed height (the viewport minus the sticky header) needs its own
+    // scroll for sidebars with more fields than fit — nothing scrolled it
+    // before, so long sidebars just overflowed past the viewport bottom.
+    overflow-y: auto;
+  }
+
+  &.document-fields--sidebar-open .document-fields__sidebar-wrap {
+    transform: translateX(0);
+  }
+
+  @media (max-width: 1024px) {
+    --main-width: initial;
+    --main-border: initial;
+    --main-field-margin: initial;
+
+    .document-fields__sidebar-wrap {
+      position: static;
+      top: initial;
+      right: initial;
+      height: initial;
+      width: 100%;
+      min-width: initial;
+      max-width: initial;
+      background: none;
+      border-left: 0;
+      box-shadow: none;
+      z-index: auto;
+      transform: none;
+      transition: none;
+      overflow-y: initial;
+    }
+  }
+}
+
+// Live Preview's iframe (`.live-preview-window`, a sibling of `.document-
+// fields` under their shared ancestor `.collection-edit` — confirmed by
+// reading the real DOM) painted over the fixed drawer regardless of
+// z-index — tried up to 999999 with no effect, so this is an iframe
+// compositing-layer quirk, not a stacking fight worth chasing further.
+// Reverts to Payload's stock in-flow sidebar whenever Live Preview is
+// actually open instead, the same way the mobile breakpoint above does —
+// a drawer overlaying the preview pane wouldn't make sense even if the
+// paint order were fixed.
+//
+// Keyed on `.collection-edit--is-live-previewing` (added by Payload only
+// once the Live Preview panel is actually toggled open), not
+// `:has(.live-preview-window)` — that element stays mounted (`display:
+// none`) even while closed, for every collection that merely *supports*
+// live preview, which wrongly matched on every Forms/Site Pages edit view
+// regardless of whether the panel was showing (confirmed via
+// getComputedStyle/className diffing before and after clicking the real
+// "Live Preview" toolbar button).
+.collection-edit--is-live-previewing .document-fields--has-sidebar {
+  --main-width: initial;
+  --main-border: initial;
+  --main-field-margin: initial;
+
+  .document-fields__sidebar-wrap {
+    position: static;
+    top: initial;
+    right: initial;
+    height: initial;
+    width: 100%;
+    min-width: initial;
+    max-width: initial;
+    background: none;
+    border-left: 0;
+    box-shadow: none;
+    z-index: auto;
+    transform: none;
+    transition: none;
+    overflow-y: initial;
+  }
+}
+
+// Payload defines a single global `--nav-width` (275px in `app.scss`) with
+// no built-in per-route variant, consumed by both `.nav` and `.template-default`'s
+// grid columns across list and edit views alike. On document-edit views,
+// this crowds the main tab content area (Content/Advanced/SEO) alongside the
+// fields; narrowing `--nav-width` specifically when `.collection-edit` is present
+// reclaims horizontal space for the document editor without shrinking list views.
+.template-default:has(.collection-edit) {
+  --nav-width: 240px;
+
+  @media (max-width: 768px) {
+    --nav-width: 100vw;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// TECH-0112 Phase 3 — Shared Components (Figma: Components Inventory, 2:230)
+//
+// Global lever first: Payload exposes its own corner-radius and font-family
+// scale as overridable custom properties (`--style-radius-{s,m,l}` consumed
+// by `.btn`/`.pill`/`.card`/form-input styles via a shared `formInput` mixin;
+// `--font-body`/`--font-mono` consumed almost everywhere text renders).
+// Remapping those once here reaches every real DOM element at once — the
+// same "map onto Payload's CSS variables" approach `Plan.md` calls for —
+// rather than repeating radius/font per selector below.
+// ---------------------------------------------------------------------------
+:root {
+  // Bumped up from the original --radius-xs/-sm remap (4px/6px) per explicit
+  // request for a more rounded look on inputs/cards — still the same named
+  // token scale from Phase 1, just mapped to bigger steps on it.
+  --style-radius-s: var(--radius-md); // buttons, pills, form inputs: 3px -> 8px
+  --style-radius-m: var(--radius-lg); // cards, popups: 4px -> 12px
+  --style-radius-l: var(--radius-md); // large surfaces: 8px (unchanged)
+  --font-body: var(--admin-font-sans);
+  --font-mono: var(--admin-font-mono);
+}
+
+// Poppins (--admin-font-sans/--font-body) renders ExtraLight (200) by
+// default, per explicit request. `input`/`textarea`/`select`/`button` are
+// listed alongside `body` because form controls don't inherit font
+// properties from ancestors by default in browsers — a body-level rule
+// alone wouldn't reach them. Elements that also declare their own
+// font-weight (buttons, headings, active states, etc.) override this and
+// are changed individually below, wherever they use Poppins specifically.
+body,
+input,
+textarea,
+select,
+button {
+  font-weight: 200;
+}
+
+// ---------------------------------------------------------------------------
+// Buttons (`.btn`) — Primary (Blue), Secondary (Outlined), Danger (Red),
+// Icon Button (Circle), 3 sizes (Small/Medium/Large already exist as
+// `.btn--size-{small,medium,large}` and only needed the radius/font remap
+// above).
+// ---------------------------------------------------------------------------
+.btn {
+  // Buttons specifically use Light (300) rather than the ExtraLight (200)
+  // baseline everything else on Poppins uses — 200 read as too thin for
+  // click affordance, per explicit follow-up.
+  font-weight: 300;
+
+  &--style-primary {
+    --bg-color: var(--admin-color-primary);
+    --color: var(--admin-color-primary-content);
+    --hover-bg: color-mix(in srgb, var(--admin-color-primary) 85%, black);
+    --hover-color: var(--color);
+  }
+
+  &--style-secondary {
+    --bg-color: var(--theme-elevation-0);
+    --color: var(--theme-elevation-600);
+    --box-shadow: inset 0 0 0 1px var(--theme-elevation-150);
+    --hover-color: var(--theme-elevation-800);
+    --hover-box-shadow: inset 0 0 0 1px var(--theme-elevation-250);
+  }
+
+  // Icon-only buttons (e.g. row-action "..." triggers) — Figma's circular
+  // bordered icon button.
+  &--icon-style-without-border,
+  &--icon-style-none {
+    .btn__icon {
+      border-radius: var(--radius-full);
+      background: var(--theme-elevation-50);
+      border: 1px solid var(--theme-elevation-150);
+    }
+
+    &:hover .btn__icon {
+      background: var(--theme-elevation-100);
+    }
+  }
+}
+
+// Payload has no dedicated "danger" button style (no `btn--style-danger` —
+// destructive confirmations render as `.btn--style-primary` inside
+// `.confirmation-modal__controls`, e.g. the Delete Document dialog). That's
+// the real DOM target for Figma's "Danger (Red)" showcase, using Payload's
+// own error scale rather than a fabricated hex.
+.confirmation-modal__controls .btn--style-primary {
+  --bg-color: var(--theme-error-500);
+  --hover-bg: var(--theme-error-600);
+  // Measured 4.46:1 against --theme-error-500 in dark mode — just under
+  // WCAG AA's 4.5 minimum, a pre-existing Phase 3 near-miss (not caused by
+  // this pass's color changes). Tried a fixed color here instead: every
+  // candidate on this fixed-hue background measured worse (cream 3.34:1,
+  // pure white 4.13:1, our own --admin-color-black 3.86:1 — only pure black
+  // cleared AA, at 5.08:1, and using literal black felt like the wrong fix
+  // for a one-line contrast nit). Left as var(--theme-elevation-0)
+  // (Payload's own adaptive convention) rather than regress it further;
+  // Phase 3's Results already flagged the error scale's exact color match
+  // as Phase 6 "Dark Mode Parity" territory, not this pass's to fix.
+  --color: var(--theme-elevation-0);
+}
+
+// ---------------------------------------------------------------------------
+// Form Controls — Text Input, Textarea, Select/Dropdown trigger already
+// inherit the radius/font remap above via Payload's shared `formInput` mixin.
+// Checkbox, Rich Text Toolbar, and File Upload Dropzone need their own rules.
+// ---------------------------------------------------------------------------
+.checkbox-input {
+  &__input {
+    border-radius: var(--radius-xs);
+  }
+
+  // Payload's Checkbox field has no toggle-switch variant to restyle into
+  // Figma's "Toggle Switch" example (tracked in open-items.md) — only the
+  // checkbox itself is themed here.
+  &--checked .checkbox-input__input {
+    background: color-mix(in srgb, var(--admin-color-primary) 12%, transparent);
+    border-color: var(--admin-color-primary);
+
+    // Same low-contrast issue as the doc-tabs active state below — primary
+    // green reads poorly against the dark background — secondary gold
+    // instead, per request.
+    [data-theme='dark'] & {
+      background: color-mix(in srgb, var(--admin-color-secondary) 12%, transparent);
+      border-color: var(--admin-color-secondary);
+    }
+  }
+
+  &--checked .checkbox-input__icon svg {
+    color: var(--admin-color-primary);
+
+    [data-theme='dark'] & {
+      color: var(--admin-color-secondary);
+    }
+  }
+}
+
+.fixed-toolbar {
+  border-radius: var(--radius-xs);
+  gap: 4px;
+}
+
+.toolbar-popup__button {
+  border-radius: 2px;
+
+  &:hover {
+    background: var(--theme-elevation-100);
+  }
+}
+
+.dropzone {
+  border-style: dashed;
+
+  &.dragging {
+    border-color: var(--admin-color-primary);
+    background: color-mix(in srgb, var(--admin-color-primary) 8%, transparent);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Data Display — Collection Card UI / Card Container Outline both render
+// through Payload's shared `.card` component; Status Badge Set / Table Row
+// status column through `.pill`; Pagination Controls through `.paginator`.
+// ---------------------------------------------------------------------------
+.card {
+  background: var(--theme-elevation-0);
+  border-color: var(--theme-elevation-150);
+
+  // Was bold Poppins (600 by Payload's own default) — per request,
+  // switched to Baskerville instead of thinning it out.
+  &__title {
+    font-family: var(--admin-font-secondary);
+    font-size: 0.875rem;
+    font-weight: normal;
+  }
+}
+
+.pill {
+  font-family: var(--admin-font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.paginator {
+  &__page {
+    border-radius: var(--radius-xs);
+
+    &--is-current {
+      background: var(--admin-color-primary);
+      color: var(--admin-color-primary-content);
+    }
+  }
+}
+
+.clickable-arrow {
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--theme-elevation-150);
+}
+
+// All bold (600) Poppins by Payload's own default, with no font-family
+// override of their own elsewhere in this file — switched to Baskerville
+// per the same "bold Poppins -> Baskerville" rule. `.doc-controls__value`
+// is the "Creating new Department" text in the doc header specifically
+// called out by request.
+.doc-controls__value,
+.status__value,
+.per-page__base-button,
+.per-page__button-active,
+.localizer-button button {
+  font-family: var(--admin-font-secondary);
+  font-weight: normal;
+}
+
+// ---------------------------------------------------------------------------
+// Feedback — Toast (success/error), Empty State Placeholder, Loading Spinner.
+// ---------------------------------------------------------------------------
+.payload-toast-item {
+  border-radius: var(--radius-xs);
+  font-family: var(--admin-font-sans);
+}
+
+.no-results {
+  border-radius: var(--radius-sm);
+  border-style: dashed;
+}
+
+.loading-overlay__text {
+  font-family: var(--admin-font-sans);
+  letter-spacing: 0.04em;
+}
+
+// ---------------------------------------------------------------------------
+// Layout Elements — Tab Bar (document-level `.doc-tab`, distinct from the
+// in-form Tabs field), Section Divider (`.group-field`'s own top border +
+// header, the closest real equivalent to a bare label-over-rule divider),
+// Card Container Outline (covered by `.card` above).
+// ---------------------------------------------------------------------------
+.doc-tabs__tabs {
+  gap: 16px;
+}
+
+// Payload renders both tab states bold (600) Poppins — switched to
+// Baskerville per the "bold Poppins -> Baskerville" rule, on both states so
+// the font-family doesn't jump when a tab becomes active.
+.doc-tab {
+  padding-bottom: 8px;
+  border-bottom: 2px solid transparent;
+  color: var(--theme-elevation-500);
+  font-family: var(--admin-font-secondary);
+  font-weight: normal;
+
+  &--active {
+    color: var(--admin-color-primary);
+    border-bottom-color: var(--admin-color-primary);
+    font-family: var(--admin-font-secondary);
+    font-weight: normal;
+
+    // The primary green is too close to the dark background to read as
+    // "selected" in dark mode (same low-contrast issue already fixed for
+    // primary buttons) — secondary gold instead, per request.
+    [data-theme='dark'] & {
+      color: var(--admin-color-secondary);
+      border-bottom-color: var(--admin-color-secondary);
+    }
+  }
+}
+
+.group-field {
+  border-top-color: var(--theme-elevation-100);
+  border-bottom-color: var(--theme-elevation-100);
+
+  // Was bold Poppins (600) — switched to Baskerville per the same rule.
+  &__title {
+    font-family: var(--admin-font-secondary);
+    font-weight: normal;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Typography scale — H2 (24px), Body Large (15px), Body Small (13px),
+// Code Mono (12px). Payload has no single universal heading/body element, so
+// each row maps to the real element that structurally plays that role.
+// ---------------------------------------------------------------------------
+.doc-header__title {
+  // The document title ("[Untitled]" on create views) — Baskerville per
+  // request, in place of the Noah brand-heading font used elsewhere.
+  font-family: var(--admin-font-secondary);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.field-description {
+  // Helper/description copy reads as regular body text, per request —
+  // explicit here (rather than relying on the global --font-body
+  // inheritance) since it sits right next to .field-label's deliberately
+  // different font, making the pairing an intentional choice, not a
+  // default.
+  font-family: var(--admin-font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+// Dashboard section headings ("Common", "Admin", "Link Shortener", ...) —
+// Poppins is body/UI text only; these are headings, so the brand display
+// font (Noah) instead. Noah-Regular is its own font-family (not a weight
+// variant), so explicit `normal` avoids inheriting a numeric Poppins weight.
+.dashboard__label {
+  font-family: var(--admin-font-primary);
+  font-weight: normal;
+}
+
+.field-label {
+  // Secondary/editorial voice on every field label, distinct from the
+  // --admin-font-primary headings and the --admin-font-sans workhorse text
+  // everywhere else (including this field's own helper text, right above).
+  font-family: var(--admin-font-secondary);
+  font-size: 1rem;
+
+  // The locale suffix Payload appends to every localized field's label
+  // ("— English", "— Arabic", ...) — scoped to `.localized` specifically
+  // so only that suffix switches to Poppins Light, not the label text
+  // itself (which stays Baskerville above). Payload already renders it in
+  // Poppins by its own default (`--font-body`); only the weight changes.
+  .localized {
+    font-weight: 300;
+  }
+}
+
+code,
+pre,
+.rs__input {
+  font-family: var(--admin-font-mono);
+  font-size: 0.75rem;
+}
+
+// ---------------------------------------------------------------------------
+// TECH-0112 Phase 4 — Field Types (Figma: Field Types Inventory, 11:4)
+//
+// Text & Content (Text, Textarea, Rich Text, Email, Code, JSON), Number &
+// Data (Number, Point, Date), Upload/Upload-with-preview: no rule needed
+// here. `.field-type.{text,textarea,email,number}`, `.point`, `.code-editor`
+// (shared by Code + JSON), `.rich-text-lexical`'s toolbar, the DatePicker's
+// text input, and `.upload-field-card` all consume Payload's `formInput`
+// mixin (`var(--style-radius-s)`/`var(--font-body)`), which Phase 3's global
+// remap above already reaches — confirmed by grepping each field's compiled
+// `.scss` in `node_modules/@payloadcms/{ui,richtext-lexical}` rather than
+// guessing. Only the gaps that mixin doesn't cover are below.
+// ---------------------------------------------------------------------------
+
+// Collapsible — and, through it, every Array/Blocks row, since both render
+// their rows via this same shared element (`elements/Collapsible/index.scss`).
+// Unlike the buttons/cards/inputs above, this one bakes Payload's radius in
+// as a Sass variable (`$style-radius-m`, default 4px) at Payload's own build
+// time, not the `--style-radius-m` custom property Phase 3 remapped on
+// `:root` — that remap never reaches it. Overridden directly here instead.
+.collapsible {
+  // Matches the card radius (--style-radius-m -> --radius-lg) rather than
+  // its own separate value — an Array/Blocks row reads as a card-like
+  // surface and would look inconsistently under-rounded next to Phase 3's
+  // `.card` otherwise, now that both got bumped for a more rounded look.
+  border-radius: var(--radius-lg);
+
+  &__toggle-wrap,
+  &__toggle {
+    border-top-left-radius: var(--radius-lg);
+    border-top-right-radius: var(--radius-lg);
+  }
+
+  &--collapsed .collapsible__toggle-wrap {
+    border-bottom-left-radius: var(--radius-lg);
+    border-bottom-right-radius: var(--radius-lg);
+  }
+
+  &__content {
+    border-bottom-left-radius: var(--radius-lg);
+    border-bottom-right-radius: var(--radius-lg);
+  }
+}
+
+// Blocks — block-picker drawer grid (Array shares the Collapsible fix above
+// and needs nothing further).
+.blocks-drawer {
+  &__default-image {
+    border-radius: var(--radius-xs);
+  }
+}
+
+// Tabs (in-form `type: 'tabs'` field, distinct from the document-level
+// `.doc-tab` Phase 3 already themed) — active-tab underline re-colored to
+// the accent blue for the same "selected" language as Phase 3's doc-tabs,
+// checkbox, and paginator.
+.tabs-field__tab-button {
+  &:after {
+    background: var(--admin-color-primary);
+  }
+
+  &--active {
+    color: var(--admin-color-primary);
+
+    // The primary green is too close to the dark background to read as
+    // "selected" in dark mode (same low-contrast issue already fixed for
+    // primary buttons) — secondary gold instead, per request.
+    [data-theme='dark'] & {
+      color: var(--admin-color-secondary);
+    }
+  }
+
+  [data-theme='dark'] &:after {
+    background: var(--admin-color-secondary);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Selection — Select (single/multi) and Relationship (single/has-many) both
+// render through the shared React Select component
+// (`elements/ReactSelect/index.scss`); its control already inherits the
+// radius/font remap via `formInput`, but the popup menu hardcodes
+// `border-radius: 0` and the "selected option" state uses a plain elevation
+// tint rather than the accent color used everywhere else a selection is
+// marked (checkbox, tabs, paginator).
+// ---------------------------------------------------------------------------
+.rs__menu {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.rs__option--is-selected {
+  background-color: color-mix(in srgb, var(--admin-color-primary) 16%, transparent);
+  color: var(--theme-elevation-800);
+}
+
+// Radio Group — Payload's own RadioGroup field, styled to match the blue
+// selected-state Phase 3 gave the Checkbox field, rather than the stock
+// elevation-800 fill.
+.radio-input {
+  &--is-selected .radio-input__styled-radio {
+    border-color: var(--admin-color-primary);
+
+    &:before {
+      background-color: var(--admin-color-primary);
+      opacity: 1;
+    }
+
+    // Same low-contrast issue as the Checkbox field above — primary green
+    // reads poorly against the dark background — secondary gold instead,
+    // per request.
+    [data-theme='dark'] & {
+      border-color: var(--admin-color-secondary);
+
+      &:before {
+        background-color: var(--admin-color-secondary);
+      }
+    }
+  }
+}
+
+// Payload has no distinct "Checkbox Group" field type — every boolean field
+// (grouped or not) renders through the single Checkbox component Phase 3
+// already themed (`.checkbox-input--checked`). Nothing further to add here;
+// see phase-4-field-types.md's Results for this as a deviation from the
+// Figma inventory, same reasoning as the Toggle Switch item in
+// open-items.md.
+
+// ---------------------------------------------------------------------------
+// Number & Data — Date's calendar popup (`elements/DatePicker/index.scss`)
+// hardcodes `border-radius: 0` throughout and marks the selected day with a
+// plain elevation tint, same gap pattern as the Select/Relationship menu
+// above.
+// ---------------------------------------------------------------------------
+.react-datepicker {
+  border-radius: var(--radius-sm);
+
+  &__header {
+    border-top-left-radius: var(--radius-sm);
+    border-top-right-radius: var(--radius-sm);
+  }
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected,
+.react-datepicker__day--in-selecting-range,
+.react-datepicker__day--in-range {
+  background-color: var(--admin-color-primary);
+  color: var(--admin-color-primary-content);
+  border-radius: var(--radius-xs);
+}
+
+// ---------------------------------------------------------------------------
+// Media & Special — Join (read-only) renders Payload's own list-view Table
+// component (already themed generically via `.table`/`.pill` in Phase 3)
+// inside the field; wrapped here in the same card treatment as Data
+// Display's Collection Card so it doesn't float bare against the page. UI
+// Custom Field (`.field-type.ui`) is intentionally left as a pass-through:
+// every `type: 'ui'` field in this app (slug preview, QR button, dashboard
+// tables, etc.) renders its own component and owns its own styling — see
+// `src/common/components/slug` and the `generate_qr_button`/
+// `frontend_url_preview` fields across `src/collections/**`.
+// ---------------------------------------------------------------------------
+.field-type.join {
+  padding: var(--base);
+  border: 1px solid var(--theme-elevation-150);
+  border-radius: var(--radius-sm);
+  background: var(--theme-elevation-0);
+}

@@ -1,0 +1,460 @@
+
+@urlBase = {{$dotenv BASE_URL}}
+@payloadItem = careers-printemps
+@apiKey = {{$dotenv API_TOKEN}}
+@url = {{urlBase}}/{{payloadItem}}
+
+
+### FETCH
+GET {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+
+###POST1
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "title": "Marketing Coordinator",
+    "description": "Assist in the development and execution of marketing strategies to promote our brand and products.",
+    "department": 2,
+    "work_type": 1,
+    "responsibilities": [
+        {
+            "title": "Coordinate marketing campaigns",
+            "sub_title": "Across multiple channels"
+        },
+        {
+            "title": "Monitor campaign performance",
+            "sub_title": null
+        },
+        {
+            "title": "Collaborate with creative team",
+            "sub_title": "To develop content"
+        }
+    ],
+    "qualifications": [
+        {
+            "title": "Bachelor's degree in Marketing",
+            "sub_title": null
+        },
+        {
+            "title": "1-2 years of experience in marketing",
+            "sub_title": null
+        }
+    ],
+    "questions": [
+        {
+            "careers_questions": 1
+        },
+        {
+            "careers_questions": 2
+        }
+    ]
+}
+
+###POST2
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "title": "Software Engineer",
+    "description": "Develop, test, and maintain software applications that meet the needs of our clients.",
+    "department": 5,
+    "work_type": 3,
+    "responsibilities": [
+        {
+            "title": "Write clean, scalable code",
+            "sub_title": "Following best practices"
+        },
+        {
+            "title": "Participate in code reviews",
+            "sub_title": null
+        },
+        {
+            "title": "Collaborate with cross-functional teams",
+            "sub_title": "To define and ship new features"
+        }
+    ],
+    "qualifications": [
+        {
+            "title": "Bachelor's degree in Computer Science",
+            "sub_title": null
+        },
+        {
+            "title": "2+ years of software development experience",
+            "sub_title": null
+        }
+    ],
+    "questions": [
+        {
+            "careers_questions": 2
+        },
+        {
+            "careers_questions": 3
+        }
+    ]
+}
+
+
+###POST3
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "title": "Graphic Designer",
+    "description": "Create visually appealing designs for digital and print media, ensuring brand consistency.",
+    "department": 7,
+    "work_type": 1,
+    "responsibilities": [
+        {
+            "title": "Design marketing materials",
+            "sub_title": "For both print and digital platforms"
+        },
+        {
+            "title": "Collaborate with the marketing team",
+            "sub_title": "To create cohesive campaigns"
+        },
+        {
+            "title": "Manage multiple projects",
+            "sub_title": "Ensuring timely delivery"
+        }
+    ],
+    "qualifications": [
+        {
+            "title": "Bachelor's degree in Graphic Design",
+            "sub_title": null
+        },
+        {
+            "title": "Proficiency in Adobe Creative Suite",
+            "sub_title": null
+        }
+    ],
+    "questions": [
+        {
+            "careers_questions": 1
+        },
+        {
+            "careers_questions": 3
+        }
+    ]
+}
+
+
+###POST4
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "title": "HR Specialist",
+    "description": "Support the HR department in managing recruitment, employee relations, and benefits administration.",
+    "department": 9,
+    "work_type": 4,
+    "responsibilities": [
+        {
+            "title": "Manage the recruitment process",
+            "sub_title": "From job posting to onboarding"
+        },
+        {
+            "title": "Handle employee inquiries",
+            "sub_title": "Regarding policies and benefits"
+        },
+        {
+            "title": "Maintain employee records",
+            "sub_title": "In accordance with company policies"
+        }
+    ],
+    "qualifications": [
+        {
+            "title": "Bachelor's degree in Human Resources",
+            "sub_title": null
+        },
+        {
+            "title": "1-3 years of experience in HR",
+            "sub_title": null
+        }
+    ],
+    "questions": [
+        {
+            "careers_questions": 2
+        },
+        {
+            "careers_questions": 3
+        }
+    ]
+}
+
+
+###POST5
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "title": "Sales Manager",
+    "description": "Lead the sales team to achieve revenue targets by developing and executing effective sales strategies.",
+    "department": 4,
+    "work_type": 2,
+    "responsibilities": [
+        {
+            "title": "Develop sales strategies",
+            "sub_title": "To achieve company targets"
+        },
+        {
+            "title": "Manage and mentor sales team",
+            "sub_title": "To drive performance"
+        },
+        {
+            "title": "Analyze market trends",
+            "sub_title": "And adjust strategies accordingly"
+        }
+    ],
+    "qualifications": [
+        {
+            "title": "Bachelor's degree in Business Administration",
+            "sub_title": null
+        },
+        {
+            "title": "5+ years of sales experience",
+            "sub_title": "With at least 2 years in a managerial role"
+        }
+    ],
+    "questions": [
+        {
+            "careers_questions": 1
+        },
+        {
+            "careers_questions": 3
+        }
+    ]
+}
+
+
+###POST6
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "title": "Product Manager",
+    "description": "Oversee the development and lifecycle of our products, ensuring they meet market needs and company goals.",
+    "department": 10,
+    "work_type": 3,
+    "responsibilities": [
+        {
+            "title": "Define product vision",
+            "sub_title": "And strategy"
+        },
+        {
+            "title": "Lead cross-functional teams",
+            "sub_title": "To deliver product milestones"
+        },
+        {
+            "title": "Analyze market trends",
+            "sub_title": "And customer feedback"
+        }
+    ],
+    "qualifications": [
+        {
+            "title": "Bachelor's degree in a related field",
+            "sub_title": null
+        },
+        {
+            "title": "3-5 years of experience in product management",
+            "sub_title": "In a relevant industry"
+        }
+    ],
+    "questions": [
+        {
+            "careers_questions": 2
+        },
+        {
+            "careers_questions": 1
+        }
+    ]
+}
+
+
+###POST7
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "title": "Operations Coordinator",
+    "description": "Support the operations team in streamlining processes and ensuring efficient workflow across departments.",
+    "department": 12,
+    "work_type": 4,
+    "responsibilities": [
+        {
+            "title": "Coordinate daily operations",
+            "sub_title": "Ensuring all departments are aligned"
+        },
+        {
+            "title": "Monitor and improve processes",
+            "sub_title": "For efficiency and effectiveness"
+        },
+        {
+            "title": "Manage communication between teams",
+            "sub_title": "To ensure smooth operations"
+        }
+    ],
+    "qualifications": [
+        {
+            "title": "Bachelor's degree in Operations Management",
+            "sub_title": null
+        },
+        {
+            "title": "2+ years of experience in an operational role",
+            "sub_title": null
+        }
+    ],
+    "questions": [
+        {
+            "careers_questions": 3
+        },
+        {
+            "careers_questions": 2
+        }
+    ]
+}
+
+
+###POST8
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "title": "Data Analyst",
+    "description": "Analyze and interpret complex data to provide insights that drive business decisions.",
+    "department": 13,
+    "work_type": 1,
+    "responsibilities": [
+        {
+            "title": "Collect and analyze data",
+            "sub_title": "From various sources"
+        },
+        {
+            "title": "Develop reports and dashboards",
+            "sub_title": "To present findings"
+        },
+        {
+            "title": "Work with stakeholders",
+            "sub_title": "To understand data needs"
+        }
+    ],
+    "qualifications": [
+        {
+            "title": "Bachelor's degree in Data Science or related field",
+            "sub_title": null
+        },
+        {
+            "title": "Proficiency in data analysis tools",
+            "sub_title": "Such as SQL, Python, or R"
+        }
+    ],
+    "questions": [
+        {
+            "careers_questions": 1
+        },
+        {
+            "careers_questions": 3
+        }
+    ]
+}
+
+
+###POST9
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "title": "Content Writer",
+    "description": "Create compelling and engaging content for our website, blog, and marketing materials.",
+    "department": 14,
+    "work_type": 2,
+    "responsibilities": [
+        {
+            "title": "Write and edit content",
+            "sub_title": "For various platforms"
+        },
+        {
+            "title": "Collaborate with marketing team",
+            "sub_title": "To align content with strategy"
+        },
+        {
+            "title": "Research industry topics",
+            "sub_title": "To ensure accuracy and relevance"
+        }
+    ],
+    "qualifications": [
+        {
+            "title": "Bachelor's degree in English, Communications, or related field",
+            "sub_title": null
+        },
+        {
+            "title": "Experience in content writing",
+            "sub_title": "Preferably in a corporate setting"
+        }
+    ],
+    "questions": [
+        {
+            "careers_questions": 2
+        },
+        {
+            "careers_questions": 3
+        }
+    ]
+}
+
+
+###POST10
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "title": "Customer Support Representative",
+    "description": "Provide exceptional support to our customers, resolving inquiries and issues efficiently.",
+    "department": 11,
+    "work_type": 4,
+    "responsibilities": [
+        {
+            "title": "Respond to customer inquiries",
+            "sub_title": "Via phone, email, and chat"
+        },
+        {
+            "title": "Resolve customer issues",
+            "sub_title": "In a timely and effective manner"
+        },
+        {
+            "title": "Document customer interactions",
+            "sub_title": "For future reference"
+        }
+    ],
+    "qualifications": [
+        {
+            "title": "High school diploma or equivalent",
+            "sub_title": null
+        },
+        {
+            "title": "Experience in customer service",
+            "sub_title": "Preferably in a call center environment"
+        }
+    ],
+    "questions": [
+        {
+            "careers_questions": 3
+        },
+        {
+            "careers_questions": 1
+        }
+    ]
+}

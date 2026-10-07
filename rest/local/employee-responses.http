@@ -1,0 +1,57 @@
+@urlBase = http://localhost:3005/payload
+@urlResponses = {{urlBase}}/api/employee-responses
+@urlResponsesPadel = {{urlBase}}/api/employee-responses-padel
+@apiKey = f740ed71-817f-4958-928b-b5525c6396ab
+
+### GET
+GET {{urlResponses}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+### ADD WITHOUT COMMENT NEW
+POST {{urlResponses}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+  "anonymous_id": "2b94c9af-18f7-4398-ac40-487f27b57665",
+  "department": "DO Centralized IT",
+  "department_sub": "IT Support",
+  "questions": [
+    { "question": 1, "response": "strongly-agree" },
+    { "question": 2, "response": "agree" },
+    { "question": 3, "response": "i-do-not-know" },
+    { "question": 4, "response": "disagree" },
+    { "question": 5, "response": "strongly-disagree" },
+    { "question": 6, "response": "i-do-not-know" },
+    { "question": 7, "response": "strongly-disagree" },
+    { "question": 8, "response": "strongly-disagree" },
+    { "question": 9, "response": "strongly-disagree" },
+    { "question": 10, "response": "strongly-disagree" },
+    { "question": 11, "response": "strongly-agree" },
+    { "question": 12, "response": "i-do-not-know" },
+    { "question": 13, "response": "strongly-disagree" },
+    { "question": 14, "response": "i-do-not-know" },
+    { "question": 15, "response": "strongly-disagree" },
+    { "question": 16, "response": "strongly-disagree" },
+    { "question": 17, "response": "agree" },
+    { "question": 18, "response": "disagree" },
+    { "question": 19, "response": "strongly-disagree" },
+    { "question": 20, "response": "strongly-disagree" }
+  ]
+}
+
+### ADD WITHOUT COMMENT NEW PADEL
+POST {{urlResponses}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+  "anonymous_id": "7894111145",
+  "department": "DO Centralized IT",
+  "department_sub": "IT Support",
+  "questions": [
+    { "question": 1, "response": "strongly-agree" },
+    { "question": 2, "response": "agree" }
+  ]
+}

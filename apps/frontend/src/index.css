@@ -1,0 +1,117 @@
+@font-face {
+  font-family: "Gilroy-Light";
+  src: local("Gilroy-Light"), url(./fonts/Gilroy-Light.otf) format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gilroy-ExtraBold";
+  src: local("Gilroy-ExtraBold"),
+    url(./fonts/Gilroy-ExtraBold.otf) format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noah-Bold";
+  src: local("Noah-Bold"), url(./fonts/Noah-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Noah-Regular";
+  src: local("Noah-Regular"), url(./fonts/Noah-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Noah-RegularItalic";
+  src: local("Noah-RegularItalic"),
+    url(./fonts/Noah-RegularItalic.ttf) format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Baskerville";
+  src: local("Baskerville"), url(./fonts/Baskerville.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Baskerville-Italic";
+  src: local("Baskerville-Italic"), url(./fonts/Baskerville-Italic.ttf) format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@200;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap");
+@media (inverted-colors: inverted) {
+  body {
+    background-color: #ffffff;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff !important;
+}
+
+#root {
+  margin: 0 auto;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 bg-opacity-[0.5];
+  @apply rounded-lg;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 bg-opacity-100; /* Hover state color */
+}
+
+/* Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.swiper > .swiper-button-prev,
+.swiper-button-next {
+  @apply text-primary !important;
+}
+
+.swiper .swiper-pagination-bullet-active {
+  @apply bg-primary;
+}

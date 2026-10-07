@@ -1,0 +1,27 @@
+{
+  "anonymous_id": "9999",
+  "department": "DO Centralized IT",
+  "department_sub": "IT Support",
+  "questions": [
+    { "question": 1, "response": "very-high" },
+    { "question": 2, "response": "high" },
+    { "question": 3, "response": "neutral" },
+    { "question": 4, "response": "low" },
+    { "question": 5, "response": "very-low" },
+    { "question": 6, "response": "neutral" },
+    { "question": 7, "response": "very-low" },
+    { "question": 8, "response": "very-low" },
+    { "question": 9, "response": "very-low" },
+    { "question": 10, "response": "very-low" },
+    { "question": 11, "response": "very-high" },
+    { "question": 12, "response": "neutral" },
+    { "question": 13, "response": "very-low" },
+    { "question": 14, "response": "neutral" },
+    { "question": 15, "response": "very-low" },
+    { "question": 16, "response": "very-low" },
+    { "question": 17, "response": "high" },
+    { "question": 18, "response": "low" },
+    { "question": 19, "response": "very-low" },
+    { "question": 20, "response": "very-low" }
+  ]
+}

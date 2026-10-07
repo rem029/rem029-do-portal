@@ -1,0 +1,37 @@
+{
+  "name": "do-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/file-saver": "^2.0.7",
+    "@types/jsonwebtoken": "^9.0.10",
+    "concurrently": "^8.2.2"
+  },
+  "scripts": {
+    "install:deps": "bash install_deps.sh",
+    "build:backend-admin": "cd apps/backend-admin && yarn build",
+    "build:frontend": "cd apps/frontend && yarn build",
+    "dev:backend-admin": "cd apps/backend-admin && yarn dev",
+    "dev:frontend": "cd apps/frontend && yarn dev",
+    "dev": "concurrently -n backend-emp,backend,frontend \"yarn dev:backend-admin\" \"yarn dev:frontend\"",
+    "migrate:latest": "cd apps/backend && yarn migrate:latest",
+    "migrate:revert": "cd apps/backend && yarn migrate:revert",
+    "push:production": "bash scripts/common/git-push-production.sh",
+    "db:restore": "bash scripts/common/db-restore.sh",
+    "push:production:win": "git checkout production && git pull origin dev && git push origin production && git checkout dev",
+    "start:backend": "cd apps/backend && yarn start",
+    "start:pm2:github-webhook": "cd apps/github-webhook && yarn start:pm2",
+    "start:production:private": "bash scripts/common/init-app.sh production survey_do",
+    "start:production:public": "bash scripts/common/init-app.sh production survey_do --with-v3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parse": "^5.6.0",
+    "file-saver": "^2.0.5",
+    "qrcode": "^1.5.4",
+    "sharp": "^0.34.2"
+  }
+}

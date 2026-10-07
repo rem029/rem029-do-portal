@@ -1,0 +1,234 @@
+
+@urlBase = {{$dotenv BASE_URL}}
+@payloadItem = kpi-plans-item
+@apiKey = {{$dotenv API_TOKEN}}
+@url = {{urlBase}}/{{payloadItem}}
+
+###POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Improve team collaboration by 20% by Q3 (TEST)",
+    "description": "Improve team collaboration by 20% by Q3 (TEST)",
+    "department": 3,
+    "status": 1,
+    "start_date": "2024-07-01T12:00:00.000Z",
+    "end_date": "2024-09-30T12:00:00.000Z",
+    "weight": 15,
+    "_status": "published"
+}
+###POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Launch new product line by Q2 2024 (TEST)",
+    "description": "Launch new product line by Q2 2024 (TEST)",
+    "department": 2,
+    "status": 1,
+    "start_date": "2024-04-01T12:00:00.000Z",
+    "end_date": "2024-06-30T12:00:00.000Z",
+    "weight": 20,
+    "_status": "published"
+}
+###POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Increase customer retention rate by 15% (TEST)",
+    "description": "Increase customer retention rate by 15% (TEST)",
+    "department": 5,
+    "status": 1,
+    "start_date": "2024-08-01T12:00:00.000Z",
+    "end_date": "2024-12-31T12:00:00.000Z",
+    "weight": 10,
+    "_status": "published"
+}
+###POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Reduce operational costs by 10% in Q1 (TEST)",
+    "description": "Reduce operational costs by 10% in Q1 (TEST)",
+    "department": 4,
+    "status": 2,
+    "start_date": "2024-01-01T12:00:00.000Z",
+    "end_date": "2024-03-31T12:00:00.000Z",
+    "weight": 25,
+    "_status": "published"
+}
+###POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Enhance IT infrastructure by Q4 2024 (TEST)",
+    "description": "Enhance IT infrastructure by Q4 2024 (TEST)",
+    "department": 5,
+    "status": 1,
+    "start_date": "2024-10-01T12:00:00.000Z",
+    "end_date": "2024-12-31T12:00:00.000Z",
+    "weight": 30,
+    "_status": "published"
+}
+###POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Achieve 100% on-time project delivery (TEST)",
+    "description": "Achieve 100% on-time project delivery (TEST)",
+    "department": 6,
+    "status": 1,
+    "start_date": "2024-05-01T12:00:00.000Z",
+    "end_date": "2024-06-30T12:00:00.000Z",
+    "weight": 10,
+    "_status": "published"
+}
+###POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Improve employee satisfaction by 10% (TEST)",
+    "description": "Improve employee satisfaction by 10% (TEST)",
+    "department": 3,
+    "status": 2,
+    "start_date": "2024-03-01T12:00:00.000Z",
+    "end_date": "2024-05-31T12:00:00.000Z",
+    "weight": 5,
+    "_status": "published"
+}
+###POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Increase market share by 5% in Q2 (TEST)",
+    "description": "Increase market share by 5% in Q2 (TEST)",
+    "department": 2,
+    "status": 1,
+    "start_date": "2024-04-01T12:00:00.000Z",
+    "end_date": "2024-06-30T12:00:00.000Z",
+    "weight": 20,
+    "_status": "published"
+}
+###POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Implement new training program by Q3 (TEST)",
+    "description": "Implement new training program by Q3 (TEST)",
+    "department": 5,
+    "status": 1,
+    "start_date": "2024-07-01T12:00:00.000Z",
+    "end_date": "2024-09-30T12:00:00.000Z",
+    "weight": 10,
+    "_status": "published"
+}
+###POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Reduce production downtime by 8% by Q2 (TEST)",
+    "description": "Reduce production downtime by 8% by Q2 (TEST)",
+    "department": 5,
+    "status": 1,
+    "start_date": "2024-04-01T12:00:00.000Z",
+    "end_date": "2024-06-30T12:00:00.000Z",
+    "weight": 15,
+    "_status": "published"
+}
+###POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Launch new customer service platform (TEST)",
+    "description": "Launch new customer service platform (TEST)",
+    "department": 4,
+    "status": 2,
+    "start_date": "2024-09-01T12:00:00.000Z",
+    "end_date": "2024-12-31T12:00:00.000Z",
+    "weight": 25,
+    "_status": "published"
+}
+###POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Increase social media engagement by 10% (TEST)",
+    "description": "Increase social media engagement by 10% (TEST)",
+    "department": 2,
+    "status": 1,
+    "start_date": "2024-06-01T12:00:00.000Z",
+    "end_date": "2024-08-31T12:00:00.000Z",
+    "weight": 20,
+    "_status": "published"
+}
+###POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Achieve ISO certification by Q4 2024 (TEST)",
+    "description": "Achieve ISO certification by Q4 2024 (TEST)",
+    "department": 5,
+    "status": 1,
+    "start_date": "2024-09-01T12:00:00.000Z",
+    "end_date": "2024-12-31T12:00:00.000Z",
+    "weight": 30,
+    "_status": "published"
+}
+
+###POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Develop new mobile app feature by Q3 (TEST)",
+    "description": "Develop new mobile app feature by Q3 (TEST)",
+    "department": 6,
+    "status": 1,
+    "start_date": "2024-07-01T12:00:00.000Z",
+    "end_date": "2024-09-30T12:00:00.000Z",
+    "weight": 10,
+    "_status": "published"
+}
+
+###POST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "name": "Expand IT security measures by Q2 2024 (TEST)",
+    "description": "Expand IT security measures by Q2 2024 (TEST)",
+    "department": 5,
+    "status": 2,
+    "start_date": "2024-04-01T12:00:00.000Z",
+    "end_date": "2024-06-30T12:00:00.000Z",
+    "weight": 15,
+    "_status": "published"
+}
+

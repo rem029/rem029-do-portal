@@ -1,0 +1,47 @@
+@urlBase = http://localhost:3005
+@url = {{urlBase}}/payload/api/ai/chat
+
+
+###
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key 19000dfc-38a1-45dd-ac72-adb8f0295efe
+
+{
+    "content": "Summary of SOP please"
+}
+
+###
+POST {{url}}
+Content-Type: application/json
+
+{
+    "content": "what are the key points?",
+    "threadId": "thread_57yo1BdTdyDjGFGk36M9mm8b"
+}
+
+###
+POST {{url}}
+Content-Type: application/json
+
+{
+    "content": "",
+    "threadId": "thread_JVHvJ1IDliVzRJMLrnYJGmUv"
+}
+
+###
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key 19000dfc-38a1-45dd-ac72-adb8f0295efe
+{
+    "content": "what are the key points?"
+}
+
+
+###
+POST {{url}}
+Content-Type: application/json
+
+{
+    "content": "do you have any attached files?"   
+}

@@ -1,0 +1,182 @@
+@urlBase = http://localhost:3005
+@url = {{urlBase}}/payload/api/items
+@apiKey = {{survey-do api-token-dev}}
+
+### ADD NOTE
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+  "name": "dohaquest-laser-oasis-waiver-note",
+  "description": "Notes",
+  "items": [
+    {
+      "data": {
+        "bold": false
+      },
+      "values": [
+        {
+          "key": "en",
+          "value": "All Players must sign a waiver in order to participate in this attraction."
+        },
+
+        {
+          "key": "ar",
+          "value": "يجب على جميع اللاعبين التوقيع على التنازل من أجل المشاركة في هذا النشاط."
+        }
+      ]
+    },
+    {
+      "data": {
+        "bold": true
+      },
+
+      "values": [
+        {
+          "key": "en",
+          "value": "PLEASE HANDLE ALL EQUIPMENT WITH CARE, DO NOT USE EQUIPMENT (VEST, GUN ETC.) UNTIL INSTRUCTED TO DO SO BY ATTRACTION ATTENDANT.\nEQUIPMENT MUST BE USED IN ARENA ONLY"
+        },
+        {
+          "key": "ar",
+          "value": "يرجى التعامل مع جميع المعدات بعناية ، ولا تستخدم المعدات (سترة ، بندقية ، إلخ) حتى يُطلب منك القيام بذلك من قبل الموظف المسؤول  علي النشاط. يجب استخدام المعدات في الحلبة فقط."
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2024-06-24T11:24:24.354Z",
+  "createdAt": "2024-06-23T13:20:37.451Z"
+}
+
+### ADD CHECKLIST
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+  "name": "dohaquest-laser-oasis-waiver-terms",
+  "description": "Terms",
+  "items": [
+    {
+        "data": null,
+      "values": [
+        {
+          "key": "en",
+          "value": "I agree for myself and/or the child(ren) to participate in Laser Oasis in Doha Oasis QUEST."
+        },
+        {
+          "key": "ar",
+          "value": "أوافق على نفسي و / أو الطفل (الأطفال) للمشاركة في نشاط لايزر الواحة في دوحة كويست."
+        }
+      ]
+    },
+
+    {
+      "data": null,
+      "values": [
+        {
+          "key": "en",
+          "value": "I declare that, in case I am not the parent or legal guardian of the child(ren), I have authority from the parent or legal guardian of the child(ren) to sign this Disclaimer and Waiver Form."
+        }
+        ,{
+          "key": "ar",
+          "value": "أقر بأنه في حال لم أكن الوالد أو الوصي القانوني للطفل (الأطفال)، لدي سلطة من الوالد أو الوصي القانوني للطفل (الأطفال) للتوقيع على نموذج إخلاء المسؤولية و على هذا التنازل"
+        }
+      ]
+    },
+    {
+      "data": null,
+
+      "values": [
+        {
+          "key": "en",
+          "value": "I declare that I understand and acknowledge the attraction rules, regulations and restrictions. The child(ren) will abide by them."
+        }
+        ,{
+          "key": "ar",
+          "value": "أقر بأنني أفهم وأقر بقواعد ولوائح وقيود هذا النشاط وسوف يلتزم الأطفال بها"
+        }
+      ]
+    },
+
+    {
+      "data": null,
+      "values": [
+        {
+          "key": "en",
+          "value": "I confirm that I do know of any medical condition that any of the child(ren) suffer from which might result in any incident that could result in injury to the child(ren) or others during the activity."
+        }
+        ,{
+          "key": "ar",
+          "value": "أؤكد أنني على علم بأي حالة صحية يعاني منها الطفل (أطفال) والتي قد تؤدي إلى أي حادث او إصابة للطفل (أطفال) أو غيره أثناء القيام بالنشاط."
+        }
+      ]
+    },
+    {
+      "data": null,
+      "values": [
+        {
+          "key": "en",
+          "value": "I acknowledge that there are inherent risks associated with the above-mentioned activity, and I accept full risk of its consequences, or property damage and I accept this risk on behalf of the child(ren)."
+        }
+        ,{
+          "key": "ar",
+          "value": "أقر بأن هناك مخاطر مرتبطة بالنشاط المذكور أعلاه، وأتحمل مسؤولية كل العواقب الناتجة عن هذا النشاط ، أو أي تلف بالممتلكات وأوافق على هذا الخطر نيابة عن الطفل (الأطفال)"
+        }
+      ]
+    },
+    {
+      "data": null,
+      "values": [
+        {
+          "key": "en",
+          "value": "I hereby release, waive, forever hold harmless, indemnify and keep indemnified Doha QUEST from all claims for any injury, loss or damage sustained by the child(ren) in my custody arising from or in connection with the activity mentioned above and I hereby indemnify Doha QUEST against all claims made by any other person against Doha QUEST in respect of any injury, loss or damage arising out of or in connection with the failure of the child(ren) to follow general restrictions and instructions and/or directions of Doha QUEST its management and/or staff."
+        }
+        ,{
+          "key": "ar",
+          "value": "بموجب هذا، أنا أعفي و أتنازل و اخلي طرف دوحة كويست  الى الأبد عن أي طلب تعويض على أي نوع من الاصابات، خسارة او ضرر لحق بي أو بالطفل (الأطفال) الذي بعهدتي الناتجة عن النشاط المذكور أعلاه، و بموجب هذا فأنا أخلى طرف دوحة كويست من جميع المطالبات المقدمة من طرف أي شخص أخر ضد دوحة كويست فيما يتعلق بأي اصابة أو ضرر ناجم عن عدم التزام الطفل بمتابعة التعليمات و التوجيهات العامة من أدارة و موظفين دوحة كويست ."
+        }
+      ]
+    },
+
+    {
+      "data": null,
+      "values": [
+        {
+          "key": "en",
+          "value": "I acknowledge and accept that this form may be pleaded in the defence to any action or proceedings taken by the child(ren) at any time against Doha QUEST arising out of or in connection with the child(ren)’s participation in the activity."
+        }
+        ,{
+          "key": "ar",
+          "value": "أنا أقر وأوافق على أنه يجوز تقديم هذا النموذج للدفاع عن أي إجراءات أتخذها أو يتخدها الطفل (الأطفال) في أي وقت ضد دوحة كويست     و المتعلقة بمشاركتي أو بمشاركة الطفل (الأطفال) في هذا النشاط."
+        }
+      ]
+    },
+    {
+      "data": null,
+      "values": [
+        {
+          "key": "en",
+          "value": "I confirm that I am 13 years of age or older (18 years old as parent/ guardian) and acknowledge that I have read and fully understand the above prior to signing below."
+        }
+        ,{
+          "key": "ar",
+          "value": "أؤكد أن عمري 13 عامًا أو أكثر (18 عامًا بصفتي ولي الأمر / الوصي)  وأقر بأنني قد قرأت وفهمت تمامًا ما ورد أعلاه قبل التوقيع أدناه"
+        }
+      ]
+    },
+    {
+      "data": null,
+      "values": [
+        {
+          "key": "en",
+          "value": "Any person deemed by the Management to be behaving in an unsafe or disorderly fashion will be asked to leave the attraction"
+        }
+        ,{
+          "key": "ar",
+          "value": "سيُطلب من أي شخص تعتبره الإدارة يتصرف بطريقة غير آمنة أو غير منضبطة لمغادرة مكان النشاط "
+        }
+      ]
+    }
+  ]
+}

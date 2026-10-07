@@ -1,0 +1,63 @@
+
+@urlBase = {{$dotenv BASE_URL}}
+@payloadItem = careers-questions
+@apiKey = {{$dotenv API_TOKEN}}
+@url = {{urlBase}}/{{payloadItem}}
+
+
+### FETCH
+GET {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+
+###POST#1
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "title": "A note to us?",
+    "type": "TextArea"
+}
+
+###POST#2
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "title": "Other skill you did not mention?",
+    "type": "Text"
+}
+
+###POST#3
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "title": "Your level of experience?",
+    "type": "Dropdown",
+    "options": [
+        {
+            "title": "More than 2 years"
+        },
+        {
+            "title": "Less than 2 years"
+        },
+        {
+            "title": "No experience"
+        }
+    ]
+}
+
+###POST#4
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "title": "Your age?",
+    "type": "Number"
+}

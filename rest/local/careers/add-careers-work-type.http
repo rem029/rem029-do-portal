@@ -1,0 +1,53 @@
+
+@urlBase = {{$dotenv BASE_URL}}
+@payloadItem = careers-work-type
+@apiKey = {{$dotenv API_TOKEN}}
+@url = {{urlBase}}/{{payloadItem}}
+
+
+### FETCH
+GET {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+
+###POST1
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "title": "Remote"
+
+}
+
+###POST2
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "title": "Contract"
+
+}
+
+###POST3
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "title": "Full time"
+
+}
+
+###POST4
+POST {{url}}
+Content-Type: application/json
+Authorization: users API-Key {{apiKey}}
+
+{
+    "title": "Part time"
+
+}
+

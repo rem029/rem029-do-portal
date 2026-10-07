@@ -1,0 +1,14 @@
+# @urlBase = http://private.dohaoasis.com
+@urlBase = http://172.18.42.95
+
+@url = {{urlBase}}/payload/email/send-employee-survey
+
+
+###
+POST {{url}}
+Content-Type: application/json
+
+{
+    "email": "lawrence.ponce@dohaoasis.com",
+    "url": "http://localhost:3000/employee?id=456"
+}

@@ -1,0 +1,35 @@
+@urlBase = http://localhost:3005
+@url = {{urlBase}}/payload/api/health/status
+
+# {
+#     "urls": [
+#         "",
+#         "https://www.dohaoasis.com/",
+#         "https://kien-fm.qa/",
+#         "https://public.dohaoasis.com/",
+#         "https://www.banyantree.com/",
+#         "https://dohaquest.com/",
+#         "https://www.vertigodoha.com/"
+#     ]
+# }
+
+###
+GET {{url}}?url=https://doha.printemps.com/
+Content-Type: application/json
+Authorization: users API-Key 19000dfc-38a1-45dd-ac72-adb8f0295efe
+
+###
+GET {{url}}
+Content-Type: application/json
+Authorization: users API-Key 19000dfc-38a1-45dd-ac72-adb8f0295efe
+
+
+
+###
+GET {{url}}
+Content-Type: application/json
+Authorization: users API-Key 19000dfc-38a1-45dd-ac72-adb8f0295efe
+
+{
+    "urls":    "https://doha.printemps.com/"
+}
